@@ -1,1132 +1,1184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./main.css">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script defer src="./main.js"></script>
-</head>
-<body>
-  
-  <!-- Header -->
-  <header id="header">
-    <div class="inner">
-      <!-- Top Nav Bar -->
-      <nav class="top-nav">
-        <div class="top-nav-left">
-          <a href="#" class="nav-link">초등</a>
-          <a href="#" class="nav-link">중학</a>
-          <a href="#" class="nav-link">고등</a>
-          <a href="#" class="nav-link">교과서 홍보관</a>
-          <a href="#" class="nav-link">AIDT (교육자료)</a>
-        </div>
-        <div class="top-nav-right">
-          <a href="#" class="nav-link">로그아웃</a>
-          <a href="#" class="nav-link">나의 교실</a>
-          <a href="#" class="nav-link">1:1 문의 내역 <img src="./img/notification.svg" alt="Notification-icon" style="margin-left: 3px;"></a>
-          <a href="#" class="nav-link">이벤트</a>
-          <a href="#" class="nav-link">고객센터</a>
-        </div>
-      </nav>
-      <!--  -->
-      <div class="sticky-wrap">
-        <div class="main-header">
-          <div class="header-left">
-              <div class="logo-container">
-                <img src="./img/main-logo.svg" alt="지학사 로고" class="logo-icon" />
-              </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <!-- Top Nav Bar -->
+        <nav class="top-nav">
+          <div class="top-nav-left">
+            <a href="#" class="nav-link">초등</a>
+            <a href="#" class="nav-link">중학</a>
+            <a href="#" class="nav-link">고등</a>
+            <a href="#" class="nav-link">교과서 홍보관</a>
+            <a href="#" class="nav-link">AIDT (교육자료)</a>
           </div>
-          <div class="header-center">
-            <input type="text" placeholder="11.29 세계 아동학대 예방의 날">
-          </div>
-        </div>
-        <!--  -->
-        <!-- bottom-nav -->
-        <nav class="bottom-nav">
-          <div class="nav-item-wrapper">
-            <!-- 교과활동 -->
-            <div class="nav-item">
-              <span class="badge badge-up"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">교과활동</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">1학년</a></li>
-                    <li><a href="#" class="dropdown-menu-item">2학년</a></li>
-                    <li><a href="#" class="dropdown-menu-item">3학년</a></li>
-                    <li><a href="#" class="dropdown-menu-item">4학년</a></li>
-                    <li><a href="#" class="dropdown-menu-item">5학년</a></li>
-                    <li><a href="#" class="dropdown-menu-item">6학년</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- 평가자료 -->
-            <div class="nav-item">
-              <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">평가자료</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">평가자료01</a></li>
-                    <li><a href="#" class="dropdown-menu-item">평가자료02</a></li>
-                    <li><a href="#" class="dropdown-menu-item">평가자료03</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- 창의적 체험활동 -->
-            <div class="nav-item">
-              <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">창의적 체험활동</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">체험활동01</a></li>
-                    <li><a href="#" class="dropdown-menu-item">체험활동02</a></li>
-                    <li><a href="#" class="dropdown-menu-item">체험활동03</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- 학교자율시간 -->
-            <div class="nav-item">
-              <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">학교자율시간</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">학교자율시간01</a></li>
-                    <li><a href="#" class="dropdown-menu-item">학교자율시간02</a></li>
-                    <li><a href="#" class="dropdown-menu-item">학교자율시간03</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- 게임 활동 수업 -->
-            <div class="nav-item">
-              <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">게임활동수업</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">게임활동수업01</a></li>
-                    <li><a href="#" class="dropdown-menu-item">게임활동수업02</a></li>
-                    <li><a href="#" class="dropdown-menu-item">게임활동수업03</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- 기초학력,아침활동 -->
-            <div class="nav-item">
-              <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">기초학력·아침활동</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">기초학력01</a></li>
-                    <li><a href="#" class="dropdown-menu-item">기초학력02</a></li>
-                    <li><a href="#" class="dropdown-menu-item">기초학력03</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- 학급운영 -->
-            <div class="nav-item">
-              <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon"></span>
-              <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon"></span>
-              <div class="nav-item-title">학급운영</div>
-              <div class="dropdown-menu">
-                <span class="hover-bridge"></span>
-                <div class="dropdown-content">
-                  <ul class="dropdown-menu-list">
-                    <li><a href="#" class="dropdown-menu-item">학급운영01</a></li>
-                    <li><a href="#" class="dropdown-menu-item">학급운영02</a></li>
-                    <li><a href="#" class="dropdown-menu-item">학급운영03</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <div class="top-nav-right">
+            <a href="#" class="nav-link">로그아웃</a>
+            <a href="#" class="nav-link">나의 교실</a>
+            <a href="#" class="nav-link"
+              >1:1 문의 내역 <img src="./img/notification.svg" alt="Notification-icon" style="margin-left: 3px"
+            /></a>
+            <a href="#" class="nav-link">이벤트</a>
+            <a href="#" class="nav-link">고객센터</a>
           </div>
         </nav>
         <!--  -->
-      </div>
-    </div>
-  </header>
-  <!-- contents -->
-  <div id="contents">
-    <!-- Section01 -->
-    <section id="main-content01">
-      <div class="inner">
-        <div class="main-content01-wrapper">
-          <!-- Card -->
-          <div class="main-content-card-wrap">
-            <div class="main-content-card-top-wrap">
-              <div class="main-content-card-title">
-                <img src="./img/blue-star-badge.svg" alt="badge">
-                <div>내 교과서 <span>6</span></div>
+        <div class="sticky-wrap">
+          <div class="main-header">
+            <div class="header-left">
+              <div class="logo-container">
+                <img src="./img/main-logo.svg" alt="지학사 로고" class="logo-icon" />
               </div>
-              <img src="./img/option-img.svg" alt="option">
             </div>
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <!-- swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="./img/book-sample-01.png" alt="">
-                  <div class="tag-wrap">
-                    <div class="tag active">사회 3-1</div>
-                    <div class="tag">과학 3-2</div>
-                    <div class="tag">수학 3-2</div>
-                  </div>
-                </div>
-                <!-- swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="./img/book-sample-01.png" alt="">
-                  <div class="tag-wrap">
-                    <div class="tag active">사회 3-1</div>
-                    <div class="tag">과학 3-2</div>
-                    <div class="tag">수학 3-2</div>
-                  </div>
-                </div>
-                <!-- swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="./img/book-sample-01.png" alt="">
-                  <div class="tag-wrap">
-                    <div class="tag active">사회 3-1</div>
-                    <div class="tag">과학 3-2</div>
-                    <div class="tag">수학 3-2</div>
-                  </div>
-                </div>
-                <!-- swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="./img/book-sample-01.png" alt="">
-                  <div class="tag-wrap">
-                    <div class="tag active">사회 3-1</div>
-                    <div class="tag">과학 3-2</div>
-                    <div class="tag">수학 3-2</div>
-                  </div>
-                </div>
-              </div>
-              <!-- swiper-button -->
-              <div class="swiper-button-next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 6L15 12L9 18"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div class="swiper-button-prev">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 6L9 12L15 18"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <!-- Pagination -->
-              <div class="swiper-pagination"></div>
+            <div class="header-center">
+              <input type="text" placeholder="11.29 세계 아동학대 예방의 날" />
             </div>
           </div>
           <!--  -->
-          <!-- slide-banner -->
-          <div class="main-slide-banner">
-            <div class="main-slide-tab-wrap">
-              <div class="main-slide-tab active">이벤트 <span style="margin-left: 5px;">2</span></div>
-              <div class="main-slide-tab">티솔 소식 <span style="margin-left: 5px;">3</span></div>
+          <!-- bottom-nav -->
+          <nav class="bottom-nav">
+            <div class="nav-item-wrapper">
+              <!-- 교과활동 -->
+              <div class="nav-item">
+                <span class="badge badge-up"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">교과활동</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">1학년</a></li>
+                      <li><a href="#" class="dropdown-menu-item">2학년</a></li>
+                      <li><a href="#" class="dropdown-menu-item">3학년</a></li>
+                      <li><a href="#" class="dropdown-menu-item">4학년</a></li>
+                      <li><a href="#" class="dropdown-menu-item">5학년</a></li>
+                      <li><a href="#" class="dropdown-menu-item">6학년</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 평가자료 -->
+              <div class="nav-item">
+                <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">평가자료</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">평가자료01</a></li>
+                      <li><a href="#" class="dropdown-menu-item">평가자료02</a></li>
+                      <li><a href="#" class="dropdown-menu-item">평가자료03</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 창의적 체험활동 -->
+              <div class="nav-item">
+                <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">창의적 체험활동</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">체험활동01</a></li>
+                      <li><a href="#" class="dropdown-menu-item">체험활동02</a></li>
+                      <li><a href="#" class="dropdown-menu-item">체험활동03</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 학교자율시간 -->
+              <div class="nav-item">
+                <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">학교자율시간</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">학교자율시간01</a></li>
+                      <li><a href="#" class="dropdown-menu-item">학교자율시간02</a></li>
+                      <li><a href="#" class="dropdown-menu-item">학교자율시간03</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 게임 활동 수업 -->
+              <div class="nav-item">
+                <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">게임활동수업</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">게임활동수업01</a></li>
+                      <li><a href="#" class="dropdown-menu-item">게임활동수업02</a></li>
+                      <li><a href="#" class="dropdown-menu-item">게임활동수업03</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 기초학력,아침활동 -->
+              <div class="nav-item">
+                <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">기초학력·아침활동</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">기초학력01</a></li>
+                      <li><a href="#" class="dropdown-menu-item">기초학력02</a></li>
+                      <li><a href="#" class="dropdown-menu-item">기초학력03</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 학급운영 -->
+              <div class="nav-item">
+                <span class="badge badge-up displaynone"><img src="./img/up-icon.svg" alt="up-icon" /></span>
+                <span class="badge badge-new displaynone"><img src="./img/new-icon.svg" alt="new-icon" /></span>
+                <div class="nav-item-title">학급운영</div>
+                <div class="dropdown-menu">
+                  <span class="hover-bridge"></span>
+                  <div class="dropdown-content">
+                    <ul class="dropdown-menu-list">
+                      <li><a href="#" class="dropdown-menu-item">학급운영01</a></li>
+                      <li><a href="#" class="dropdown-menu-item">학급운영02</a></li>
+                      <li><a href="#" class="dropdown-menu-item">학급운영03</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- main-slide-banner-tab-01 -->
-            <div class="main-slide-banner-wrap tab-01">
+          </nav>
+          <!--  -->
+        </div>
+      </div>
+    </header>
+    <!-- contents -->
+    <div id="contents">
+      <!-- Section01 -->
+      <section id="main-content01">
+        <div class="inner">
+          <div class="main-content01-wrapper">
+            <!-- Card -->
+            <div class="main-content-card-wrap">
+              <div class="main-content-card-top-wrap">
+                <div class="main-content-card-title">
+                  <img src="./img/blue-star-badge.svg" alt="badge" />
+                  <div>내 교과서 <span>6</span></div>
+                </div>
+                <img src="./img/option-img.svg" alt="option" />
+              </div>
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <!-- swiper-slide -->
                   <div class="swiper-slide">
-                    <img src="./img/main-slide-banner-01.png" alt="banner">
-                    <div class="main-slide-banner-title-wrap">
-                      <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt=""></div>
-                      <div class="main-slide-banner-title">학교자율시간</div>
-                      <div class="main-slide-banner-title">두근두근이벤트</div>
-                      <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                    <img src="./img/book-sample-01.png" alt="" />
+                    <div class="tag-wrap">
+                      <div class="tag active">사회 3-1</div>
+                      <div class="tag">과학 3-2</div>
+                      <div class="tag">수학 3-2</div>
                     </div>
                   </div>
                   <!-- swiper-slide -->
                   <div class="swiper-slide">
-                    <img src="./img/main-slide-banner-01.png" alt="banner">
-                    <div class="main-slide-banner-title-wrap">
-                      <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt=""></div>
-                      <div class="main-slide-banner-title">학교자율시간</div>
-                      <div class="main-slide-banner-title">두근두근이벤트</div>
-                      <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                    <img src="./img/book-sample-01.png" alt="" />
+                    <div class="tag-wrap">
+                      <div class="tag active">사회 3-1</div>
+                      <div class="tag">과학 3-2</div>
+                      <div class="tag">수학 3-2</div>
                     </div>
                   </div>
                   <!-- swiper-slide -->
                   <div class="swiper-slide">
-                    <img src="./img/main-slide-banner-01.png" alt="banner">
-                    <div class="main-slide-banner-title-wrap">
-                      <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt=""></div>
-                      <div class="main-slide-banner-title">학교자율시간</div>
-                      <div class="main-slide-banner-title">두근두근이벤트</div>
-                      <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                    <img src="./img/book-sample-01.png" alt="" />
+                    <div class="tag-wrap">
+                      <div class="tag active">사회 3-1</div>
+                      <div class="tag">과학 3-2</div>
+                      <div class="tag">수학 3-2</div>
+                    </div>
+                  </div>
+                  <!-- swiper-slide -->
+                  <div class="swiper-slide">
+                    <img src="./img/book-sample-01.png" alt="" />
+                    <div class="tag-wrap">
+                      <div class="tag active">사회 3-1</div>
+                      <div class="tag">과학 3-2</div>
+                      <div class="tag">수학 3-2</div>
                     </div>
                   </div>
                 </div>
-                <!-- pagination -->
-                <div class="swiper-pagination-wrap-container">
-                  <div class="swiper-pagination-wrap">
-                    <div class="banner-swiper-button-prev">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 6L9 12L15 18"
+                <!-- swiper-button -->
+                <div class="swiper-button-next">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9 6L15 12L9 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="swiper-button-prev">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15 6L9 12L15 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!--  -->
+            <!-- slide-banner -->
+            <div class="main-slide-banner">
+              <div class="main-slide-tab-wrap">
+                <div class="main-slide-tab active">이벤트 <span style="margin-left: 5px">2</span></div>
+                <div class="main-slide-tab">티솔 소식 <span style="margin-left: 5px">3</span></div>
+              </div>
+              <!-- main-slide-banner-tab-01 -->
+              <div class="main-slide-banner-wrap tab-01">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <!-- swiper-slide -->
+                    <div class="swiper-slide">
+                      <img src="./img/main-slide-banner-01.png" alt="banner" />
+                      <div class="main-slide-banner-title-wrap">
+                        <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt="" /></div>
+                        <div class="main-slide-banner-title">학교자율시간</div>
+                        <div class="main-slide-banner-title">두근두근이벤트</div>
+                        <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                      </div>
+                    </div>
+                    <!-- swiper-slide -->
+                    <div class="swiper-slide">
+                      <img src="./img/main-slide-banner-01.png" alt="banner" />
+                      <div class="main-slide-banner-title-wrap">
+                        <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt="" /></div>
+                        <div class="main-slide-banner-title">학교자율시간</div>
+                        <div class="main-slide-banner-title">두근두근이벤트</div>
+                        <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                      </div>
+                    </div>
+                    <!-- swiper-slide -->
+                    <div class="swiper-slide">
+                      <img src="./img/main-slide-banner-01.png" alt="banner" />
+                      <div class="main-slide-banner-title-wrap">
+                        <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt="" /></div>
+                        <div class="main-slide-banner-title">학교자율시간</div>
+                        <div class="main-slide-banner-title">두근두근이벤트</div>
+                        <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- pagination -->
+                  <div class="swiper-pagination-wrap-container">
+                    <div class="swiper-pagination-wrap">
+                      <div class="banner-swiper-button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M15 6L9 12L15 18"
                             stroke="currentColor"
                             stroke-width="2"
                             stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-                    <div class="banner-swiper-pagination"></div>
-                    <div class="banner-swiper-button-next">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 6L15 12L9 18"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                      </svg>
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                       </div>
-
-                      <div class="pauseBtn">⏸</div>
-                  </div>
-                  <div class="total-wrap">전체</div>
-                </div>
-              </div>
-            </div>
-            <!-- main-slide-banner-tab-02 -->
-            <div class="main-slide-banner-wrap tab-02">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <!-- swiper-slide -->
-                  <div class="swiper-slide">
-                    <img src="./img/main-slide-banner-01.png" alt="banner">
-                    <div class="main-slide-banner-title-wrap">
-                      <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt=""></div>
-                      <div class="main-slide-banner-title">학교자율시간</div>
-                      <div class="main-slide-banner-title">두근두근이벤트</div>
-                      <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
-                    </div>
-                  </div>
-                  <!-- swiper-slide -->
-                  <div class="swiper-slide">
-                    <img src="./img/main-slide-banner-01.png" alt="banner">
-                    <div class="main-slide-banner-title-wrap">
-                      <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt=""></div>
-                      <div class="main-slide-banner-title">학교자율시간</div>
-                      <div class="main-slide-banner-title">두근두근이벤트</div>
-                      <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
-                    </div>
-                  </div>
-                  <!-- swiper-slide -->
-                  <div class="swiper-slide">
-                    <img src="./img/main-slide-banner-01.png" alt="banner">
-                    <div class="main-slide-banner-title-wrap">
-                      <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt=""></div>
-                      <div class="main-slide-banner-title">학교자율시간</div>
-                      <div class="main-slide-banner-title">두근두근이벤트</div>
-                      <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- pagination -->
-                <div class="swiper-pagination-wrap-container">
-                  <div class="swiper-pagination-wrap">
-                    <div class="banner-swiper-button-prev">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 6L9 12L15 18"
+                      <div class="banner-swiper-pagination"></div>
+                      <div class="banner-swiper-button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M9 6L15 12L9 18"
                             stroke="currentColor"
                             stroke-width="2"
                             stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                      </svg>
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      <div class="pauseBtn">⏸</div>
                     </div>
-                    <div class="banner-swiper-pagination"></div>
-                    <div class="banner-swiper-button-next">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 6L15 12L9 18"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                      </svg>
+                    <div class="total-wrap">전체</div>
+                  </div>
+                </div>
+              </div>
+              <!-- main-slide-banner-tab-02 -->
+              <div class="main-slide-banner-wrap tab-02">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <!-- swiper-slide -->
+                    <div class="swiper-slide">
+                      <img src="./img/main-slide-banner-01.png" alt="banner" />
+                      <div class="main-slide-banner-title-wrap">
+                        <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt="" /></div>
+                        <div class="main-slide-banner-title">학교자율시간</div>
+                        <div class="main-slide-banner-title">두근두근이벤트</div>
+                        <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                      </div>
+                    </div>
+                    <!-- swiper-slide -->
+                    <div class="swiper-slide">
+                      <img src="./img/main-slide-banner-01.png" alt="banner" />
+                      <div class="main-slide-banner-title-wrap">
+                        <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt="" /></div>
+                        <div class="main-slide-banner-title">학교자율시간</div>
+                        <div class="main-slide-banner-title">두근두근이벤트</div>
+                        <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                      </div>
+                    </div>
+                    <!-- swiper-slide -->
+                    <div class="swiper-slide">
+                      <img src="./img/main-slide-banner-01.png" alt="banner" />
+                      <div class="main-slide-banner-title-wrap">
+                        <div class="main-slide-banner-badge"><img src="./img/banner-new-icon.svg" alt="" /></div>
+                        <div class="main-slide-banner-title">학교자율시간</div>
+                        <div class="main-slide-banner-title">두근두근이벤트</div>
+                        <div class="main-slide-banner-desc">PPT부터 활동지 평가자료까지 한 번에 OK!</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- pagination -->
+                  <div class="swiper-pagination-wrap-container">
+                    <div class="swiper-pagination-wrap">
+                      <div class="banner-swiper-button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M15 6L9 12L15 18"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <div class="banner-swiper-pagination"></div>
+                      <div class="banner-swiper-button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M9 6L15 12L9 18"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                       </div>
                       <div class="pauseBtn">⏸</div>
+                    </div>
+                    <div class="total-wrap">전체</div>
                   </div>
-                  <div class="total-wrap">전체</div>
                 </div>
               </div>
             </div>
-          </div>
-          <!--  -->
-        </div>
-      </div>
-      
-      <!-- modal-layer -->
-      <div id="modal-layer">
-        <div class="modal-inner">
-          <div class="modal-layer-cancel-wrap"><img src="./img/modal-cancel.svg" alt="cancel"></div>
-          <div class="modal-layer-content-wrap">
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
-            <div class="modal-layer-content">
-              <img src="./img/main-content02-img.png" alt="img">
-            </div>
+            <!--  -->
           </div>
         </div>
-      </div>
-      <!--  -->
-    </section>
-    <!--  -->
 
-    <!-- Section02 -->
-    <section id="main-content02">
-      <div class="inner">
-        <div class="main-content02-wrap">
-          <div class="main-content02-title-wrap">
-            <img src="./img/gift-img.svg" alt="gift">
-            <div class="title">신중하게 골랐어요!</div>
-            <div class="desc">자료 고민 끝</div>
-          </div>
-          <!-- tab-wrap -->
-          <div class="main-content02-tab-wrap">
-            <div class="main-content02-tab active">이달의 계기자료</div>
-            <div class="main-content02-tab">아침 활동</div>
-            <div class="main-content02-tab">연간지도계획</div>
-            <div class="main-content02-tab">세미대미님 코너</div>
-          </div>
-          <!-- tab-01 -->
-          <div class="tab-01">
-            <div class="main-content02-img-wrap">
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
+        <!-- modal-layer -->
+        <div id="modal-layer">
+          <div class="modal-inner">
+            <div class="modal-layer-cancel-wrap"><img src="./img/modal-cancel.svg" alt="cancel" /></div>
+            <div class="modal-layer-content-wrap">
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
               </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
               </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
               </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
+              </div>
+              <div class="modal-layer-content">
+                <img src="./img/main-content02-img.png" alt="img" />
               </div>
             </div>
           </div>
-          <!-- tab-02 -->
-          <div class="tab-02 displaynone">
-            <div class="main-content02-img-wrap">
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- tab-03 -->
-          <div class="tab-03 displaynone">
-            <div class="main-content02-img-wrap">
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- tab-04 -->
-          <div class="tab-04 displaynone">
-            <div class="main-content02-img-wrap">
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-              <div class="main-content02-img">
-                <img src="./img/main-content02-img.png" alt="#">
-                <div class="tag-wrap">
-                  <div class="tag">차시명</div>
-                  <div class="title">제목</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- more-btn -->
-        <div class="main-content02-more-btn">
-          <a href="#">더 많은 자료 보러가기 <img src="./img/ico-see-more.svg" alt="ico-see-more"></a>
-        </div>
-      </div>
-    </section>
-    <!--  -->
-
-    <!-- Section03 -->
-    <section id="main-content03">
-      <div class="inner">
-        <div class="main-content03-wrap">
-          <div class="main-content03-left">
-            <div class="main-content03-left-text-wrap">
-              <div class="main-content03-left-title">나에게 필요한 <span>수업 도구</span>는?</div>
-              <div class="main-content03-left-desc">다양한 도구가 준비 되어 있어요!</div>
-            </div>
-          </div>
-          <!-- swiper -->
-          <div class="main-content03-right swiper">
-            <div class="swiper-wrapper">
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-01.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">과학 가상 실험실</div>
-                  <span class="main-content03-right-item-tag">과학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-02.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">노래 익히기</div>
-                  <span class="main-content03-right-item-tag">통합</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-03.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">미술 감상실</div>
-                  <span class="main-content03-right-item-tag">미술</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-04.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">사회 지역화 자료실</div>
-                  <span class="main-content03-right-item-tag">사회</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-05.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-06.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수업 지원 자료집</div>
-                  <span class="main-content03-right-item-tag">전과목</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-01.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-02.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-03.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-04.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-05.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content03-right-item swiper-slide">
-                <div class="main-content03-right-item-icon">
-                  <img src="./img/study-icon/icon-06.svg" alt="icon">
-                </div>
-                <div class="main-content03-right-item-text-wrap">
-                  <div class="main-content03-right-item-title">수학 놀이 자료집</div>
-                  <span class="main-content03-right-item-tag">수학</span>
-                </div>
-              </div>
-              <!--  -->
-            </div>
-          </div>
-        </div>
-        <!-- swiper-button -->
-        <div class="main-content-03-swiper-button-next">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"/>
-          </svg>
-
-        </div>
-        <div class="main-content-03-swiper-button-prev">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 6L9 12L15 18"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"/>
-          </svg>
         </div>
         <!--  -->
-      </div>
-    </section>
-    <!--  -->
+      </section>
+      <!--  -->
 
-    <!-- Section04 -->
-    <section id="main-content04">
-      <div class="inner">
-        <div class="main-content04-wrap">
-          <div class="main-content04-top-wrap">
-            <div class="main-content04-tag">HOT <img src="./img/fire-icon.svg" alt="fire"></div>
-            <div class="main-content04-title">티솔루션 협업 자료</div>
-            <div class="main-content04-desc">인기도 급상승 <img src="./img/up-arrow-icon.png" alt="up-arrow-icon"></div>
+      <!-- Section02 -->
+      <section id="main-content02">
+        <div class="inner">
+          <div class="main-content02-wrap">
+            <div class="main-content02-title-wrap">
+              <img src="./img/gift-img.svg" alt="gift" />
+              <div class="title">신중하게 골랐어요!</div>
+              <div class="desc">자료 고민 끝</div>
+            </div>
+            <!-- tab-wrap -->
+            <div class="main-content02-tab-wrap">
+              <div class="main-content02-tab active">이달의 계기자료</div>
+              <div class="main-content02-tab">아침 활동</div>
+              <div class="main-content02-tab">연간지도계획</div>
+              <div class="main-content02-tab">세미대미님 코너</div>
+            </div>
+            <!-- tab-01 -->
+            <div class="tab-01">
+              <div class="main-content02-img-wrap">
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tab-02 -->
+            <div class="tab-02 displaynone">
+              <div class="main-content02-img-wrap">
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tab-03 -->
+            <div class="tab-03 displaynone">
+              <div class="main-content02-img-wrap">
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tab-04 -->
+            <div class="tab-04 displaynone">
+              <div class="main-content02-img-wrap">
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+                <div class="main-content02-img">
+                  <img src="./img/main-content02-img.png" alt="#" />
+                  <div class="tag-wrap">
+                    <div class="tag">차시명</div>
+                    <div class="title">제목</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="main-content04-logo-wrap swiper">
-            <div class="swiper-wrapper">
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-01.svg" alt="collabo-01">
+          <!-- more-btn -->
+          <div class="main-content02-more-btn">
+            <a href="#">더 많은 자료 보러가기 <img src="./img/ico-see-more.svg" alt="ico-see-more" /></a>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+
+      <!-- Section03 -->
+      <section id="main-content03">
+        <div class="inner">
+          <div class="main-content03-wrap">
+            <div class="main-content03-left">
+              <div class="main-content03-left-text-wrap">
+                <div class="main-content03-left-title">나에게 필요한 <span>수업 도구</span>는?</div>
+                <div class="main-content03-left-desc">다양한 도구가 준비 되어 있어요!</div>
               </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-02.svg" alt="collabo-02">
+            </div>
+            <!-- swiper -->
+            <div class="main-content03-right swiper">
+              <div class="swiper-wrapper">
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-01.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">과학 가상 실험실</div>
+                    <span class="main-content03-right-item-tag">과학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-02.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">노래 익히기</div>
+                    <span class="main-content03-right-item-tag">통합</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-03.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">미술 감상실</div>
+                    <span class="main-content03-right-item-tag">미술</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-04.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">사회 지역화 자료실</div>
+                    <span class="main-content03-right-item-tag">사회</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-05.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-06.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수업 지원 자료집</div>
+                    <span class="main-content03-right-item-tag">전과목</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-01.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-02.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-03.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-04.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-05.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content03-right-item swiper-slide">
+                  <div class="main-content03-right-item-icon">
+                    <img src="./img/study-icon/icon-06.svg" alt="icon" />
+                  </div>
+                  <div class="main-content03-right-item-text-wrap">
+                    <div class="main-content03-right-item-title">수학 놀이 자료집</div>
+                    <span class="main-content03-right-item-tag">수학</span>
+                  </div>
+                </div>
+                <!--  -->
               </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-03.svg" alt="collabo-03">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-04.svg" alt="collabo-04">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-05.svg" alt="collabo-05">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-06.svg" alt="collabo-06">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-01.svg" alt="collabo-01">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-02.svg" alt="collabo-02">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-03.svg" alt="collabo-03">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-04.svg" alt="collabo-04">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-05.svg" alt="collabo-05">
-              </div>
-              <!-- swiper-slide -->
-              <div class="main-content04-logo-item swiper-slide">
-                <img src="./img/collabo-logo-06.svg" alt="collabo-06">
-              </div>
-              <!--  -->
             </div>
           </div>
           <!-- swiper-button -->
-          <div class="main-content-04-swiper-button-next">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 6L15 12L9 18"
+          <div class="main-content-03-swiper-button-next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9 6L15 12L9 18"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
-                stroke-linejoin="round"/>
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
-          <div class="main-content-04-swiper-button-prev">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 6L9 12L15 18"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
+          <div class="main-content-03-swiper-button-prev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </div>
           <!--  -->
-          <div class="main-content04-video-wrap">
-            <div class="main-content04-video-item">
-              <div class="tag">수학</div>
-              <img src="./img/main-content04-img-01.png" alt="collabo01">
-              <div class="main-content04-video-text-wrap">
-                <div class="main-content04-video-subtitle">소타이틀</div>
-                <div class="main-content04-video-title">타이틀</div>
-              </div>
-            </div>
-            <div class="main-content04-video-item">
-              <div class="tag">수학</div>
-              <img src="./img/main-content04-img-02.png" alt="collabo02">
-              <div class="main-content04-video-text-wrap">
-                <div class="main-content04-video-subtitle">소타이틀</div>
-                <div class="main-content04-video-title">타이틀</div>
-              </div>
-            </div>
-            <div class="main-content04-video-item">
-              <div class="tag">수학</div>
-              <img src="./img/main-content04-img-01.png" alt="collabo01">
-              <div class="main-content04-video-text-wrap">
-                <div class="main-content04-video-subtitle">소타이틀</div>
-                <div class="main-content04-video-title">타이틀</div>
-              </div>
-            </div>
-            <div class="main-content04-video-item">
-              <div class="tag">수학</div>
-              <img src="./img/main-content04-img-02.png" alt="collabo02">
-              <div class="main-content04-video-text-wrap">
-                <div class="main-content04-video-subtitle">소타이틀</div>
-                <div class="main-content04-video-title">타이틀</div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-    <!--  -->
+      </section>
+      <!--  -->
 
-    <!-- Section05 -->
-    <section id="main-content05">
-      <div class="inner">
-        <div class="main-content05-wrap">
-          <div class="main-content05-top-wrap">
-            <div class="main-content05-top-tag"><img src="./img/speaker-icon.svg" alt="speaker"></div>
-            <div class="main-content05-top-title"><span>NEW </span>초등 독서평설 12월호</div>
-            <div class="main-content05-top-desc">흥미로운 이야기와 자료!</div>
-          </div>
-        </div>
-        <div class="main-content05-container">
-          <div class="main-content-detail">
-            <img src="./img/content05-img-01.png" alt="content05-img-01">
-            <div class="main-content-detail-wrap">
-              <div class="main-content-detail-subtitle">정보</div>
-              <div class="main-content-detail-title">타이틀</div>
-              <div class="main-content-detail-desc">소타이틀</div>
-              <div class="main-content-detail-tag">태그</div>
-            </div>
-          </div>
-          <div class="main-content05-swiper-wrap swiper">
-            <div class="swiper-wrapper">
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-01.png" alt="content05-img-01">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">정보</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-02.png" alt="content05-img-02">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">교양</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-03.png" alt="content05-img-03">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">진로</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-04.png" alt="content05-img-04">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">정보</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-01.png" alt="content05-img-01">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">정보</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-02.png" alt="content05-img-02">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">교양</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-03.png" alt="content05-img-03">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">진로</div>
-              </div>
-              <!-- swiper-slide -->
-              <div class="swiper-slide">
-                <img src="./img/content05-img-04.png" alt="content05-img-04">
-                <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
-                <div class="main-content-swiper-detail-title displaynone">타이틀</div>
-                <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
-                <div class="main-content-swiper-detail-tag">교양</div>
+      <!-- Section04 -->
+      <section id="main-content04">
+        <div class="inner">
+          <div class="main-content04-wrap">
+            <div class="main-content04-top-wrap">
+              <div class="main-content04-tag">HOT <img src="./img/fire-icon.svg" alt="fire" /></div>
+              <div class="main-content04-title">티솔루션 협업 자료</div>
+              <div class="main-content04-desc">
+                인기도 급상승 <img src="./img/up-arrow-icon.png" alt="up-arrow-icon" />
               </div>
             </div>
-          </div>
-          <div class="main-content-05-swiper-button-next">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 6L15 12L9 18"
+            <div class="main-content04-logo-wrap swiper">
+              <div class="swiper-wrapper">
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-01.svg" alt="collabo-01" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-02.svg" alt="collabo-02" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-03.svg" alt="collabo-03" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-04.svg" alt="collabo-04" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-05.svg" alt="collabo-05" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-06.svg" alt="collabo-06" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-01.svg" alt="collabo-01" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-02.svg" alt="collabo-02" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-03.svg" alt="collabo-03" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-04.svg" alt="collabo-04" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-05.svg" alt="collabo-05" />
+                </div>
+                <!-- swiper-slide -->
+                <div class="main-content04-logo-item swiper-slide">
+                  <img src="./img/collabo-logo-06.svg" alt="collabo-06" />
+                </div>
+                <!--  -->
+              </div>
+            </div>
+            <!-- swiper-button -->
+            <div class="main-content-04-swiper-button-next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9 6L15 12L9 18"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"/>
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="main-content-04-swiper-button-prev">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 6L9 12L15 18"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <!--  -->
+            <div class="main-content04-video-wrap">
+              <div class="main-content04-video-item">
+                <div class="tag">수학</div>
+                <img src="./img/main-content04-img-01.png" alt="collabo01" />
+                <div class="main-content04-video-text-wrap">
+                  <div class="main-content04-video-subtitle">소타이틀</div>
+                  <div class="main-content04-video-title">타이틀</div>
+                </div>
+              </div>
+              <div class="main-content04-video-item">
+                <div class="tag">수학</div>
+                <img src="./img/main-content04-img-02.png" alt="collabo02" />
+                <div class="main-content04-video-text-wrap">
+                  <div class="main-content04-video-subtitle">소타이틀</div>
+                  <div class="main-content04-video-title">타이틀</div>
+                </div>
+              </div>
+              <div class="main-content04-video-item">
+                <div class="tag">수학</div>
+                <img src="./img/main-content04-img-01.png" alt="collabo01" />
+                <div class="main-content04-video-text-wrap">
+                  <div class="main-content04-video-subtitle">소타이틀</div>
+                  <div class="main-content04-video-title">타이틀</div>
+                </div>
+              </div>
+              <div class="main-content04-video-item">
+                <div class="tag">수학</div>
+                <img src="./img/main-content04-img-02.png" alt="collabo02" />
+                <div class="main-content04-video-text-wrap">
+                  <div class="main-content04-video-subtitle">소타이틀</div>
+                  <div class="main-content04-video-title">타이틀</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+
+      <!-- Section05 -->
+      <section id="main-content05">
+        <div class="inner">
+          <div class="main-content05-wrap">
+            <div class="main-content05-top-wrap">
+              <div class="main-content05-top-tag"><img src="./img/speaker-icon.svg" alt="speaker" /></div>
+              <div class="main-content05-top-title"><span>NEW </span>초등 독서평설 12월호</div>
+              <div class="main-content05-top-desc">흥미로운 이야기와 자료!</div>
+            </div>
+          </div>
+          <div class="main-content05-container">
+            <div class="main-content-detail">
+              <img src="./img/content05-img-01.png" alt="content05-img-01" />
+              <div class="main-content-detail-wrap">
+                <div class="main-content-detail-subtitle">정보</div>
+                <div class="main-content-detail-title">타이틀</div>
+                <div class="main-content-detail-desc">소타이틀</div>
+                <div class="main-content-detail-tag">태그</div>
+              </div>
+            </div>
+            <div class="main-content05-swiper-wrap swiper">
+              <div class="swiper-wrapper">
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-01.png" alt="content05-img-01" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">정보</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-02.png" alt="content05-img-02" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">교양</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-03.png" alt="content05-img-03" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">진로</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-04.png" alt="content05-img-04" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">정보</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-01.png" alt="content05-img-01" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">정보</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-02.png" alt="content05-img-02" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">교양</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-03.png" alt="content05-img-03" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">진로</div>
+                </div>
+                <!-- swiper-slide -->
+                <div class="swiper-slide">
+                  <img src="./img/content05-img-04.png" alt="content05-img-04" />
+                  <div class="main-content-swiper-detail-subtitle displaynone">정보</div>
+                  <div class="main-content-swiper-detail-title displaynone">타이틀</div>
+                  <div class="main-content-swiper-detail-desc displaynone">소타이틀</div>
+                  <div class="main-content-swiper-detail-tag">교양</div>
+                </div>
+              </div>
+            </div>
+            <div class="main-content-05-swiper-button-next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9 6L15 12L9 18"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
             <div class="main-content-05-swiper-button-prev">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 6L9 12L15 18"
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 6L9 12L15 18"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round"/>
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
-        </div>
-      </div>
-    </section>
-    <!--  -->
-
-    <!-- Section06 -->
-    <section id="main-content06">
-      <div class="inner">
-        <div class="main-content06-wrap">
-          <div class="main-content06-top-wrap">
-            <div class="main-content06-top-left">
-              <div class="main-content06-top-tag"><img src="./img/light-icon.svg" alt="light-icon"></div>
-              <div class="main-content06-top-title">이번 달 티솔 하이라이트!</div>
-            </div>
-            <!-- SNS -->
-            <div class="main-content06-top-right">
-              <div class="sns-icon"><a href="#"><img src="./img/sns/solution-logo.svg" alt="icon"></a></div>
-              <div class="sns-icon"><a href="#"><img src="./img/sns/youtube-logo.svg" alt="icon"></a></div>
-              <div class="sns-icon"><a href="#"><img src="./img/sns/kakao-logo.svg" alt="icon"></a></div>
-              <div class="sns-icon"><a href="#"><img src="./img/sns/naver-cafe-logo.svg" alt="icon"></a></div>
-              <div class="sns-icon"><a href="#"><img src="./img/sns/naver-blog-logo.svg" alt="icon"></a></div>
-            </div>
-            <!--  -->
-          </div>
-          <div class="main-content06-content-wrap">
-            <!-- main-content06-left -->
-            <div class="main-content06-content-wrap-left">
-              <div class="main-content06-content-wrap-top-wrap">
-                <div class="main-content06-content-wrap-top-tag"><img src="./img/sns/solution-logo.svg" alt="icon"></div>
-                <div class="main-content06-content-wrap-top-title">선생님의 B면</div>
-              </div>
-              <div class="main-content06-content-wrap-left-item-wrap">
-                <div class="main-content06-content-wrap-item">
-                  <div class="teacher-img"><img src="./img/teacher-01.png" alt="teacher"></div>
-                  <div class="teacher-desc">
-                    <div>13년 만에 다시</div>
-                    <div>학교로 돌아왔습니다.</div>
-                  </div>
-                </div>
-                <div class="main-content06-content-wrap-item">
-                  <div class="teacher-img"><img src="./img/teacher-02.png" alt="teacher"></div>
-                  <div class="teacher-desc">
-                    <div>춤추는 60대 교사가</div>
-                    <div>말하는 행복</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <!-- main-content06-right -->
-            <div class="main-content06-content-wrap-right">
-              <div class="main-content06-content-wrap-top-wrap">
-                <div class="main-content06-content-wrap-top-tag"><img src="./img/sns/youtube-logo.svg" alt="icon"></div>
-                <div class="main-content06-content-wrap-top-title">지학사 공식 유튜브</div>
-              </div>
-              <div class="main-content06-content-wrap-right-item-wrap">
-                <div class="main-content06-content-wrap-item">
-                  <div class="yotubue">
-                    <img src="./img/yotubue-thumbnail.png" alt="yotube">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-          </div>
-
-          <div class="main-content06-board-wrap">
-            <!-- 공지사항 -->
-            <div class="notice-wrap">
-              <div class="main-content-board-top-wrap">
-                <div class="title">공지사항</div>
-                <div class="more-btn">전체보기</div>
-              </div>
-              <div class="main-content-board-list-wrap">
-                <div class="main-content-board-item">
-                  <div class="title">AIDT 교육자료의 효과성 및 활용 방안을 위한 설문조사 <img src="./img/board-new-icon.svg" alt="board-new-icon" class=""></div>
-                </div>
-                <div class="main-content-board-item">
-                  <div class="title">2022개정 교과서 선정이유 HWP 파일 모음 제공 <img src="./img/board-new-icon.svg" alt="board-new-icon" class=""></div>
-                </div>
-                <div class="main-content-board-item">
-                  <div class="title">2025년 2학기 사회 결손 단원 보완 안내 <img src="./img/board-new-icon.svg" alt="board-new-icon" class="displaynone"></div>
-                </div>
-                <div class="main-content-board-item">
-                  <div class="title">2022개정 교과서 선정이유 HWP 파일 모음 제공 <img src="./img/board-new-icon.svg" alt="board-new-icon" class="displaynone"></div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <!-- FAQ 게시판 -->
-            <div class="FAQ-wrap">
-              <div class="main-content-board-top-wrap">
-                <div class="title">자주 묻는 질문</div>
-                <div class="more-btn">전체보기</div>
-              </div>
-              <div class="main-content-board-list-wrap">
-                <div class="main-content-board-item">
-                  <div class="title"><span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq"></span>교사 인증 시 인증서(GPKI)가 보이지 않아요.</div>
-                </div>
-                <div class="main-content-board-item">
-                  <div class="title"><span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq"></span>바탕화면에 티솔루션 바로가기를 만들고 싶어요.</div>
-                </div>
-                <div class="main-content-board-item">
-                  <div class="title"><span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq"></span>교사 인증은 어떻게 하나요?</div>
-                </div>
-                <div class="main-content-board-item">
-                  <div class="title"><span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq"></span>교사 인증은 어떻게 하나요?</div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-            <!-- 고객센터 -->
-            <div class="service-center-wrap">
-              <div class="service-center-top-wrap">
-                <div class="title">고객센터</div>
-                <div class="number">02-330-5200 </div>
-              </div>
-              <div class="service-center-middle-wrap">
-                <div class="title">· 평일: 9시~12시 / 14시 ~ 17시</div>
-                <div class="title">· 토요일 및 공휴일 휴무</div>
-              </div>
-              <div class="service-center-bottom-wrap">
-                <div class="serivce-remote-btn">원격지원</div>
-                <div class="service-center-bottom-wrap-wrap">
-                  <div class="auth-btn second-btn">교사인증</div>
-                  <div class="number second-btn">안내전화</div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
           </div>
         </div>
-      </div>
-    </section>
-    <!--  -->
+      </section>
+      <!--  -->
 
-    <!-- 하단 영역 -->
-    <footer id="footer">
-      <div class="footer-nav">
+      <!-- Section06 -->
+      <section id="main-content06">
         <div class="inner">
+          <div class="main-content06-wrap">
+            <div class="main-content06-top-wrap">
+              <div class="main-content06-top-left">
+                <div class="main-content06-top-tag"><img src="./img/light-icon.svg" alt="light-icon" /></div>
+                <div class="main-content06-top-title">이번 달 티솔 하이라이트!</div>
+              </div>
+              <!-- SNS -->
+              <div class="main-content06-top-right">
+                <div class="sns-icon">
+                  <a href="#"><img src="./img/sns/solution-logo.svg" alt="icon" /></a>
+                </div>
+                <div class="sns-icon">
+                  <a href="#"><img src="./img/sns/youtube-logo.svg" alt="icon" /></a>
+                </div>
+                <div class="sns-icon">
+                  <a href="#"><img src="./img/sns/kakao-logo.svg" alt="icon" /></a>
+                </div>
+                <div class="sns-icon">
+                  <a href="#"><img src="./img/sns/naver-cafe-logo.svg" alt="icon" /></a>
+                </div>
+                <div class="sns-icon">
+                  <a href="#"><img src="./img/sns/naver-blog-logo.svg" alt="icon" /></a>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+            <div class="main-content06-content-wrap">
+              <!-- main-content06-left -->
+              <div class="main-content06-content-wrap-left">
+                <div class="main-content06-content-wrap-top-wrap">
+                  <div class="main-content06-content-wrap-top-tag">
+                    <img src="./img/sns/solution-logo.svg" alt="icon" />
+                  </div>
+                  <div class="main-content06-content-wrap-top-title">선생님의 B면</div>
+                </div>
+                <div class="main-content06-content-wrap-left-item-wrap">
+                  <div class="main-content06-content-wrap-item">
+                    <div class="teacher-img"><img src="./img/teacher-01.png" alt="teacher" /></div>
+                    <div class="teacher-desc">
+                      <div>13년 만에 다시</div>
+                      <div>학교로 돌아왔습니다.</div>
+                    </div>
+                  </div>
+                  <div class="main-content06-content-wrap-item">
+                    <div class="teacher-img"><img src="./img/teacher-02.png" alt="teacher" /></div>
+                    <div class="teacher-desc">
+                      <div>춤추는 60대 교사가</div>
+                      <div>말하는 행복</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <!-- main-content06-right -->
+              <div class="main-content06-content-wrap-right">
+                <div class="main-content06-content-wrap-top-wrap">
+                  <div class="main-content06-content-wrap-top-tag">
+                    <img src="./img/sns/youtube-logo.svg" alt="icon" />
+                  </div>
+                  <div class="main-content06-content-wrap-top-title">지학사 공식 유튜브</div>
+                </div>
+                <div class="main-content06-content-wrap-right-item-wrap">
+                  <div class="main-content06-content-wrap-item">
+                    <div class="yotubue">
+                      <img src="./img/yotubue-thumbnail.png" alt="yotube" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+
+            <div class="main-content06-board-wrap">
+              <!-- 공지사항 -->
+              <div class="notice-wrap">
+                <div class="main-content-board-top-wrap">
+                  <div class="title">공지사항</div>
+                  <div class="more-btn">전체보기</div>
+                </div>
+                <div class="main-content-board-list-wrap">
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      AIDT 교육자료의 효과성 및 활용 방안을 위한 설문조사
+                      <img src="./img/board-new-icon.svg" alt="board-new-icon" class="" />
+                    </div>
+                  </div>
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      2022개정 교과서 선정이유 HWP 파일 모음 제공
+                      <img src="./img/board-new-icon.svg" alt="board-new-icon" class="" />
+                    </div>
+                  </div>
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      2025년 2학기 사회 결손 단원 보완 안내
+                      <img src="./img/board-new-icon.svg" alt="board-new-icon" class="displaynone" />
+                    </div>
+                  </div>
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      2022개정 교과서 선정이유 HWP 파일 모음 제공
+                      <img src="./img/board-new-icon.svg" alt="board-new-icon" class="displaynone" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <!-- FAQ 게시판 -->
+              <div class="FAQ-wrap">
+                <div class="main-content-board-top-wrap">
+                  <div class="title">자주 묻는 질문</div>
+                  <div class="more-btn">전체보기</div>
+                </div>
+                <div class="main-content-board-list-wrap">
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      <span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq" /></span>교사
+                      인증 시 인증서(GPKI)가 보이지 않아요.
+                    </div>
+                  </div>
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      <span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq" /></span
+                      >바탕화면에 티솔루션 바로가기를 만들고 싶어요.
+                    </div>
+                  </div>
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      <span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq" /></span>교사
+                      인증은 어떻게 하나요?
+                    </div>
+                  </div>
+                  <div class="main-content-board-item">
+                    <div class="title">
+                      <span class="faq-icon-wrap"><img class="faq-icon" src="./img/faq-icon.svg" alt="faq" /></span>교사
+                      인증은 어떻게 하나요?
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <!-- 고객센터 -->
+              <div class="service-center-wrap">
+                <div class="service-center-top-wrap">
+                  <div class="title">고객센터</div>
+                  <div class="number">02-330-5200</div>
+                </div>
+                <div class="service-center-middle-wrap">
+                  <div class="title">· 평일: 9시~12시 / 14시 ~ 17시</div>
+                  <div class="title">· 토요일 및 공휴일 휴무</div>
+                </div>
+                <div class="service-center-bottom-wrap">
+                  <div class="serivce-remote-btn">원격지원</div>
+                  <div class="service-center-bottom-wrap-wrap">
+                    <div class="auth-btn second-btn">교사인증</div>
+                    <div class="number second-btn">안내전화</div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+
+      <!-- 하단 영역 -->
+      <footer id="footer">
+        <div class="footer-nav">
+          <div class="inner">
             <div class="footer-nav-wrap">
               <div class="footer-nav-links"><a href="">회사소개</a></div>
               <div class="footer-nav-links"><a href="">오시는길</a></div>
@@ -1141,7 +1193,13 @@
               <div class="family-site-wrap">
                 <form method="get" action="">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path
+                      d="M9 6L15 12L9 18"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
                   </svg>
                   <select name="url" onchange="this.form.action=this.value; this.form.submit();">
                     <option value="">패밀리 사이트</option>
@@ -1155,155 +1213,155 @@
                 </form>
               </div>
             </div>
+          </div>
         </div>
-      </div>
 
-      <div class="footer-info-wrap">
-        <div class="inner">
-          <div class="footer-info">
-            <img src="./img/footer-logo.svg" alt="footer-logo">
-            <div class="footer-info-desc">
-              <div class="footer-info-desc-wrap">
-                <div>(주)지학사 대표이사: 권준구</div>
-                <div>사업자등록번호: 105-81-31452</div>
-                <div>통신판매업신고: 제2020-서울마포-0362호</div>
-              </div>
-              <div class="footer-info-desc-wrap">
-                <div>이메일: webmaster@jihak.co.kr</div>
-                <div>고객센터: 02-330-5200</div>
-                <div>서울특별시 마포구 신촌로6길 5 ㈜지학사</div>
-              </div>
-              <div class="footer-info-desc-wrap">
-                <div>©2022. (주)지학사 All Rights Reserved.</div>
+        <div class="footer-info-wrap">
+          <div class="inner">
+            <div class="footer-info">
+              <img src="./img/footer-logo.svg" alt="footer-logo" />
+              <div class="footer-info-desc">
+                <div class="footer-info-desc-wrap">
+                  <div>(주)지학사 대표이사: 권준구</div>
+                  <div>사업자등록번호: 105-81-31452</div>
+                  <div>통신판매업신고: 제2020-서울마포-0362호</div>
+                </div>
+                <div class="footer-info-desc-wrap">
+                  <div>이메일: webmaster@jihak.co.kr</div>
+                  <div>고객센터: 02-330-5200</div>
+                  <div>서울특별시 마포구 신촌로6길 5 ㈜지학사</div>
+                </div>
+                <div class="footer-info-desc-wrap">
+                  <div>©2022. (주)지학사 All Rights Reserved.</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-    <!--  -->
-  </div>
-
-  <!-- Quick Menu 사이드바 -->
-  <div class="quick-menu" id="quickMenu">
-    <!-- 토글 버튼 -->
-    <button class="menu-toggle" id="menuToggle">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M9 18L15 12L9 6"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-
-    <!-- 퀵메뉴헤더 -->
-    <div class="menu-header">
-      <h1 class="menu-title-full">Quick Menu</h1>
-      <h1 class="menu-title-collapsed">Quick<br />Menu</h1>
+      </footer>
+      <!--  -->
     </div>
-    <div class="Login-icon">
-      <img src="./img/quick-menu/login-icon.svg" alt="icon.png">
-      <div class="user-name">김지학 선생님</div>
-    </div>
-    <!-- 사용자 정보 섹션 -->
-    <div class="user-section">
-      <!-- 로그인 안했을 때 -->
-      <div class="login-state" id="loginState">
-        <button class="login-btn">로그인</button>
-        <div class="login-links">
-          <a href="#" class="login-link">ID/PW 찾기</a>
-          <a href="#" class="login-link">회원가입</a>
-        </div>
+
+    <!-- Quick Menu 사이드바 -->
+    <div class="quick-menu collapsed" id="quickMenu">
+      <!-- 토글 버튼 -->
+      <button class="menu-toggle" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9 18L15 12L9 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <!-- 퀵메뉴헤더 -->
+      <div class="menu-header">
+        <h1 class="menu-title-full">Quick Menu</h1>
+        <h1 class="menu-title-collapsed">Quick<br />Menu</h1>
       </div>
-      <!-- 로그인 했을 때 -->
-      <div class="logged-in-state" id="loggedInState" style="display: none">
-        <button class="cert-btn">교사인증완료</button>
+      <div class="Login-icon">
+        <img src="./img/quick-menu/login-icon.svg" alt="icon.png" />
         <div class="user-name">김지학 선생님</div>
-        <a href="#" class="logout-link">로그아웃</a>
       </div>
+      <!-- 사용자 정보 섹션 -->
+      <div class="user-section">
+        <!-- 로그인 안했을 때 -->
+        <div class="login-state" id="loginState">
+          <button class="login-btn">로그인</button>
+          <div class="login-links">
+            <a href="#" class="login-link">ID/PW 찾기</a>
+            <a href="#" class="login-link">회원가입</a>
+          </div>
+        </div>
+        <!-- 로그인 했을 때 -->
+        <div class="logged-in-state" id="loggedInState" style="display: none">
+          <button class="cert-btn">교사인증완료</button>
+          <div class="user-name">김지학 선생님</div>
+          <a href="#" class="logout-link">로그아웃</a>
+        </div>
+      </div>
+      <!-- 메뉴 아이템들 -->
+      <div class="menu-top-wrap">
+        <div class="menu-item" data-tooltip="내 교과서">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/lets-icons_book.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">내 교과서</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="찜한 자료">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/bookmark.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">찜한 자료</div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-middle-wrap">
+        <div class="menu-item" data-tooltip="타이머">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-hover-timer.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">타이머</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="스톱워치">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-hover-stopwatch.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">스톱워치</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="발표도우미">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-hover-microphone.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">발표도우미</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="집중">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-hover-clap.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">집중</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="깜깜이">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-hover-light bulb.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">깜깜이</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="배경음악">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-hover-music.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">배경음악</div>
+          </div>
+        </div>
+        <div class="menu-item" data-tooltip="칠판">
+          <div class="menu-item-wrap">
+            <div class="menu-icon">
+              <img src="./img/quick-menu/icon-park-outline_blackboard.svg" alt="icon" />
+            </div>
+            <div class="menu-item-title">칠판</div>
+          </div>
+        </div>
+      </div>
+      <!-- top-btn -->
+      <div class="top-btn"><img src="./img/top-btn.png" alt="top-icon" /></div>
     </div>
-    <!-- 메뉴 아이템들 -->
-    <div class="menu-top-wrap">
-      <div class="menu-item" data-tooltip="내 교과서">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/lets-icons_book.svg" alt="icon" >
-          </div>
-          <div class="menu-item-title">내 교과서</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="찜한 자료">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/bookmark.svg" alt="icon" >
-          </div>
-          <div class="menu-item-title">찜한 자료</div>
-        </div>
-      </div>
-    </div>
-    <div class="menu-middle-wrap">
-      <div class="menu-item" data-tooltip="타이머">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/icon-hover-timer.svg" alt="icon" >
-          </div>
-          <div class="menu-item-title">타이머</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="스톱워치">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/icon-hover-stopwatch.svg" alt="icon" >
-          </div>
-          <div class="menu-item-title">스톱워치</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="발표도우미">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-          <img src="./img/quick-menu/icon-hover-microphone.svg" alt="icon" >
-          </div>
-          <div class="menu-item-title">발표도우미</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="집중">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/icon-hover-clap.svg" alt="icon" >
-          </div>
-          <div class="menu-item-title">집중</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="깜깜이">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-          <img src="./img/quick-menu/icon-hover-light bulb.svg" alt="icon">
-          </div>
-          <div class="menu-item-title">깜깜이</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="배경음악">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/icon-hover-music.svg" alt="icon">
-          </div>
-          <div class="menu-item-title">배경음악</div>
-        </div>
-      </div>
-      <div class="menu-item" data-tooltip="칠판">
-        <div class="menu-item-wrap">
-          <div class="menu-icon">
-            <img src="./img/quick-menu/icon-park-outline_blackboard.svg" alt="icon">
-          </div>
-          <div class="menu-item-title">칠판</div>
-        </div>
-      </div>
-    </div>
-    <!-- top-btn -->
-    <div class="top-btn"><img src="./img/top-btn.png" alt="top-icon"></div>
-  </div>
-</body>
+  </body>
 </html>
