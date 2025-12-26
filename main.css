@@ -474,11 +474,9 @@ body {
   
 }
 
-
 #main-content01 .main-content-card-wrap .swiper-slide .slide-img-wrap{
   position: relative;
 }
-
 
 #main-content01 .main-content-card-wrap .swiper-slide .button-wrap{
   position: absolute;
@@ -505,6 +503,7 @@ body {
 #main-content01 .main-content-card-wrap .swiper-slide .button-wrap .button a{
   text-decoration: none;
 }
+
 #main-content01 .main-content-card-wrap .swiper-slide .button-wrap .button a p{
   width: 80px;
   height: 32px;
@@ -567,9 +566,6 @@ body {
   =============================================== */
 #main-content01 .main-slide-banner .swiper{
   position: relative;
-}
-
-#main-content01 .main-slide-banner .swiper-slide img{
   border-radius: 0 0 20px 20px;
 }
 
