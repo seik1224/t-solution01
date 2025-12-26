@@ -384,7 +384,7 @@ body {
   ======================================== */
 
 #main-content01{
-  background-image: url('./img/main-content-01-bg.png');
+  background-image: url('img/main-content-01-bg.png');
   width: 100%;
 }
 
@@ -964,7 +964,7 @@ body {
 }
 
 #main-content03 .main-content03-left{
-  background-image: url('./img/main-content03-bg.png');
+  background-image: url('img/main-content03-bg.png');
   background-color: #968268;
   background-repeat: no-repeat;
   height: 247px;
@@ -1065,7 +1065,7 @@ body {
   ======================================== */
 
 #main-content04{
-  background-image: url('./img/main-content04-bg.png');
+  background-image: url('img/main-content04-bg.png');
   background-color: #FFF9C2;
   height: 694px;
 }
@@ -1410,7 +1410,7 @@ body {
   ======================================== */
 
 #main-content06{
-  background-image: url('./img/main-06-bg.png');
+  background-image: url('img/main-06-bg.png');
   background-repeat: no-repeat;
   background-position-y: -550px;
   background-size: cover;
