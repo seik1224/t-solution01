@@ -1,4 +1,18 @@
 
+
+/* ========================================
+    헤더 Search 영역
+  ======================================== */
+const input = document.querySelector('#header .header-center .header-search-input');
+const placeholder = document.querySelector('#header .header-search-input-placeholder');
+
+input.addEventListener('input', () => {
+  const filled = input.value.trim() !== '';
+  placeholder.classList.toggle('hidden', filled);
+  input.classList.toggle('filled', filled);
+});
+
+
 /* ========================================
     헤더 Sticky 영역
   ======================================== */
@@ -30,6 +44,43 @@ const swiper = new Swiper('#main-content01 .main-content-card-wrap .swiper', {
   },
 });
 
+// 각 슬라이드 초기화: active 태그 연결된 이미지만 보이도록
+document.querySelectorAll('#main-content01 .main-content-card-wrap .swiper-slide').forEach(slide => {
+  const tags = slide.querySelectorAll('.tag');
+  const imgs = slide.querySelectorAll('img[data-book]');
+
+  // 초기화: active 태그 찾기
+  const activeTag = slide.querySelector('.tag.active');
+  const activeBook = activeTag ? activeTag.getAttribute('data-book') : null;
+
+  imgs.forEach(img => {
+    if(img.getAttribute('data-book') === activeBook){
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
+    }
+  });
+
+  // 클릭 이벤트
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      const book = tag.getAttribute('data-book');
+
+      // 태그 active 처리
+      tags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      // 이미지 표시
+      imgs.forEach(img => {
+        if(img.getAttribute('data-book') === book) {
+          img.style.display = 'block';
+        } else {
+          img.style.display = 'none';
+        }
+      });
+    });
+  });
+});
 
 /* ========================================
    메인페이지 첫번째 섹션
@@ -46,11 +97,13 @@ const modal = document.querySelector('#modal-layer');
 totalBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     modal.classList.toggle('active');
+    document.body.style.overflow = 'hidden';
   });
 });
 
 cancelBtn.addEventListener('click', () => {
   modal.classList.remove('active');
+  document.body.style.overflow = '';
 });
 
 tabs.forEach((tab, index) => {
@@ -90,14 +143,30 @@ function createMainSwiper(tabClass) {
     `.main-slide-banner-wrap.${tabClass} .pauseBtn`
   );
 
-  if (pauseBtn) {
+  const playBtn = document.querySelector(
+    `.main-slide-banner-wrap.${tabClass} .playBtn`
+  );
+
+  if (pauseBtn && playBtn) {
+    // 초기 상태: playBtn 숨기고 pauseBtn 보이기
+    playBtn.style.display = 'none';
+    pauseBtn.style.display = 'inline-block';
+
     pauseBtn.addEventListener('click', () => {
       if (swiper.autoplay.running) {
         swiper.autoplay.stop();
-        pauseBtn.textContent = '▶';
-      } else {
+        // 버튼 전환
+        pauseBtn.style.display = 'none';
+        playBtn.style.display = 'inline-block';
+      }
+    });
+
+    playBtn.addEventListener('click', () => {
+      if (!swiper.autoplay.running) {
         swiper.autoplay.start();
-        pauseBtn.textContent = '⏸';
+        // 버튼 전환
+        playBtn.style.display = 'none';
+        pauseBtn.style.display = 'inline-block';
       }
     });
   }
@@ -133,11 +202,22 @@ content02tabs.forEach((tab, index) => {
    - 수업도구 슬라이드
   ========================================  */
   
+const swiperContainer = document.querySelector("#main-content03 .swiper");
+const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
+const slides = swiperWrapper.querySelectorAll(".swiper-slide");
+
+// 원본 슬라이드 복제하여 추가 (loop 모드가 제대로 작동하도록)
+slides.forEach((slide) => {
+  const clonedSlide = slide.cloneNode(true);
+  swiperWrapper.appendChild(clonedSlide);
+});
+
 const swiper03 = new Swiper('#main-content03 .swiper', {
   slidesPerView: 6,
-  spaceBetween: 20,
+  slidesPerGroup: 1,
+  spaceBetween: 16,
   loop: true,
-  loopAdditionalSlides: 6,
+  loopAdditionalSlides: 14,
   navigation: {
     nextEl: '.main-content-03-swiper-button-next',
     prevEl: '.main-content-03-swiper-button-prev',
@@ -155,11 +235,45 @@ const swiper04 = new Swiper('#main-content04 .swiper', {
   spaceBetween: 60,
   loop: true,
   loopAdditionalSlides: 6,
+
   navigation: {
     nextEl: '.main-content-04-swiper-button-next',
     prevEl: '.main-content-04-swiper-button-prev',
+  },
+
+  on: {
+    init(swiper) {
+      syncVideoByActiveSlide(swiper);
+    },
+    slideChange(swiper) {
+      syncVideoByActiveSlide(swiper);
+    }
   }
 });
+
+// 활성 슬라이드 기준으로 video-wrap 표시
+function syncVideoByActiveSlide(swiper) {
+  const activeSlide = swiper.slides[swiper.activeIndex];
+  if (!activeSlide) return;
+
+  // 모든 video-wrap 숨기기
+  const allVideoWraps = document.querySelectorAll('.main-content04-video-wrap');
+  allVideoWraps.forEach(wrap => {
+    wrap.classList.add('displaynone');
+    wrap.classList.remove('active');
+  });
+
+  // 활성 슬라이드의 tab 클래스 가져오기
+  const tabClass = Array.from(activeSlide.classList).find(cls => cls.startsWith('tab-'));
+  if (!tabClass) return;
+
+  // 해당 tab video-wrap 보여주기
+  const videoWrap = document.querySelector(`.main-content04-video-wrap.${tabClass}`);
+  if (!videoWrap) return;
+
+  videoWrap.classList.remove('displaynone');
+  videoWrap.classList.add('active');
+}
 
 
 /* ========================================
@@ -169,14 +283,14 @@ const swiper04 = new Swiper('#main-content04 .swiper', {
   ========================================  */
 
 const detailImg = document.querySelector('.main-content05-container .main-content-detail img');
-const detailSubtitle = document.querySelector('.main-content-detail-subtitle');
-const detailTitle = document.querySelector('.main-content-detail-title');
-const detailDesc = document.querySelector('.main-content-detail-desc');
-const detailTag = document.querySelector('.main-content-detail-tag');
+const detailSubtitle = document.querySelector('.main-content-detail-subtitle p');
+const detailTitle = document.querySelector('.main-content-detail-title p');
+const detailDesc = document.querySelector('.main-content-detail-desc p');
+const detailTag = document.querySelector('.main-content-detail-tag p');
 
 const swiper05 = new Swiper('#main-content05 .swiper', {
   slidesPerView: 4,
-  spaceBetween: 20,
+  spaceBetween: 48,
   loop: true,
   loopAdditionalSlides: 6,
   navigation: {
@@ -203,10 +317,10 @@ function updateDetail(swiper) {
     detailImg.setAttribute('alt', slideImg.getAttribute('alt') || '');
   }
 
-  const subtitle = activeSlide.querySelector('.main-content-swiper-detail-subtitle');
-  const title = activeSlide.querySelector('.main-content-swiper-detail-title');
-  const desc = activeSlide.querySelector('.main-content-swiper-detail-desc');
-  const tag = activeSlide.querySelector('.main-content-swiper-detail-tag');
+  const subtitle = activeSlide.querySelector('.main-content-swiper-detail-subtitle p');
+  const title = activeSlide.querySelector('.main-content-swiper-detail-title p');
+  const desc = activeSlide.querySelector('.main-content-swiper-detail-desc p');
+  const tag = activeSlide.querySelector('.main-content-swiper-detail-tag p');
 
   if (subtitle) detailSubtitle.textContent = subtitle.textContent;
   if (title) detailTitle.textContent = title.textContent;
@@ -252,16 +366,13 @@ function updateLoginState() {
   if (isLoggedIn) {
       loginState.style.display = 'none';
       loggedInState.style.display = 'flex';
-      loginImg.classList.add('hidden');
       userName.classList.add('active');
   } else {
       loginState.style.display = 'flex';
       loggedInState.style.display = 'none';
-      loginImg.classList.remove('hidden');
       userName.classList.remove('active');
   }
 }
-
 
 /* ========================================
    top 버튼
@@ -276,7 +387,21 @@ topBtn.addEventListener('click', () => {
 /* ========================================
    하단 family-site
   ========================================  */
-const select = document.querySelector('.family-site-wrap form');
-select.addEventListener('click', () => {
-  select.classList.toggle('active');
-});
+
+const familySite = document.querySelector('.family-site-wrap');
+const familyBtn = familySite.querySelector('.family-btn');
+
+  familyBtn.addEventListener('click', () => {
+    familySite.classList.toggle('active');
+    familyBtn.classList.toggle('active');
+  });
+
+    document.addEventListener('click', (e) => {
+    if (!familySite.contains(e.target)) {
+      familySite.classList.remove('active');
+      familyBtn.classList.remove('active');
+    }
+  });
+  
+
+  
