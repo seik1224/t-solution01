@@ -1359,8 +1359,6 @@ body {
   border: 2px solid #fdd000;
 }
 
-
-
 .main-content05-swiper-wrap .main-content-swiper-detail-tag{
   position: absolute;
   top: 0;
@@ -1387,6 +1385,25 @@ body {
 .main-content-05-swiper-button-next{
   left: 105%;
 }
+
+.main-content-05-swiper-button-next,
+.main-content-05-swiper-button-prev
+{
+  position: absolute;
+  top: 58%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 28px rgba(35, 35, 35, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
+}
+
 
 /* ========================================
     메인페이지 여섯번째 섹션
@@ -1760,15 +1777,15 @@ body {
 }
 
 
-.footer-info-desc-wrap:nth-child(1) div:not(:last-of-type)::after,
-.footer-info-desc-wrap:nth-child(2) div:not(:last-of-type)::after{
+.footer-info-desc-wrap:nth-child(1) div:not(:last-of-type) p::after,
+.footer-info-desc-wrap:nth-child(2) div:not(:last-of-type) p::after{
   content: "|";
   font-size: 14px;
   color: #c4c4c4;
   margin: 0 12px;
 }
 
-.footer-info-desc div{
+.footer-info-desc div p{
   font-size: 16px;
   line-height: 27px;
   color: #84848c;
