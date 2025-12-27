@@ -111,12 +111,19 @@
   background-color: #4DE5A5;
 }
 
-#main-content05 .main-content05-container .main-content-detail-subtitle{
+#main-content05 .main-content05-container .main-content-detail-subtitle{  
   color: #27B397;
 }
 
 
 
+/* ===============================================
+    메인페이지 여섯번째 섹션 - B면, 유튜브 영역
+  ================================================ */
+
+#main-content06 .teacher-desc{
+  background-color: rgba(77, 229, 165, 0.8);
+}
 
 
 
