@@ -7,3 +7,34 @@
 #header .nav-link:hover {
   color: #2BC886;
 }
+
+#header .header-search-input-placeholder p{
+  color: rgba(23, 23, 25, 0.5);
+  font-weight: var(--fw-medium);
+}
+
+#header .sticky-wrap .main-header .header-center input.filled{
+  background-color: rgba(219, 248, 236, 0.3);
+}
+
+
+/* ========================================
+    헤더 하단 드랍다운 메뉴 영역
+  ======================================== */
+
+.bottom-nav .nav-item-wrapper{
+  display: flex;
+  background-color: #F7F9FA;
+  width: fit-content;
+  padding: 8px;
+  transition: .2s;
+  border-radius: 200px;
+}
+
+.bottom-nav .nav-item-wrapper:hover{
+  background-color: #DBF8EC;
+}
+
+.nav-item:hover .nav-item-title{
+  color: #00C270;
+}

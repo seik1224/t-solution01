@@ -163,7 +163,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-sm) var(--spacing-lg);
 }
 
 .top-nav-left,
