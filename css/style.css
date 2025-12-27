@@ -20,28 +20,28 @@
 /* 나눔스퀘어 */
 @font-face {
   font-family: 'NanumSquareRound';
-  src: url('/fonts/nanumSquareRoundL.ttf') format('truetype');
+  src: url('../fonts/nanumSquareRoundL.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NanumSquareRound';
-  src: url('/fonts/nanumSquareRoundR.ttf') format('truetype');
+  src: url('../fonts/nanumSquareRoundR.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NanumSquareRound';
-  src: url('/fonts/nanumSquareRoundB.ttf') format('truetype');
+  src: url('../fonts/nanumSquareRoundB.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NanumSquareRound';
-  src: url('/fonts/nanumSquareRoundEB.ttf') format('truetype');
+  src: url('../fonts/nanumSquareRoundEB.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
 /* Pretendard */
 @font-face {
   font-family: 'pretendard Variable';
-  src: url('/fonts/pretendardVariable.woff2') format('woff2');
+  src: url('../fonts/pretendardVariable.woff2') format('woff2');
   font-weight: 100 900;
 }
 
@@ -383,7 +383,7 @@ body {
   ======================================== */
 
 #main-content01{
-  background-image: url('/img/main-content-01-bg.png');
+  background-image: url('../img/main-content-01-bg.png');
   width: 100%;
 }
 
@@ -959,7 +959,7 @@ body {
 }
 
 #main-content03 .main-content03-left{
-  background-image: url('/img/main-content03-bg.png');
+  background-image: url('../img/main-content03-bg.png');
   background-color: #968268;
   background-repeat: no-repeat;
   height: 247px;
@@ -1060,7 +1060,7 @@ body {
   ======================================== */
 
 #main-content04{
-  background-image: url('/img/main-content04-bg.png');
+  background-image: url('../img/main-content04-bg.png');
   background-color: #FFF9C2;
   height: 694px;
 }
@@ -1405,7 +1405,7 @@ body {
   ======================================== */
 
 #main-content06{
-  background-image: url('/img/main-06-bg.png');
+  background-image: url('../img/main-06-bg.png');
   background-repeat: no-repeat;
   background-position-y: -550px;
   background-size: cover;
