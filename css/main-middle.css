@@ -1,7 +1,7 @@
 
-#header{
-
-}
+/* ========================================
+    헤더 영역
+  ======================================== */
 
 #header .nav-link.active span,
 #header .nav-link:hover {
@@ -16,7 +16,6 @@
 #header .sticky-wrap .main-header .header-center input.filled{
   background-color: rgba(219, 248, 236, 0.3);
 }
-
 
 /* ========================================
     헤더 하단 드랍다운 메뉴 영역
@@ -91,6 +90,161 @@
   background-color: #FFB9E5;
   
 }
+
+
+/* ========================================
+    메인페이지 수업자료 섹션
+  ======================================== */
+
+#main-class-resource{
+  height: 407px;
+  box-sizing: border-box;
+  padding: 66px 0;
+  background-image: url('../img/middle/main-content-02-bg-middle.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-class-resource-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.main-class-resource-title-wrap{
+  width: 347px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 16px 0;
+
+}
+
+.main-class-resource-title-wrap .title{
+  font-family: 'NanumSquareRound', 'Pretendard Variable', sans-serif;
+  font-weight: var(--fw-extrabold);
+  font-size: 32px;
+  color: #171719;
+  line-height: 44px;
+}
+.main-class-resource-title-wrap .title img{
+  width: 29px;
+  height: 20px;
+}
+
+.main-class-resource-title-wrap .main-class-resource-btn{
+  border-radius: 50px;
+  background-color: #fff;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 180px;
+  height: 49px;
+}
+
+.main-class-resource-title-wrap .main-class-resource-btn p{
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  color: #171719;
+}
+
+.main-class-resource-slide-wrap{
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-content: center;
+  background-color: #fff;
+  border-radius: 32px;
+  width: 934px;
+  border: 1px solid #F2F2F2;
+  box-sizing: border-box;
+  box-shadow: 0 10px 50px rgba(151, 151, 151, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.main-class-resource-slide-wrap .tabs{
+  display: flex;
+  gap: 6px;
+}
+
+.main-class-resource-slide-wrap .tabs .tab{
+  padding: 16px 20px;
+  border-radius: 50px;
+  background-color: #F7F9FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.main-class-resource-slide-wrap .tabs .tab.active{
+  background-color: #4DE5A5;
+}
+
+.main-class-resource-slide-wrap .tabs .tab p{
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: #171719;
+}
+
+
+
+
+.main-class-resource-slide-wrap .main-class-resource-download-wrap{
+  display: grid;
+  grid-template-columns: repeat(4, 203px);
+  grid-template-rows: auto;
+  gap: 8px;
+}
+
+.main-class-resource-slide-wrap .main-class-resource-download-item{
+  display: flex;
+  padding: 14px 14px 14px 18px;
+  border-radius: 14px;
+  background-color: #f7f9fa;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+.download-item-title-wrap{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.download-item-title-wrap p{
+  font-size: 15px;
+  font-weight: var(--fw-medium);
+  color: #2b2b2b;
+}
+
+.file-icon-wrap{
+  width: 24px;
+  height: 24px;
+  background-color: #efefef;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-class-resource-title-wrap .title span{
+  color: #16B572;
+}
+
+
+
 
 
 
