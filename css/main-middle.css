@@ -76,6 +76,11 @@
 }
 
 
+#contents #main-content01 .main-content-card-wrap .swiper-button-prev.swiper-button-disabled svg path,
+#contents #main-content01 .main-content-card-wrap .swiper-button-next.swiper-button-disabled svg path{
+  stroke: #BFBFBF;
+}
+
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next svg path,
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev svg path{
   stroke: rgba(22, 181, 114, 0.9);
@@ -104,4 +109,29 @@
 
 .main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag{
   background-color: #4DE5A5;
+}
+
+#main-content05 .main-content05-container .main-content-detail-subtitle{
+  color: #27B397;
+}
+
+
+
+
+
+
+/* ========================================
+    퀵메뉴 영역
+  ======================================== */
+
+.menu-header {
+  background-color: #4DE5A5;
+}
+
+.cert-btn{
+  background-color: #2BC886;
+}
+
+.login-btn{
+  background-color: #2BC886;
 }
