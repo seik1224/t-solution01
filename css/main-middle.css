@@ -38,3 +38,70 @@
 .nav-item:hover .nav-item-title{
   color: #00C270;
 }
+
+/* ========================================
+    중등 메인페이지 첫번째 섹션
+  ======================================== */
+
+#main-content01{
+  background-image: url('../img/middle/main-content-01-bg-middle.png');
+  width: 100%;
+}
+
+#contents #main-content01 .main-content-card-wrap{
+  background-color: #4DE5A5;
+}
+
+#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background-color: #4DE5A5;
+}
+
+#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag{
+  background-color: #DBF8EC;
+}
+
+#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:hover,
+#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag.active{
+  background-color: #4DE5A5;
+}
+
+
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next,
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev{
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  top: 46%;
+  background-color: #DBF8EC;
+}
+
+
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next svg path,
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev svg path{
+  stroke: rgba(22, 181, 114, 0.9);
+}
+
+#main-content01 .main-slide-banner-wrap .swiper-wrapper{
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.5);
+  background-color: #FFB9E5;
+  
+}
+
+
+
+/* ========================================
+    메인페이지 다섯번째 섹션
+  ======================================== */
+
+#main-content05 .main-content05-container .main-content-detail-tag{
+  background: #78EFBD;
+}
+
+
+.main-content05-swiper-wrap .swiper-slide.swiper-slide-active img{
+  border: 2px solid #4DE5A5;
+}
+
+.main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag{
+  background-color: #4DE5A5;
+}
