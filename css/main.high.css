@@ -1,0 +1,6 @@
+
+
+#header .nav-link.active span,
+#header .nav-link:hover {
+  color: #7B38FF;
+}
