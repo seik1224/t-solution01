@@ -44,7 +44,7 @@ const swiper = new Swiper('#main-content01 .main-content-card-wrap .swiper', {
 
 // 각 슬라이드 초기화: active 태그 연결된 이미지만 보이도록
 document.querySelectorAll('#main-content01 .main-content-card-wrap .swiper-slide').forEach(slide => {
-  const tags = slide.querySelectorAll('.tag');
+  const tags = slide.querySelectorAll('.tag:not(.disabled)');
   const imgs = slide.querySelectorAll('img[data-book]');
 
   // 초기화: active 태그 찾기

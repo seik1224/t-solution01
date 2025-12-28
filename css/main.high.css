@@ -42,7 +42,7 @@
 
 
 /* ========================================
-    중등 메인페이지 첫번째 섹션
+    고등 메인페이지 첫번째 섹션
   ======================================== */
 
 #main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
@@ -67,6 +67,10 @@
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next svg path,
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev svg path{
   stroke: rgba(136, 94, 255, 0.9);
+}
+
+#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag{
+  background-color: #EFE6FF;
 }
 
 
