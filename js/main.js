@@ -1,8 +1,8 @@
 
-
 /* ========================================
     헤더 Search 영역
   ======================================== */
+
 const input = document.querySelector('#header .header-center .header-search-input');
 const placeholder = document.querySelector('#header .header-search-input-placeholder');
 
@@ -11,7 +11,6 @@ input.addEventListener('input', () => {
   placeholder.classList.toggle('hidden', filled);
   input.classList.toggle('filled', filled);
 });
-
 
 /* ========================================
     헤더 Sticky 영역
@@ -23,7 +22,6 @@ const trigger = 350;
 window.addEventListener('scroll', () => {
   header.classList.toggle('is-sticky', window.scrollY > trigger);
 });
-
 
 /* ========================================
     메인페이지 첫번째 섹션

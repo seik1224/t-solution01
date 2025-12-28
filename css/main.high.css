@@ -42,6 +42,35 @@
 
 
 /* ========================================
+    중등 메인페이지 첫번째 섹션
+  ======================================== */
+
+#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background-color: #B79DFF;
+}
+
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next,
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev{
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  top: 46%;
+  background-color: #EFE6FF;
+}
+
+
+#contents #main-content01 .main-content-card-wrap .swiper-button-prev.swiper-button-disabled svg path,
+#contents #main-content01 .main-content-card-wrap .swiper-button-next.swiper-button-disabled svg path{
+  stroke: #BFBFBF;
+}
+
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next svg path,
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev svg path{
+  stroke: rgba(136, 94, 255, 0.9);
+}
+
+
+/* ========================================
     메인페이지 수업자료 섹션 - 고등
   ======================================== */
 
