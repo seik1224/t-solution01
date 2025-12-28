@@ -370,6 +370,9 @@ body {
   align-items: center;
   gap: 20px;
 }
+#header.is-sticky .sticky-wrap .nav-item-title p{
+  white-space: nowrap;
+}
 
 #header.is-sticky .badge,
 #header.is-sticky .main-header .header-center{
