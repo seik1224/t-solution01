@@ -151,6 +151,10 @@
   color: #171719;
 }
 
+.main-class-resource-title-wrap .main-class-resource-btn svg path{
+  stroke: #313131;
+}
+
 .main-class-resource-slide-wrap{
   padding: 48px;
   display: flex;
@@ -166,6 +170,7 @@
   box-shadow: 0 10px 50px rgba(151, 151, 151, 0.2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  position: relative;
 }
 
 .main-class-resource-slide-wrap .tabs{
@@ -183,6 +188,7 @@
   border: none;
   white-space: nowrap;
   cursor: pointer;
+  height: 43px;
 }
 
 .main-class-resource-slide-wrap .tabs .tab.active{
@@ -196,26 +202,56 @@
 }
 
 
+.main-class-resource-slide-wrap .main-class-resource-swiper-button-next{
+  left: 98%;
+}
 
+.main-class-resource-slide-wrap .main-class-resource-swiper-button-prev{
+  right: 98%;
+}
 
-.main-class-resource-slide-wrap .main-class-resource-download-wrap{
+.main-class-resource-swiper-button-next,
+.main-class-resource-swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 28px rgba(35, 35, 35, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.main-class-resource-slide-wrap .swiper{
+  width: 100%;
+}
+
+/* .main-class-resource-slide-wrap .main-class-resource-download-wrap{
   display: grid;
   grid-template-columns: repeat(4, 203px);
   grid-template-rows: auto;
+  gap: 8px;
+} */
+.main-class-resource-slide-wrap .main-class-resource-download-wrap{
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
 .main-class-resource-slide-wrap .main-class-resource-download-item{
   display: flex;
   padding: 14px 14px 14px 18px;
+  width: 203px;
   border-radius: 14px;
   background-color: #f7f9fa;
   justify-content: space-between;
   align-items: center;
 }
-
-
-
 
 .download-item-title-wrap{
   display: flex;
@@ -227,6 +263,10 @@
   font-size: 15px;
   font-weight: var(--fw-medium);
   color: #2b2b2b;
+  width: 110px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .file-icon-wrap{
@@ -242,10 +282,6 @@
 .main-class-resource-title-wrap .title span{
   color: #16B572;
 }
-
-
-
-
 
 
 /* ========================================
@@ -279,6 +315,13 @@
   background-color: rgba(77, 229, 165, 0.8);
 }
 
+.service-center-wrap .service-center-top-wrap .number{
+  color: #16B572;
+}
+
+.service-center-bottom-wrap .serivce-remote-btn{
+  background-color: #4DE5A5;
+}
 
 
 /* ========================================
