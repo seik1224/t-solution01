@@ -1,3 +1,6 @@
+/* 나눔스퀘어 */
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
 :root {
   /* max-width */
   --main-min-width: 1350px;
@@ -17,34 +20,6 @@
    폰트
    ======================================== */
 
-/* 나눔스퀘어 */
-@font-face {
-  font-family: 'NanumSquareRound';
-  src: url('../fonts/nanumSquareRoundL.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NanumSquareRound';
-  src: url('../fonts/nanumSquareRoundR.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NanumSquareRound';
-  src: url('../fonts/nanumSquareRoundB.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NanumSquareRound';
-  src: url('../fonts/nanumSquareRoundEB.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
 
 /* Pretendard */
 @font-face {
@@ -385,7 +360,7 @@ body {
   ======================================== */
 
 #main-content01{
-  background-image: url('../img/main-content-01-bg.png');
+  background-image: url('../img/elementary/main-content-01-bg.png');
   width: 100%;
 }
 
@@ -995,7 +970,7 @@ body {
 }
 
 #main-content03 .main-content03-left{
-  background-image: url('../img/main-content03-bg.png');
+  background-image: url('../img/elementary/main-content03-bg.png');
   background-color: #968268;
   background-repeat: no-repeat;
   height: 247px;
@@ -1096,7 +1071,7 @@ body {
   ======================================== */
 
 #main-content04{
-  background-image: url('../img/main-content04-bg.png');
+  background-image: url('../img/elementary/main-content04-bg.png');
   background-color: #FFF9C2;
   height: 694px;
 }
@@ -1249,19 +1224,16 @@ body {
   font-weight: var(--fw-semibold);
 }
 
-
 /* ========================================
     메인페이지 하단 영역
     - 다섯번째 섹션 + 여섯번째 섹션
   ======================================== */
 
 #bottom-board-section{
-  background-image: url(../img/main-06-bg.png);
+  background-image: url(../img/elementary/main-06-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 
 /* ========================================
     메인페이지 다섯번째 섹션

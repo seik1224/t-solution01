@@ -73,7 +73,6 @@
   background-color: #EFE6FF;
 }
 
-
 /* ========================================
     메인페이지 수업자료 섹션 - 고등
   ======================================== */
@@ -183,7 +182,6 @@
   color: #171719;
 }
 
-
 .main-class-resource-slide-wrap .main-class-resource-swiper-button-next{
   left: 98%;
 }
@@ -283,11 +281,13 @@
   background-color: #B79DFF;
 }
 
+/* ========================================
+    메인페이지 여섯번째 섹션
+  ======================================== */
+
 .teacher-desc{
   background: rgba(183, 157, 255, 0.8);
 }
-
-
 
 .service-center-wrap .service-center-top-wrap .number{
   color: #926CFD;
@@ -297,8 +297,9 @@
   background-color: #B79DFF;
 }
 
-
-/* 퀵메뉴 */
+/* ========================================
+    퀵메뉴 영역
+  ======================================== */
 
 .login-btn{
   background-color: #9C7BFB;

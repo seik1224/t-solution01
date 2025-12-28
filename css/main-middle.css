@@ -79,9 +79,7 @@
 #main-content01 .main-slide-banner-wrap .swiper-wrapper{
   box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.5);
   background-color: #FFB9E5;
-  
 }
-
 
 /* ========================================
     메인페이지 수업자료 섹션 - 중등
@@ -108,7 +106,6 @@
   flex-direction: column;
   gap: 26px;
   padding: 16px 0;
-
 }
 
 .main-class-resource-title-wrap .title{
@@ -192,7 +189,6 @@
   color: #171719;
 }
 
-
 .main-class-resource-slide-wrap .main-class-resource-swiper-button-next{
   left: 98%;
 }
@@ -203,19 +199,19 @@
 
 .main-class-resource-swiper-button-next,
 .main-class-resource-swiper-button-prev{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    background-color: #fff;
-    border-radius: 50px;
-    box-shadow: 0 0 28px rgba(35, 35, 35, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 99;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 28px rgba(35, 35, 35, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99;
 }
 
 .main-class-resource-slide-wrap .swiper{
@@ -276,10 +272,6 @@
   background-image: url('../img/middle/main-content-03-bg-middle.png');
 }
 
-/* ========================================
-    메인페이지 다섯번째 섹션
-  ======================================== */
-
 #main-content05 .main-content05-container .main-content-detail-tag{
   background: #78EFBD;
 }
@@ -297,8 +289,6 @@
   color: #27B397;
 }
 
-
-
 /* ===============================================
     메인페이지 여섯번째 섹션 - B면, 유튜브 영역
   ================================================ */
@@ -314,7 +304,6 @@
 .service-center-bottom-wrap .serivce-remote-btn{
   background-color: #4DE5A5;
 }
-
 
 /* ========================================
     퀵메뉴 영역

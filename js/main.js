@@ -180,99 +180,120 @@ const swiper_tab02 = createMainSwiper('tab-02');
    - 탭전환
   ========================================  */
 
-const content02tabs = document.querySelectorAll('.main-content02-tab');
-const contents02 = document.querySelectorAll(
-  '#main-content02 .tab-01, #main-content02 .tab-02, #main-content02 .tab-03, #main-content02 .tab-04'
-);
+const content02Wrap = document.querySelector('#main-content02');
 
-content02tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => {
-    content02tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    contents02.forEach(content => content.classList.add('displaynone'));
-    contents02[index].classList.remove('displaynone');
-  });
-});
+if (content02Wrap) {
+  const content02tabs = content02Wrap.querySelectorAll('.main-content02-tab');
+  const contents02 = content02Wrap.querySelectorAll(
+    '.tab-01, .tab-02, .tab-03, .tab-04'
+  );
 
+  if (content02tabs.length && contents02.length) {
+    content02tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        content02tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        contents02.forEach(content =>
+          content.classList.add('displaynone')
+        );
+
+        contents02[index]?.classList.remove('displaynone');
+      });
+    });
+  }
+}
 
 /* ========================================
    메인페이지 세번째 섹션
    - 수업도구 슬라이드
   ========================================  */
-  
-const swiperContainer = document.querySelector("#main-content03 .swiper");
-const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
-const slides = swiperWrapper.querySelectorAll(".swiper-slide");
 
-// 원본 슬라이드 복제하여 추가 (loop 모드가 제대로 작동하도록)
-slides.forEach((slide) => {
-  const clonedSlide = slide.cloneNode(true);
-  swiperWrapper.appendChild(clonedSlide);
-});
+const content03 = document.querySelector('#main-content03');
 
-const swiper03 = new Swiper('#main-content03 .swiper', {
-  slidesPerView: 6,
-  slidesPerGroup: 1,
-  spaceBetween: 16,
-  loop: true,
-  loopAdditionalSlides: 14,
-  navigation: {
-    nextEl: '.main-content-03-swiper-button-next',
-    prevEl: '.main-content-03-swiper-button-prev',
-  },
-});
+if (content03) {
+  const swiperContainer = content03.querySelector('.swiper');
+  const swiperWrapper = swiperContainer?.querySelector('.swiper-wrapper');
 
+  if (swiperContainer && swiperWrapper) {
+    const slides = swiperWrapper.querySelectorAll('.swiper-slide');
+
+    slides.forEach(slide => {
+      swiperWrapper.appendChild(slide.cloneNode(true));
+    });
+
+    new Swiper(swiperContainer, {
+      slidesPerView: 6,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      loop: true,
+      loopAdditionalSlides: 14,
+      navigation: {
+        nextEl: '.main-content-03-swiper-button-next',
+        prevEl: '.main-content-03-swiper-button-prev',
+      },
+    });
+  }
+}
 
 /* ========================================
    메인페이지 네번째 섹션
    - 로고 슬라이드
   ========================================  */
+const content04 = document.querySelector('#main-content04');
 
-const swiper04 = new Swiper('#main-content04 .swiper', {
-  slidesPerView: 6,
-  spaceBetween: 60,
-  loop: true,
-  loopAdditionalSlides: 6,
+if (content04) {
+  const swiperEl = content04.querySelector('.swiper');
 
-  navigation: {
-    nextEl: '.main-content-04-swiper-button-next',
-    prevEl: '.main-content-04-swiper-button-prev',
-  },
-
-  on: {
-    init(swiper) {
-      syncVideoByActiveSlide(swiper);
-    },
-    slideChange(swiper) {
-      syncVideoByActiveSlide(swiper);
-    }
+  if (swiperEl) {
+    const swiper04 = new Swiper(swiperEl, {
+      slidesPerView: 6,
+      spaceBetween: 60,
+      loop: true,
+      loopAdditionalSlides: 6,
+      navigation: {
+        nextEl: '.main-content-04-swiper-button-next',
+        prevEl: '.main-content-04-swiper-button-prev',
+      },
+      on: {
+        init(swiper) {
+          syncVideoByActiveSlide(swiper);
+        },
+        slideChange(swiper) {
+          syncVideoByActiveSlide(swiper);
+        },
+      },
+    });
   }
-});
+}
 
 // 활성 슬라이드 기준으로 video-wrap 표시
 function syncVideoByActiveSlide(swiper) {
+  if (!swiper || !swiper.slides?.length) return;
+
   const activeSlide = swiper.slides[swiper.activeIndex];
   if (!activeSlide) return;
 
-  // 모든 video-wrap 숨기기
-  const allVideoWraps = document.querySelectorAll('.main-content04-video-wrap');
-  allVideoWraps.forEach(wrap => {
-    wrap.classList.add('displaynone');
-    wrap.classList.remove('active');
-  });
+  document
+    .querySelectorAll('.main-content04-video-wrap')
+    .forEach(wrap => {
+      wrap.classList.add('displaynone');
+      wrap.classList.remove('active');
+    });
 
-  // 활성 슬라이드의 tab 클래스 가져오기
-  const tabClass = Array.from(activeSlide.classList).find(cls => cls.startsWith('tab-'));
+  const tabClass = [...activeSlide.classList].find(cls =>
+    cls.startsWith('tab-')
+  );
   if (!tabClass) return;
 
-  // 해당 tab video-wrap 보여주기
-  const videoWrap = document.querySelector(`.main-content04-video-wrap.${tabClass}`);
+  const videoWrap = document.querySelector(
+    `.main-content04-video-wrap.${tabClass}`
+  );
   if (!videoWrap) return;
 
   videoWrap.classList.remove('displaynone');
   videoWrap.classList.add('active');
 }
-
 
 /* ========================================
    메인페이지 다섯번째 섹션
@@ -327,6 +348,65 @@ function updateDetail(swiper) {
 }
 
 
+/* ========================================
+   퀵메뉴
+  ========================================  */
+
+
+  /* =========================
+   고등 수업 자료 섹션
+========================= */
+
+const resourceSection = document.querySelector('#main-class-resource');
+
+if (resourceSection) {
+  const swiperEl = resourceSection.querySelector('.swiper');
+  const resourceTabs = resourceSection.querySelectorAll(
+    '.main-class-resource-slide-wrap .tab'
+  );
+
+  if (swiperEl) {
+    const resourceSwiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: '.main-class-resource-swiper-button-next',
+        prevEl: '.main-class-resource-swiper-button-prev',
+      },
+    });
+
+    /* =========================
+       탭 클릭 → 슬라이드 이동
+    ========================= */
+    if (resourceTabs.length) {
+      resourceTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const index = Number(tab.dataset.index);
+          if (Number.isNaN(index)) return;
+
+          resourceTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          // loop 대응
+          resourceSwiper.slideToLoop(index);
+        });
+      });
+
+      /* =========================
+         슬라이드 변경 → 탭 active
+      ========================= */
+      resourceSwiper.on('slideChange', () => {
+        const currentIndex = resourceSwiper.realIndex;
+        if (!resourceTabs[currentIndex]) return;
+
+        resourceTabs.forEach(t => t.classList.remove('active'));
+        resourceTabs[currentIndex].classList.add('active');
+      });
+    }
+  }
+}
+
+  
 /* ========================================
    퀵메뉴
   ========================================  */
