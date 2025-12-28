@@ -21,15 +21,6 @@
     헤더 하단 드랍다운 메뉴 영역
   ======================================== */
 
-.bottom-nav .nav-item-wrapper{
-  display: flex;
-  background-color: #F7F9FA;
-  width: fit-content;
-  padding: 8px;
-  transition: .2s;
-  border-radius: 200px;
-}
-
 .bottom-nav .nav-item-wrapper:hover{
   background-color: #DBF8EC;
 }
