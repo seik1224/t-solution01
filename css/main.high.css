@@ -16,6 +16,13 @@
   background-color: rgba(219, 248, 236, 0.3);
 }
 
+.menu-header{
+  background-color: #B79DFF;
+}
+
+#header .sticky-wrap .main-header .header-center input.filled{
+  background-color: rgba(239, 230, 255, 0.3);
+}
 
 /* ========================================
     헤더 하단 드랍다운 메뉴 영역
@@ -27,4 +34,243 @@
 
 .nav-item:hover .nav-item-title{
   color: #926CFD;
+}
+
+#main-content01 .main-content-card-wrap{
+  background-color: #B79DFF;
+}
+
+
+/* ========================================
+    메인페이지 수업자료 섹션 - 고등
+  ======================================== */
+
+#main-class-resource{
+  height: 407px;
+  box-sizing: border-box;
+  padding: 66px 0;
+  background-image: url('../img/high/main-course-resource-high-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-class-resource-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.main-class-resource-title-wrap{
+  width: 347px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 16px 0;
+
+}
+
+.main-class-resource-title-wrap .title{
+  font-family: 'NanumSquareRound', 'Pretendard Variable', sans-serif;
+  font-weight: var(--fw-extrabold);
+  font-size: 32px;
+  color: #171719;
+  line-height: 44px;
+}
+.main-class-resource-title-wrap .title img{
+  width: 29px;
+  height: 20px;
+}
+
+.main-class-resource-title-wrap .main-class-resource-btn{
+  border-radius: 50px;
+  background-color: #fff;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 180px;
+  height: 49px;
+}
+
+.main-class-resource-title-wrap .main-class-resource-btn p{
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+  color: #171719;
+}
+
+.main-class-resource-title-wrap .main-class-resource-btn svg path{
+  stroke: #313131;
+}
+
+.main-class-resource-slide-wrap{
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-content: center;
+  background-color: #fff;
+  border-radius: 32px;
+  width: 934px;
+  border: 1px solid #F2F2F2;
+  box-sizing: border-box;
+  box-shadow: 0 10px 50px rgba(151, 151, 151, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.main-class-resource-slide-wrap .tabs{
+  display: flex;
+  gap: 6px;
+}
+
+.main-class-resource-slide-wrap .tabs .tab{
+  padding: 16px 20px;
+  border-radius: 50px;
+  background-color: #F7F9FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 43px;
+}
+
+.main-class-resource-slide-wrap .tabs .tab.active{
+  background-color: #B79DFF;
+}
+
+.main-class-resource-slide-wrap .tabs .tab p{
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: #171719;
+}
+
+
+.main-class-resource-slide-wrap .main-class-resource-swiper-button-next{
+  left: 98%;
+}
+
+.main-class-resource-slide-wrap .main-class-resource-swiper-button-prev{
+  right: 98%;
+}
+
+.main-class-resource-swiper-button-next,
+.main-class-resource-swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 28px rgba(35, 35, 35, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.main-class-resource-slide-wrap .swiper{
+  width: 100%;
+}
+
+.main-class-resource-slide-wrap .main-class-resource-download-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.main-class-resource-slide-wrap .main-class-resource-download-item{
+  display: flex;
+  padding: 14px 14px 14px 18px;
+  width: 203px;
+  border-radius: 14px;
+  background-color: #f7f9fa;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-item-title-wrap{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.download-item-title-wrap p{
+  font-size: 15px;
+  font-weight: var(--fw-medium);
+  color: #2b2b2b;
+  width: 110px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.file-icon-wrap{
+  width: 24px;
+  height: 24px;
+  background-color: #efefef;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-class-resource-title-wrap .title span{
+  color: #926CFD;
+}
+
+/* ========================================
+    메인페이지 다섯번째 섹션
+  ======================================== */
+
+#bottom-board-section{
+  background-image: url('../img/middle/main-content-03-bg-middle.png');
+}
+
+.main-content-detail-subtitle p{
+  color: #27B397;
+}
+
+.main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag{
+  background-color: #B79DFF;
+}
+
+.main-content05-swiper-wrap .swiper-slide.swiper-slide-active img {
+  border: 2px solid #B79DFF;
+}
+
+#main-content05 .main-content05-container .main-content-detail-tag{
+  background-color: #B79DFF;
+}
+
+.teacher-desc{
+  background: rgba(183, 157, 255, 0.8);
+}
+
+
+
+.service-center-wrap .service-center-top-wrap .number{
+  color: #926CFD;
+}
+
+.service-center-bottom-wrap .serivce-remote-btn{
+  background-color: #B79DFF;
+}
+
+
+/* 퀵메뉴 */
+
+.login-btn{
+  background-color: #9C7BFB;
+}
+
+.cert-btn{
+  background-color: #9C7BFB;
 }

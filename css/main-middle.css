@@ -84,7 +84,7 @@
 
 
 /* ========================================
-    메인페이지 수업자료 섹션
+    메인페이지 수업자료 섹션 - 중등
   ======================================== */
 
 #main-class-resource{
@@ -222,12 +222,6 @@
   width: 100%;
 }
 
-/* .main-class-resource-slide-wrap .main-class-resource-download-wrap{
-  display: grid;
-  grid-template-columns: repeat(4, 203px);
-  grid-template-rows: auto;
-  gap: 8px;
-} */
 .main-class-resource-slide-wrap .main-class-resource-download-wrap{
   display: flex;
   flex-wrap: wrap;
@@ -274,6 +268,13 @@
   color: #16B572;
 }
 
+/* ========================================
+    메인페이지 다섯번째 섹션
+  ======================================== */
+
+#bottom-board-section{
+  background-image: url('../img/middle/main-content-03-bg-middle.png');
+}
 
 /* ========================================
     메인페이지 다섯번째 섹션

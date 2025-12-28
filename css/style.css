@@ -1419,7 +1419,7 @@ body {
 /* ========================================
     메인페이지 여섯번째 섹션
   ======================================== */
-  
+
 .main-content06-top-wrap{
   display: flex;
   justify-content: space-between;
@@ -2153,14 +2153,9 @@ body {
 
 .logout-link {
   font-size: 14px;
-  color: #000000;
+  color: #7A7A82;
   text-decoration: underline;
   cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.logout-link:hover {
-  color: #666666;
 }
 
 .quick-menu.collapsed .Login-icon img.hidden,
