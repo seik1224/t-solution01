@@ -49,7 +49,7 @@ const swiper = new Swiper("#main-content01 .main-content-card-wrap .swiper", {
 document
   .querySelectorAll("#main-content01 .main-content-card-wrap .swiper-slide")
   .forEach((slide) => {
-    const tags = slide.querySelectorAll(".tag:not(.disabled)");
+    const tags = slide.querySelectorAll(".tag:not(.disabled,.setting)");
     const imgs = slide.querySelectorAll("img[data-book]");
 
     // 초기화: active 태그 찾기
@@ -357,7 +357,9 @@ function updateDetail(swiper) {
 
 
 /* =========================
-   중등, 고등 수업 자료 섹션
+   수업 자료 섹션
+   - 중등
+   - 고등
 ========================= */
 
 const resourceSection = document.querySelector("#main-class-resource");
@@ -378,9 +380,6 @@ if (resourceSection) {
       },
     });
 
-    /* =========================
-       탭 클릭 → 슬라이드 이동
-    ========================= */
     if (resourceTabs.length) {
       resourceTabs.forEach((tab) => {
         tab.addEventListener("click", () => {
@@ -390,14 +389,10 @@ if (resourceSection) {
           resourceTabs.forEach((t) => t.classList.remove("active"));
           tab.classList.add("active");
 
-          // loop 대응
           resourceSwiper.slideToLoop(index);
         });
       });
 
-      /* =========================
-         슬라이드 변경 → 탭 active
-      ========================= */
       resourceSwiper.on("slideChange", () => {
         const currentIndex = resourceSwiper.realIndex;
         if (!resourceTabs[currentIndex]) return;

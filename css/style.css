@@ -45,6 +45,10 @@ body {
   min-width: var(--main-min-width);
 }
 
+a{
+  text-decoration: none;
+}
+
 #main-content04 .main-content-04-button-prev::after,
 #main-content04 .main-content-04-button-next::after,
 #main-content03 .main-content-03-swiper-button-prev::after,
@@ -1134,8 +1138,6 @@ body {
   position: relative;
 }
 
-
-
 .main-content04-logo-item{
   width: 168px;
   height: 168px;
@@ -1149,14 +1151,10 @@ body {
   cursor: pointer;
 }
 
-
 .main-content04-logo-item.active{
   background-color: #fff;
   filter: drop-shadow(0 0 50px rgba(137, 132, 110, 0.15));
 }
-
-
-
 
 #main-content04 .main-content-04-button-next{
   top: 25%;
@@ -1168,10 +1166,7 @@ body {
   right: 102%;
 }
 
-
-
 .main-content04-logo-wrap{
-
   display: flex;
   justify-content: space-between;
 
@@ -1562,6 +1557,11 @@ body {
   position: relative;
 }
 
+.main-content06-content-wrap-item a{
+  text-decoration: none;
+  color: #171719;
+}
+
 .teacher-desc{
   position: absolute;
   width: 100%;
@@ -1613,11 +1613,15 @@ body {
 
 .main-content-board-top-wrap .more-btn{
   background-color: #f7f9fa;
+  padding: 9px 12px;
+  border-radius: 8px;
+}
+
+.main-content-board-top-wrap .more-btn a{
   font-size: 14px;
   font-weight: var(--fw-medium);
   color: #2f3438;
-  padding: 9px 12px;
-  border-radius: 8px;
+  text-decoration: none;
 }
 
 .main-content-board-list-wrap{
@@ -1627,15 +1631,21 @@ body {
 }
 
 .main-content-board-list-wrap .title{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.main-content-board-list-wrap .title a{
   font-size: 16px;
   font-weight: var(--fw-medium);
   line-height: 44px;
   color: #2f3438;
+  text-decoration: none;
   height: 30px;
+  width: 410px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  width: 410px;
 }
 
 .main-content-board-list-wrap dt.title p{
@@ -1718,6 +1728,13 @@ body {
   font-weight: var(--fw-medium);
   font-size: 15px;
 }
+
+.service-center-bottom-wrap .serivce-remote-btn a{
+  font-weight: var(--fw-medium);
+  font-size: 15px;
+  color: #2f3438;
+}
+
 
 .service-center-bottom-wrap-wrap{
   display: flex;
@@ -1918,7 +1935,6 @@ body {
   margin: 0;
 }
 
-
 .quick-menu.collapsed .menu-header {
   border-radius: 0;
 }
@@ -1944,9 +1960,12 @@ body {
 .quick-menu.collapsed .menu-item:hover .menu-item-wrap{
   background-color: transparent;
 }
+
 .quick-menu .menu-item:hover .menu-item-wrap{
   background-color: #E2E4E8;
 }
+
+
 
 #quickMenu.quick-menu.collapsed .menu-item {
   display: flex;
@@ -1962,6 +1981,7 @@ body {
   align-items: center;
   border-radius: 8px;
   gap: 8px;
+  color: #171719;
 }
 
 .quick-menu .menu-item {

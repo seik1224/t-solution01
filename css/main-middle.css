@@ -50,8 +50,8 @@
   background-color: #DBF8EC;
 }
 
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:hover,
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag.active{
+#contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:hover,
+#contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag.active{
   background-color: #4DE5A5;
 }
 
