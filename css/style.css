@@ -896,6 +896,10 @@ a{
   font-weight: var(--fw-semibold);
 }
 
+a.main-content02-img{
+  color: #171719;
+}
+
 /* 태그 컬러 분류 */
 .main-content02-img-wrap .tag-wrap .tag.tag-01{
   background-color: #DBF1FF;
@@ -1636,6 +1640,17 @@ a{
   gap: 4px;
 }
 
+.notice-wrap,
+.FAQ-wrap{
+  width: 400px;
+}
+
+.FAQ-wrap .main-content-board-list-wrap .title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .main-content-board-list-wrap .title a{
   font-size: 16px;
   font-weight: var(--fw-medium);
@@ -1643,7 +1658,7 @@ a{
   color: #2f3438;
   text-decoration: none;
   height: 30px;
-  width: 410px;
+  max-width: 340px;
   display: flex;
   align-items: center;
 }
