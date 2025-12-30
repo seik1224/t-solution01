@@ -408,6 +408,19 @@ if (content04) {
       return slideWidth;
     }
 
+    function updateShowSlides() {
+      slides.forEach((slide, index) => {
+        if (
+          index >= currentIndex &&
+          index < currentIndex + slidesPerView
+        ) {
+          slide.classList.add("show");
+        } else {
+          slide.classList.remove("show");
+        }
+      });
+    }
+
     function updateCarousel(animate = true) {
       if (isTransitioning && !animate) return;
 
@@ -421,6 +434,7 @@ if (content04) {
       }
 
       carouselWrapper.style.transform = `translateX(${translateX}px)`;
+      updateShowSlides(); // ⭐ 추가
     }
 
     function nextSlide() {
@@ -630,6 +644,7 @@ if (resourceSection) {
       });
     }
   }
+  
 }
 
 /* ========================================

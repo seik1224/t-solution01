@@ -1123,6 +1123,7 @@ a.main-content02-img {
   margin-bottom: 20px;
   position: relative;
   gap: 30px;
+  overflow: visible;
 }
 
 .main-content04-logo-item {
@@ -1136,6 +1137,14 @@ a.main-content02-img {
   background-color: #fffdee;
   border-radius: 200px;
   cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.main-content04-logo-item.show{
+  opacity: 1;
+  visibility: visible;
 }
 
 .main-content04-logo-item.active {
