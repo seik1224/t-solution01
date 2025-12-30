@@ -375,7 +375,6 @@ a {
 
 
 
-
 /* ========================================
     메인페이지 첫번째 섹션
   ======================================== */
@@ -1376,6 +1375,14 @@ a.main-content02-img {
   background: #fdd000;
 }
 
+#main-content05 .main-content05-swiper-wrap .swiper-wrapper {
+  gap: 40px;
+}
+#main-content05 .main-content05-swiper-wrap .swiper-slide {
+  width: auto !important;
+  cursor: pointer;
+}
+
 #main-content05 .main-content05-swiper-wrap img {
   width: 160px;
   height: 221px;
@@ -1405,11 +1412,11 @@ a.main-content02-img {
   display: block;
 }
 
-.main-content05-swiper-wrap .swiper-slide.swiper-slide-active .main-content-swiper-detail-dimmed {
+.main-content05-swiper-wrap .swiper-slide.is-active .main-content-swiper-detail-dimmed {
   display: none;
 }
 
-.main-content05-swiper-wrap .swiper-slide.swiper-slide-active img {
+.main-content05-swiper-wrap .swiper-slide.is-active img {
   border: 2px solid #fdd000;
 }
 
@@ -1424,7 +1431,7 @@ a.main-content02-img {
   z-index: 3;
 }
 
-.main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag {
+.main-content05-swiper-wrap .is-active .main-content-swiper-detail-tag {
   background-color: #fdd000;
   color: #171719;
 }

@@ -352,189 +352,170 @@ if (content03) {
    - 로고 슬라이드
   ========================================  */
 
-// const content04 = document.querySelector("#main-content04");
-
-// if (content04) {
-//   const swiperContainer = content04.querySelector(
-//     ".main-content04-logo-wrap.swiper"
-//   );
-//   const nextButton = content04.querySelector(".main-content-04-button-next");
-//   const prevButton = content04.querySelector(".main-content-04-button-prev");
-
-//   if (swiperContainer) {
-//     const swiper = new Swiper(swiperContainer, {
-//       slidesPerView: 7,
-//       spaceBetween: 30,
-//       speed: 300,
-//       loop: false,
-//       navigation: {
-//         nextEl: nextButton,
-//         prevEl: prevButton,
-//       },
-//     });
-
-// }
-// }
-
-
 const content04 = document.querySelector("#main-content04");
 
 if (content04) {
-  const carouselContainer = content04.querySelector(".swiper");
-  const carouselWrapper = carouselContainer?.querySelector(".swiper-wrapper");
-  const slides = carouselWrapper?.querySelectorAll(".swiper-slide");
+  const container = content04.querySelector(".swiper");
+  const wrapper = container.querySelector(".swiper-wrapper");
+  const nextBtn = content04.querySelector(".main-content-04-button-next");
+  const prevBtn = content04.querySelector(".main-content-04-button-prev");
 
+  const slidesPerView = 7;
+  const spaceBetween = 30;
+  const duration = 200;
 
-  const nextButton = content04.querySelector(
-    ".main-content-04-button-next"
-  );
-  const prevButton = content04.querySelector(
-    ".main-content-04-button-prev"
-  );
-
-  if (carouselContainer && carouselWrapper && slides && slides.length > 0) {
-    const slidesPerView = 7;
-    const spaceBetween = 30;
-    let currentIndex = 0;
-    let isTransitioning = false;
-
-    const totalSlides = slides.length;
-    const maxIndex = Math.max(0, totalSlides - slidesPerView);
-
-    function getSlideWidth() {
-      const containerWidth = carouselContainer.offsetWidth;
-      const slideWidth =
-        (containerWidth - spaceBetween * (slidesPerView - 1)) / slidesPerView;
-      return slideWidth;
-    }
-
-    function updateShowSlides() {
-      slides.forEach((slide, index) => {
-        if (
-          index >= currentIndex &&
-          index < currentIndex + slidesPerView
-        ) {
-          slide.classList.add("show");
-        } else {
-          slide.classList.remove("show");
-        }
-      });
-    }
-
-    function updateCarousel(animate = true) {
-      if (isTransitioning && !animate) return;
-
-      const slideWidth = getSlideWidth();
-      const translateX = -(currentIndex * (slideWidth + spaceBetween));
-
-      if (animate) {
-        carouselWrapper.style.transition = "transform 0.3s ease";
-      } else {
-        carouselWrapper.style.transition = "none";
-      }
-
-      carouselWrapper.style.transform = `translateX(${translateX}px)`;
-      updateShowSlides(); // ⭐ 추가
-    }
-
-    function nextSlide() {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      if (currentIndex >= maxIndex) {
-        currentIndex = 0;
-      } else {
-        currentIndex++;
-      }
-
-      updateCarousel(true);
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 300);
-    }
-
-    function prevSlide() {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      currentIndex--;
-
-      if (currentIndex < 0) {
-        currentIndex = maxIndex;
-      }
-
-      updateCarousel(true);
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 300);
-    }
-
-    function setSlideWidths() {
-      const slideWidth = getSlideWidth();
-      slides.forEach((slide) => {
-        slide.style.width = `${slideWidth}px`;
-        slide.style.marginRight = `${spaceBetween}px`;
-      });
-    }
-
-    setSlideWidths();
-
-    if (nextButton) {
-      nextButton.addEventListener("click", nextSlide);
-    }
-
-    if (prevButton) {
-      prevButton.addEventListener("click", prevSlide);
-    }
-
-    let resizeTimer;
-    window.addEventListener("resize", () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        setSlideWidths();
-        updateCarousel(false);
-      }, 100);
-    });
-
-    updateCarousel(false);
-  }
-
-  const logoItems = content04.querySelectorAll(".main-content04-logo-item");
   const videoWraps = content04.querySelectorAll(".main-content04-video-wrap");
 
-  function getTabClass(el) {
-    return [...el.classList].find(cls => cls.startsWith("tab-"));
+  let slides = Array.from(wrapper.children);
+  let isAnimating = false;
+
+  /* =============================
+     SIZE
+  ============================= */
+  function getSlideWidth() {
+    const w = container.offsetWidth;
+    return (w - spaceBetween * (slidesPerView - 1)) / slidesPerView;
   }
 
-  function resetActive() {
-    logoItems.forEach(item => item.classList.remove("active"));
-    videoWraps.forEach(wrap => wrap.classList.remove("active"));
-  }
-
-  logoItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const tabClass = getTabClass(item);
-      if (!tabClass) return;
-
-      resetActive();
-
-      item.classList.add("active");
-
-      videoWraps.forEach(wrap => {
-        if (wrap.classList.contains(tabClass)) {
-          wrap.classList.add("active");
-        }
-      });
+  function setSlideSize() {
+    const width = getSlideWidth();
+    slides.forEach(slide => {
+      slide.style.width = `${width}px`;
+      slide.style.marginRight = `${spaceBetween}px`;
     });
-  });
-
-  const firstLogo = content04.querySelector(".main-content04-logo-item.tab-01");
-  const firstVideo = content04.querySelector(".main-content04-video-wrap.tab-01");
-
-  if (firstLogo && firstVideo) {
-    firstLogo.classList.add("active");
-    firstVideo.classList.add("active");
   }
+
+  /* =============================
+     VIDEO SYNC
+  ============================= */
+  function syncVideo() {
+    const activeSlide = slides[0];
+    if (!activeSlide) return;
+
+    const tabClass = [...activeSlide.classList].find(cls =>
+      cls.startsWith("tab-")
+    );
+    if (!tabClass) return;
+
+    videoWraps.forEach(wrap => {
+      wrap.classList.toggle("active", wrap.classList.contains(tabClass));
+    });
+  }
+
+  /* =============================
+     CLASS CONTROL
+     - 보이는 영역만 show
+     - 맨 앞만 active
+  ============================= */
+  function updateClasses() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === 0);
+      slide.classList.toggle("show", i < slidesPerView);
+    });
+
+    syncVideo();
+  }
+
+  /* =============================
+     CORE MOVE (여러칸 슈웅)
+  ============================= */
+  function moveBy(count) {
+    if (count <= 0 || isAnimating) return;
+
+  // 🔥 애니메이션 시작 전에 show 즉시 제거
+    slides.forEach((slide, i) => {
+      if (i >= slidesPerView) slide.classList.remove("show");
+    });
+
+    const width = getSlideWidth();
+    const moveX = -count * (width + spaceBetween);
+
+    isAnimating = true;
+
+
+
+    wrapper.style.transition = `transform ${duration}ms ease`;
+    wrapper.style.transform = `translateX(${moveX}px)`;
+
+    setTimeout(() => {
+      wrapper.style.transition = "none";
+      wrapper.style.transform = "translateX(0)";
+
+      for (let i = 0; i < count; i++) {
+        wrapper.appendChild(wrapper.firstElementChild);
+      }
+
+      slides = Array.from(wrapper.children);
+      updateClasses();
+      bindClick();
+
+      isAnimating = false;
+    }, duration);
+  }
+
+  /* =============================
+     PREV (1칸 슈웅)
+  ============================= */
+  function prev() {
+    if (isAnimating) return;
+
+    const width = getSlideWidth();
+    isAnimating = true;
+
+    wrapper.insertBefore(wrapper.lastElementChild, wrapper.firstElementChild);
+
+    slides = Array.from(wrapper.children);
+    slides.forEach((slide, i) => {
+      if (i >= slidesPerView) slide.classList.remove("show");
+    });
+
+    wrapper.style.transition = "none";
+    wrapper.style.transform =
+      `translateX(-${width + spaceBetween}px)`;
+
+    requestAnimationFrame(() => {
+      wrapper.style.transition = `transform ${duration}ms ease`;
+      wrapper.style.transform = "translateX(0)";
+    });
+
+    setTimeout(() => {
+      slides = Array.from(wrapper.children);
+      updateClasses();
+      bindClick();
+      isAnimating = false;
+    }, duration);
+  }
+
+  /* =============================
+     CLICK
+     - 클릭 시 무조건 왼쪽 맨앞
+  ============================= */
+  function bindClick() {
+    slides.forEach((slide, index) => {
+      slide.onclick = () => {
+        if (isAnimating || index === 0) return;
+        moveBy(index);
+      };
+    });
+  }
+
+  /* =============================
+     INIT
+  ============================= */
+  setSlideSize();
+  updateClasses();
+  bindClick();
+
+  nextBtn?.addEventListener("click", () => moveBy(1));
+  prevBtn?.addEventListener("click", prev);
+
+  window.addEventListener("resize", () => {
+    setSlideSize();
+    updateClasses();
+  });
 }
+
+
 
 /* ========================================
    메인페이지 다섯번째 섹션
@@ -542,54 +523,77 @@ if (content04) {
    - active 슬라이드 크게 띄우기
   ========================================  */
 
-const detailImg = document.querySelector(
-  ".main-content05-container .main-content-detail img"
-);
-const detailSubtitle = document.querySelector(
-  ".main-content-detail-subtitle p"
-);
-const detailTitle = document.querySelector(".main-content-detail-title p");
-const detailDesc = document.querySelector(".main-content-detail-desc p");
-const detailTag = document.querySelector(".main-content-detail-tag p");
+/* =========================
+   DOM
+========================= */
+const section = document.querySelector("#main-content05");
 
-const swiper05 = new Swiper("#main-content05 .swiper", {
-  slidesPerView: 4,
-  spaceBetween: 48,
-  loop: true,
-  loopAdditionalSlides: 8,
-  
-  navigation: {
-    nextEl: ".main-content-05-swiper-button-next",
-    prevEl: ".main-content-05-swiper-button-prev",
-  },
-  on: {
-    init(swiper) {
-      updateDetail(swiper);
-    },
-    slideChange(swiper) {
-      updateDetail(swiper);
-    },
-  },
-});
+const swiperWrap = section.querySelector(".main-content05-swiper-wrap");
+const wrapper = swiperWrap.querySelector(".swiper-wrapper");
+const slides = Array.from(wrapper.querySelectorAll(".swiper-slide"));
 
-function updateDetail(swiper) {
-  const activeSlide = swiper.slides[swiper.activeIndex];
-  if (!activeSlide) return;
+const nextBtn = section.querySelector(".main-content-05-swiper-button-next");
+const prevBtn = section.querySelector(".main-content-05-swiper-button-prev");
 
-  const slideImg = activeSlide.querySelector("img");
-  if (slideImg) {
-    detailImg.setAttribute("src", slideImg.getAttribute("src"));
-    detailImg.setAttribute("alt", slideImg.getAttribute("alt") || "");
+/* detail */
+const detailImg = section.querySelector(".main-content-detail img");
+const detailSubtitle = section.querySelector(".main-content-detail-subtitle p");
+const detailTitle = section.querySelector(".main-content-detail-title p");
+const detailDesc = section.querySelector(".main-content-detail-desc p");
+const detailTag = section.querySelector(".main-content-detail-tag p");
+
+
+/* =========================
+   설정
+========================= */
+const VISIBLE_COUNT = 4;   // 7로 바꿔도 OK
+const SLIDE_GAP = 48;
+const TOTAL = slides.length;
+
+let startIndex = 0;
+let isAnimating = false;
+
+
+/* =========================
+   초기화
+========================= */
+render();
+updateDetail(startIndex);
+
+
+/* =========================
+   렌더링
+========================= */
+function render() {
+  wrapper.innerHTML = "";
+
+  for (let i = 0; i < VISIBLE_COUNT; i++) {
+    const index = (startIndex + i) % TOTAL;
+    const slide = slides[index];
+
+    slide.classList.toggle("is-active", i === 0);
+    wrapper.appendChild(slide);
+  }
+}
+
+
+/* =========================
+   Detail 업데이트
+========================= */
+function updateDetail(index) {
+  const slide = slides[index];
+  if (!slide) return;
+
+  const img = slide.querySelector("img");
+  if (img) {
+    detailImg.src = img.src;
+    detailImg.alt = img.alt || "";
   }
 
-  const subtitle = activeSlide.querySelector(
-    ".main-content-swiper-detail-subtitle p"
-  );
-  const title = activeSlide.querySelector(
-    ".main-content-swiper-detail-title p"
-  );
-  const desc = activeSlide.querySelector(".main-content-swiper-detail-desc p");
-  const tag = activeSlide.querySelector(".main-content-swiper-detail-tag p");
+  const subtitle = slide.querySelector(".main-content-swiper-detail-subtitle p");
+  const title = slide.querySelector(".main-content-swiper-detail-title p");
+  const desc = slide.querySelector(".main-content-swiper-detail-desc p");
+  const tag = slide.querySelector(".main-content-swiper-detail-tag p");
 
   if (subtitle) detailSubtitle.textContent = subtitle.textContent;
   if (title) detailTitle.textContent = title.textContent;
@@ -598,6 +602,114 @@ function updateDetail(swiper) {
 }
 
 
+/* =========================
+   슬라이드 너비
+========================= */
+function getSlideWidth() {
+  const slide = wrapper.querySelector(".swiper-slide");
+  if (!slide) return 0;
+  return slide.offsetWidth + SLIDE_GAP;
+}
+
+
+/* =========================
+   여러 칸 한번에 이동 (슈웅)
+========================= */
+function moveToIndexByClick(visibleIndex, targetIndex) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const distance = getSlideWidth() * visibleIndex;
+
+  wrapper.style.transition = "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)";
+  wrapper.style.transform = `translateX(-${distance}px)`;
+
+  wrapper.addEventListener(
+    "transitionend",
+    () => {
+      // 상태만 갱신
+      startIndex = targetIndex;
+
+      // DOM 재정렬 (툭 튀는 느낌 방지)
+      wrapper.style.transition = "none";
+      wrapper.style.transform = "translateX(0)";
+      render();
+      updateDetail(startIndex);
+
+      isAnimating = false;
+    },
+    { once: true }
+  );
+}
+
+
+/* =========================
+   Prev / Next
+========================= */
+nextBtn.addEventListener("click", () => {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  wrapper.style.transition = "transform 0.35s ease";
+  wrapper.style.transform = `translateX(-${getSlideWidth()}px)`;
+
+  wrapper.addEventListener(
+    "transitionend",
+    () => {
+      startIndex = (startIndex + 1) % TOTAL;
+      wrapper.style.transition = "none";
+      wrapper.style.transform = "translateX(0)";
+      render();
+      updateDetail(startIndex);
+      isAnimating = false;
+    },
+    { once: true }
+  );
+});
+
+prevBtn.addEventListener("click", () => {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  wrapper.style.transition = "transform 0.35s ease";
+  wrapper.style.transform = `translateX(${getSlideWidth()}px)`;
+
+  wrapper.addEventListener(
+    "transitionend",
+    () => {
+      startIndex = (startIndex - 1 + TOTAL) % TOTAL;
+      wrapper.style.transition = "none";
+      wrapper.style.transform = "translateX(0)";
+      render();
+      updateDetail(startIndex);
+      isAnimating = false;
+    },
+    { once: true }
+  );
+});
+
+
+/* =========================
+   Slide Click
+   - 항상 오른쪽
+   - 한번에 슈웅
+========================= */
+slides.forEach((slide, realIndex) => {
+  slide.addEventListener("click", () => {
+    if (isAnimating) return;
+
+    const visibleSlides = wrapper.querySelectorAll(".swiper-slide");
+    let visibleIndex = -1;
+
+    visibleSlides.forEach((el, i) => {
+      if (el === slide) visibleIndex = i;
+    });
+
+    if (visibleIndex <= 0) return;
+
+    moveToIndexByClick(visibleIndex, realIndex);
+  });
+});
 
 
 
