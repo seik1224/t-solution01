@@ -556,7 +556,8 @@ const swiper05 = new Swiper("#main-content05 .swiper", {
   slidesPerView: 4,
   spaceBetween: 48,
   loop: true,
-  loopAdditionalSlides: 6,
+  loopAdditionalSlides: 8,
+  
   navigation: {
     nextEl: ".main-content-05-swiper-button-next",
     prevEl: ".main-content-05-swiper-button-prev",
@@ -595,6 +596,8 @@ function updateDetail(swiper) {
   if (desc) detailDesc.textContent = desc.textContent;
   if (tag) detailTag.textContent = tag.textContent;
 }
+
+
 
 
 

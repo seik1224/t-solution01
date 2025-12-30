@@ -133,6 +133,7 @@ a {
   display: flex;
   justify-content: space-between;
   height: 48px;
+  transition: .2s;
 }
 
 .top-nav .inner {
@@ -339,24 +340,25 @@ a {
   pointer-events: auto;
 }
 
-
+#header.is-sticky{
+  padding: 20px 0;
+}
 
 #header.is-sticky .sticky-wrap {
   gap: 20px;
-  opacity: 1;
-  transform: translateY(0);
   display: flex;
   align-items: center;
 }
+
 #header.is-sticky .sticky-wrap .nav-item-title p {
   white-space: nowrap;
 }
 
-.logo-no-chip{
+.sticky-logo-container{
   display: none;
 }
 
-#header.is-sticky .logo-no-chip{
+#header.is-sticky .sticky-logo-container{
   display: block;
 }
 
@@ -364,12 +366,15 @@ a {
   margin-bottom: 0;
 }
 
-#header.is-sticky .logo-chip,
 #header.is-sticky .top-nav,
+#header.is-sticky .logo-chip,
 #header.is-sticky .badge,
 #header.is-sticky .main-header .header-center {
   display: none;
 }
+
+
+
 
 /* ========================================
     메인페이지 첫번째 섹션
