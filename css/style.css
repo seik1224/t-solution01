@@ -123,7 +123,6 @@ a {
   padding-bottom: 20px;
   background-color: #fff;
   z-index: 9999;
-
   margin: auto;
 }
 
@@ -283,7 +282,8 @@ a {
 .bottom-nav .dropdown-menu {
   position: absolute;
   top: calc(100% + 16px);
-  left: -25px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .bottom-nav .dropdown-menu .nav-item-title {
@@ -312,6 +312,7 @@ a {
   font-weight: var(--fw-medium);
   color: #171719;
   text-decoration: none;
+  transition: opacity .1s;
 }
 
 .dropdown-menu-list li .dropdown-menu-item:hover {
@@ -338,15 +339,33 @@ a {
   pointer-events: auto;
 }
 
+
+
 #header.is-sticky .sticky-wrap {
+  gap: 20px;
+  opacity: 1;
+  transform: translateY(0);
   display: flex;
   align-items: center;
-  gap: 20px;
 }
 #header.is-sticky .sticky-wrap .nav-item-title p {
   white-space: nowrap;
 }
 
+.logo-no-chip{
+  display: none;
+}
+
+#header.is-sticky .logo-no-chip{
+  display: block;
+}
+
+#header.is-sticky .main-header{
+  margin-bottom: 0;
+}
+
+#header.is-sticky .logo-chip,
+#header.is-sticky .top-nav,
 #header.is-sticky .badge,
 #header.is-sticky .main-header .header-center {
   display: none;
@@ -433,6 +452,14 @@ a {
   height: 24px;
 }
 
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next{
+  right: 22px;
+}
+
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev{
+  left: 22px;
+}
+
 #main-content01 .main-content-card-wrap .swiper-slide img {
   width: 148px;
   height: 208px;
@@ -448,6 +475,8 @@ a {
 
 #main-content01 .main-content-card-wrap .swiper-slide .slide-img-wrap .card-img {
   position: relative;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 #main-content01 .main-content-card-wrap .swiper-slide .button-wrap {
@@ -493,7 +522,7 @@ a {
 #main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet {
   width: 6px;
   height: 6px;
-  background-color: #d7dde4;
+  background-color: #D7DDE4;
 }
 
 #main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -779,7 +808,7 @@ a {
 
 #modal-layer .modal-layer-content-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3,400px);
   grid-template-rows: auto;
   padding: 0 44px;
   gap: 24px;
@@ -839,7 +868,7 @@ a {
 
 .main-content02-tab-wrap {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
@@ -920,6 +949,11 @@ a.main-content02-img {
   font-weight: var(--fw-semibold);
   color: #171719;
   border-radius: 0 0 32px 32px;
+  transition: background-color .2s;
+}
+
+.main-content02-more-btn:hover{
+  background-color: #FFE778;
 }
 
 .main-content02-more-btn a {
@@ -1382,6 +1416,7 @@ a.main-content02-img {
   background: #7c7f8e;
   color: #fff;
   font-weight: var(--fw-semibold);
+  z-index: 3;
 }
 
 .main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag {
@@ -1404,7 +1439,7 @@ a.main-content02-img {
 .main-content-05-swiper-button-next,
 .main-content-05-swiper-button-prev {
   position: absolute;
-  top: 58%;
+  top: 45%;
   transform: translateY(-50%);
   width: 42px;
   height: 42px;
@@ -1537,13 +1572,22 @@ a.main-content02-img {
   height: 334px;
 }
 
-.main-content06-content-wrap-item {
-  position: relative;
-}
 
 .main-content06-content-wrap-item a {
+  position: relative;
   text-decoration: none;
   color: #171719;
+  overflow: hidden;
+  display: block;
+  border-radius: 16px;
+}
+
+.main-content06-content-wrap-item a img{
+  transition: transform .2s;
+}
+
+.main-content06-content-wrap-item a:hover img{
+  transform: scale(1.12);
 }
 
 .teacher-desc {
@@ -1600,6 +1644,11 @@ a.main-content02-img {
   background-color: #f7f9fa;
   padding: 9px 12px;
   border-radius: 8px;
+  transition: background-color .2s;
+}
+
+.main-content-board-top-wrap .more-btn:hover{
+  background-color: #FDD000;
 }
 
 .main-content-board-top-wrap .more-btn a {
@@ -1679,6 +1728,7 @@ a.main-content02-img {
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
+  height: 17px;
 }
 
 .service-center-wrap .service-center-top-wrap .title {
@@ -1696,7 +1746,7 @@ a.main-content02-img {
 }
 
 .service-center-middle-wrap {
-  margin-bottom: 18px;
+  padding-bottom: 18px;
 }
 
 .service-center-middle-wrap .title {
@@ -1869,6 +1919,14 @@ a.main-content02-img {
   transform: translateY(8px);
   transition: all 0.2s ease;
   z-index: 10;
+}
+
+.family-list li a{
+  transition: .1s;
+}
+
+.family-list li a:hover{
+  opacity: .3;
 }
 
 .family-site-wrap.active .family-list {

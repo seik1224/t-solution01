@@ -116,8 +116,8 @@
   line-height: 44px;
 }
 .main-class-resource-title-wrap .title img{
-  width: 29px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .main-class-resource-title-wrap .main-class-resource-btn{
@@ -129,8 +129,8 @@
   align-items: center;
   box-sizing: border-box;
   text-decoration: none;
-  width: 180px;
-  height: 49px;
+  width: fit-content;
+  padding: 18px 24px;
 }
 
 .main-class-resource-title-wrap .main-class-resource-btn p{
@@ -305,6 +305,10 @@
   background-color: #4DE5A5;
 }
 
+#contents .main-content-board-top-wrap .more-btn:hover{
+  background-color: #4DE5A5;
+}
+
 /* ========================================
     퀵메뉴 영역
   ======================================== */
@@ -319,4 +323,12 @@
 
 .login-btn{
   background-color: #2BC886;
+}
+
+#quickMenu.quick-menu.collapsed .menu-item::before{
+  background-color: #4DE5A5;
+}
+
+#quickMenu.quick-menu.collapsed .menu-item::after{
+  border-left:8px solid #4DE5A5;
 }
