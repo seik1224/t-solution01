@@ -417,22 +417,20 @@ if (content04) {
   }
 
   /* =============================
-     CORE MOVE (여러칸 슈웅)
+     CORE MOVE (next/click)
   ============================= */
   function moveBy(count) {
     if (count <= 0 || isAnimating) return;
 
-  // 🔥 애니메이션 시작 전에 show 즉시 제거
+    const width = getSlideWidth();
+    const moveX = -count * (width + spaceBetween);
+
+    // show 먼저 제거
     slides.forEach((slide, i) => {
       if (i >= slidesPerView) slide.classList.remove("show");
     });
 
-    const width = getSlideWidth();
-    const moveX = -count * (width + spaceBetween);
-
     isAnimating = true;
-
-
 
     wrapper.style.transition = `transform ${duration}ms ease`;
     wrapper.style.transform = `translateX(${moveX}px)`;
@@ -454,7 +452,7 @@ if (content04) {
   }
 
   /* =============================
-     PREV (1칸 슈웅)
+     PREV (1칸)
   ============================= */
   function prev() {
     if (isAnimating) return;
@@ -462,16 +460,18 @@ if (content04) {
     const width = getSlideWidth();
     isAnimating = true;
 
+    // 맨 뒤 요소를 맨 앞으로 이동
     wrapper.insertBefore(wrapper.lastElementChild, wrapper.firstElementChild);
 
     slides = Array.from(wrapper.children);
+
+    // show 먼저 제거
     slides.forEach((slide, i) => {
       if (i >= slidesPerView) slide.classList.remove("show");
     });
 
     wrapper.style.transition = "none";
-    wrapper.style.transform =
-      `translateX(-${width + spaceBetween}px)`;
+    wrapper.style.transform = `translateX(-${width + spaceBetween}px)`;
 
     requestAnimationFrame(() => {
       wrapper.style.transition = `transform ${duration}ms ease`;
@@ -514,8 +514,6 @@ if (content04) {
     updateClasses();
   });
 }
-
-
 
 /* ========================================
    메인페이지 다섯번째 섹션
