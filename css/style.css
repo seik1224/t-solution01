@@ -1122,6 +1122,7 @@ a.main-content02-img {
   justify-content: space-between;
   margin-bottom: 20px;
   position: relative;
+  gap: 30px;
 }
 
 .main-content04-logo-item {

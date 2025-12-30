@@ -352,52 +352,174 @@ if (content03) {
    - 로고 슬라이드
   ========================================  */
 
+// const content04 = document.querySelector("#main-content04");
+
+// if (content04) {
+//   const swiperContainer = content04.querySelector(
+//     ".main-content04-logo-wrap.swiper"
+//   );
+//   const nextButton = content04.querySelector(".main-content-04-button-next");
+//   const prevButton = content04.querySelector(".main-content-04-button-prev");
+
+//   if (swiperContainer) {
+//     const swiper = new Swiper(swiperContainer, {
+//       slidesPerView: 7,
+//       spaceBetween: 30,
+//       speed: 300,
+//       loop: false,
+//       navigation: {
+//         nextEl: nextButton,
+//         prevEl: prevButton,
+//       },
+//     });
+
+// }
+// }
+
+
 const content04 = document.querySelector("#main-content04");
 
 if (content04) {
-  const slides = content04.querySelectorAll(".main-content04-logo-item");
-  const tabs = content04.querySelectorAll(".main-content04-video-wrap"); // 탭
-  const nextBtn = content04.querySelector(".main-content-04-button-next");
-  const prevBtn = content04.querySelector(".main-content-04-button-prev");
+  const carouselContainer = content04.querySelector(".swiper");
+  const carouselWrapper = carouselContainer?.querySelector(".swiper-wrapper");
+  const slides = carouselWrapper?.querySelectorAll(".swiper-slide");
 
-  let currentIndex = 0;
 
-  function updateActive(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
+  const nextButton = content04.querySelector(
+    ".main-content-04-button-next"
+  );
+  const prevButton = content04.querySelector(
+    ".main-content-04-button-prev"
+  );
+
+  if (carouselContainer && carouselWrapper && slides && slides.length > 0) {
+    const slidesPerView = 7;
+    const spaceBetween = 30;
+    let currentIndex = 0;
+    let isTransitioning = false;
+
+    const totalSlides = slides.length;
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+
+    function getSlideWidth() {
+      const containerWidth = carouselContainer.offsetWidth;
+      const slideWidth =
+        (containerWidth - spaceBetween * (slidesPerView - 1)) / slidesPerView;
+      return slideWidth;
+    }
+
+    function updateCarousel(animate = true) {
+      if (isTransitioning && !animate) return;
+
+      const slideWidth = getSlideWidth();
+      const translateX = -(currentIndex * (slideWidth + spaceBetween));
+
+      if (animate) {
+        carouselWrapper.style.transition = "transform 0.3s ease";
+      } else {
+        carouselWrapper.style.transition = "none";
+      }
+
+      carouselWrapper.style.transform = `translateX(${translateX}px)`;
+    }
+
+    function nextSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      if (currentIndex >= maxIndex) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+
+      updateCarousel(true);
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 300);
+    }
+
+    function prevSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      currentIndex--;
+
+      if (currentIndex < 0) {
+        currentIndex = maxIndex;
+      }
+
+      updateCarousel(true);
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 300);
+    }
+
+    function setSlideWidths() {
+      const slideWidth = getSlideWidth();
+      slides.forEach((slide) => {
+        slide.style.width = `${slideWidth}px`;
+        slide.style.marginRight = `${spaceBetween}px`;
+      });
+    }
+
+    setSlideWidths();
+
+    if (nextButton) {
+      nextButton.addEventListener("click", nextSlide);
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", prevSlide);
+    }
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setSlideWidths();
+        updateCarousel(false);
+      }, 100);
     });
 
-    tabs.forEach((tab, i) => {
-      tab.classList.toggle("active", i === index);
-    });
+    updateCarousel(false);
   }
 
-  nextBtn.addEventListener("click", () => {
-    if (currentIndex < slides.length - 1) {
-      currentIndex++;
-    } else {
-      currentIndex = 0;
-    }
-    updateActive(currentIndex);
-  });
+  const logoItems = content04.querySelectorAll(".main-content04-logo-item");
+  const videoWraps = content04.querySelectorAll(".main-content04-video-wrap");
 
-  prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = slides.length - 1;
-    }
-    updateActive(currentIndex);
-  });
+  function getTabClass(el) {
+    return [...el.classList].find(cls => cls.startsWith("tab-"));
+  }
 
-  slides.forEach((slide, index) => {
-    slide.addEventListener("click", () => {
-      currentIndex = index;
-      updateActive(currentIndex);
+  function resetActive() {
+    logoItems.forEach(item => item.classList.remove("active"));
+    videoWraps.forEach(wrap => wrap.classList.remove("active"));
+  }
+
+  logoItems.forEach(item => {
+    item.addEventListener("click", () => {
+      const tabClass = getTabClass(item);
+      if (!tabClass) return;
+
+      resetActive();
+
+      item.classList.add("active");
+
+      videoWraps.forEach(wrap => {
+        if (wrap.classList.contains(tabClass)) {
+          wrap.classList.add("active");
+        }
+      });
     });
   });
 
-  updateActive(currentIndex);
+  const firstLogo = content04.querySelector(".main-content04-logo-item.tab-01");
+  const firstVideo = content04.querySelector(".main-content04-video-wrap.tab-01");
+
+  if (firstLogo && firstVideo) {
+    firstLogo.classList.add("active");
+    firstVideo.classList.add("active");
+  }
 }
 
 /* ========================================
