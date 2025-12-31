@@ -163,6 +163,7 @@
 
 .main-class-resource-slide-wrap .tabs{
   display: flex;
+  justify-content: space-between;
   gap: 6px;
 }
 
@@ -185,6 +186,7 @@
 
 .main-class-resource-slide-wrap .tabs .tab p{
   font-size: 16px;
+  font-family: "Pretendard Variable", sans-serif;
   font-weight: var(--fw-medium);
   color: #171719;
 }
