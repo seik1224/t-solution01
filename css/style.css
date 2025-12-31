@@ -1408,7 +1408,7 @@ a.main-content02-img {
 }
 
 #main-content05 .main-content05-swiper-wrap .swiper-wrapper {
-  gap: 40px;
+  justify-content: space-between;
 }
 #main-content05 .main-content05-swiper-wrap .swiper-slide {
   width: auto !important;
@@ -1483,7 +1483,7 @@ a.main-content02-img {
 .main-content-05-swiper-button-next,
 .main-content-05-swiper-button-prev {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   width: 42px;
   height: 42px;
