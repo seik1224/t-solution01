@@ -352,168 +352,166 @@ if (content03) {
    - 로고 슬라이드
   ========================================  */
 
+  
 const content04 = document.querySelector("#main-content04");
 
 if (content04) {
-  const container = content04.querySelector(".swiper");
-  const wrapper = container.querySelector(".swiper-wrapper");
-  const nextBtn = content04.querySelector(".main-content-04-button-next");
-  const prevBtn = content04.querySelector(".main-content-04-button-prev");
+  const carouselContainer = content04.querySelector(".swiper");
+  const carouselWrapper = carouselContainer?.querySelector(".swiper-wrapper");
+  const slides = carouselWrapper?.querySelectorAll(".swiper-slide");
 
-  const slidesPerView = 7;
-  const spaceBetween = 30;
-  const duration = 200;
 
-  const videoWraps = content04.querySelectorAll(".main-content04-video-wrap");
+  const nextButton = content04.querySelector(
+    ".main-content-04-button-next"
+  );
+  const prevButton = content04.querySelector(
+    ".main-content-04-button-prev"
+  );
 
-  let slides = Array.from(wrapper.children);
-  let isAnimating = false;
+  if (carouselContainer && carouselWrapper && slides && slides.length > 0) {
+    const slidesPerView = 7;
+    const spaceBetween = 30;
+    let currentIndex = 0;
+    let isTransitioning = false;
 
-  /* =============================
-     SIZE
-  ============================= */
-  function getSlideWidth() {
-    const w = container.offsetWidth;
-    return (w - spaceBetween * (slidesPerView - 1)) / slidesPerView;
-  }
+    const totalSlides = slides.length;
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
 
-  function setSlideSize() {
-    const width = getSlideWidth();
-    slides.forEach(slide => {
-      slide.style.width = `${width}px`;
-      slide.style.marginRight = `${spaceBetween}px`;
-    });
-  }
+    function getSlideWidth() {
+      const containerWidth = carouselContainer.offsetWidth;
+      const slideWidth =
+        (containerWidth - spaceBetween * (slidesPerView - 1)) / slidesPerView;
+      return slideWidth;
+    }
 
-  /* =============================
-     VIDEO SYNC
-  ============================= */
-  function syncVideo() {
-    const activeSlide = slides[0];
-    if (!activeSlide) return;
+    function updateShowSlides() {
+      slides.forEach((slide, index) => {
+        if (
+          index >= currentIndex &&
+          index < currentIndex + slidesPerView
+        ) {
+          slide.classList.add("show");
+        } else {
+          slide.classList.remove("show");
+        }
+      });
+    }
 
-    const tabClass = [...activeSlide.classList].find(cls =>
-      cls.startsWith("tab-")
-    );
-    if (!tabClass) return;
+    function updateCarousel(animate = true) {
+      if (isTransitioning && !animate) return;
 
-    videoWraps.forEach(wrap => {
-      wrap.classList.toggle("active", wrap.classList.contains(tabClass));
-    });
-  }
+      const slideWidth = getSlideWidth();
+      const translateX = -(currentIndex * (slideWidth + spaceBetween));
 
-  /* =============================
-     CLASS CONTROL
-     - 보이는 영역만 show
-     - 맨 앞만 active
-  ============================= */
-  function updateClasses() {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === 0);
-      slide.classList.toggle("show", i < slidesPerView);
-    });
-
-    syncVideo();
-  }
-
-  /* =============================
-     CORE MOVE (next/click)
-  ============================= */
-  function moveBy(count) {
-    if (count <= 0 || isAnimating) return;
-
-    const width = getSlideWidth();
-    const moveX = -count * (width + spaceBetween);
-
-    // show 먼저 제거
-    slides.forEach((slide, i) => {
-      if (i >= slidesPerView) slide.classList.remove("show");
-    });
-
-    isAnimating = true;
-
-    wrapper.style.transition = `transform ${duration}ms ease`;
-    wrapper.style.transform = `translateX(${moveX}px)`;
-
-    setTimeout(() => {
-      wrapper.style.transition = "none";
-      wrapper.style.transform = "translateX(0)";
-
-      for (let i = 0; i < count; i++) {
-        wrapper.appendChild(wrapper.firstElementChild);
+      if (animate) {
+        carouselWrapper.style.transition = "transform 0.3s ease";
+      } else {
+        carouselWrapper.style.transition = "none";
       }
 
-      slides = Array.from(wrapper.children);
-      updateClasses();
-      bindClick();
+      carouselWrapper.style.transform = `translateX(${translateX}px)`;
+      updateShowSlides(); // ⭐ 추가
+    }
 
-      isAnimating = false;
-    }, duration);
-  }
+    function nextSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
 
-  /* =============================
-     PREV (1칸)
-  ============================= */
-  function prev() {
-    if (isAnimating) return;
+      if (currentIndex >= maxIndex) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
 
-    const width = getSlideWidth();
-    isAnimating = true;
+      updateCarousel(true);
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 300);
+    }
 
-    // 맨 뒤 요소를 맨 앞으로 이동
-    wrapper.insertBefore(wrapper.lastElementChild, wrapper.firstElementChild);
+    function prevSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      currentIndex--;
 
-    slides = Array.from(wrapper.children);
+      if (currentIndex < 0) {
+        currentIndex = maxIndex;
+      }
 
-    // show 먼저 제거
-    slides.forEach((slide, i) => {
-      if (i >= slidesPerView) slide.classList.remove("show");
+      updateCarousel(true);
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 300);
+    }
+
+    function setSlideWidths() {
+      const slideWidth = getSlideWidth();
+      slides.forEach((slide) => {
+        slide.style.width = `${slideWidth}px`;
+        slide.style.marginRight = `${spaceBetween}px`;
+      });
+    }
+
+    setSlideWidths();
+
+    if (nextButton) {
+      nextButton.addEventListener("click", nextSlide);
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", prevSlide);
+    }
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setSlideWidths();
+        updateCarousel(false);
+      }, 100);
     });
 
-    wrapper.style.transition = "none";
-    wrapper.style.transform = `translateX(-${width + spaceBetween}px)`;
-
-    requestAnimationFrame(() => {
-      wrapper.style.transition = `transform ${duration}ms ease`;
-      wrapper.style.transform = "translateX(0)";
-    });
-
-    setTimeout(() => {
-      slides = Array.from(wrapper.children);
-      updateClasses();
-      bindClick();
-      isAnimating = false;
-    }, duration);
+    updateCarousel(false);
   }
 
-  /* =============================
-     CLICK
-     - 클릭 시 무조건 왼쪽 맨앞
-  ============================= */
-  function bindClick() {
-    slides.forEach((slide, index) => {
-      slide.onclick = () => {
-        if (isAnimating || index === 0) return;
-        moveBy(index);
-      };
-    });
+  const logoItems = content04.querySelectorAll(".main-content04-logo-item");
+  const videoWraps = content04.querySelectorAll(".main-content04-video-wrap");
+
+  function getTabClass(el) {
+    return [...el.classList].find(cls => cls.startsWith("tab-"));
   }
 
-  /* =============================
-     INIT
-  ============================= */
-  setSlideSize();
-  updateClasses();
-  bindClick();
+  function resetActive() {
+    logoItems.forEach(item => item.classList.remove("active"));
+    videoWraps.forEach(wrap => wrap.classList.remove("active"));
+  }
 
-  nextBtn?.addEventListener("click", () => moveBy(1));
-  prevBtn?.addEventListener("click", prev);
+  logoItems.forEach(item => {
+    item.addEventListener("click", () => {
+      const tabClass = getTabClass(item);
+      if (!tabClass) return;
 
-  window.addEventListener("resize", () => {
-    setSlideSize();
-    updateClasses();
+      resetActive();
+
+      item.classList.add("active");
+
+      videoWraps.forEach(wrap => {
+        if (wrap.classList.contains(tabClass)) {
+          wrap.classList.add("active");
+        }
+      });
+    });
   });
+
+  const firstLogo = content04.querySelector(".main-content04-logo-item.tab-01");
+  const firstVideo = content04.querySelector(".main-content04-video-wrap.tab-01");
+
+  if (firstLogo && firstVideo) {
+    firstLogo.classList.add("active");
+    firstVideo.classList.add("active");
+  }
 }
+
 
 /* ========================================
    메인페이지 다섯번째 섹션
