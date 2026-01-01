@@ -1,19 +1,18 @@
-
 /* ========================================
     헤더 영역
   ======================================== */
 
 #header .nav-link.active span,
 #header .nav-link:hover {
-  color: #2BC886;
+  color: #2bc886;
 }
 
-#header .header-search-input-placeholder p{
+#header .header-search-input-placeholder p {
   color: rgba(23, 23, 25, 0.5);
   font-weight: var(--fw-medium);
 }
 
-#header .sticky-wrap .main-header .header-center input.filled{
+#header .sticky-wrap .main-header .header-center input.filled {
   background-color: rgba(219, 248, 236, 0.3);
 }
 
@@ -21,86 +20,84 @@
     헤더 하단 드랍다운 메뉴 영역
   ======================================== */
 
-.bottom-nav .nav-item-wrapper:hover{
-  background-color: #DBF8EC;
+.bottom-nav .nav-item-wrapper:hover {
+  background-color: #dbf8ec;
 }
 
-.nav-item:hover .nav-item-title{
-  color: #00C270;
+.nav-item:hover .nav-item-title {
+  color: #00c270;
 }
 
 /* ========================================
     중등 메인페이지 첫번째 섹션
   ======================================== */
 
-#main-content01{
-  background-image: url('../img/middle/main-content-01-bg-middle.png');
+#main-content01 {
+  background-image: url("../img/middle/main-content-01-bg-middle.png");
   width: 100%;
 }
 
-#contents #main-content01 .main-content-card-wrap{
-  background-color: #4DE5A5;
+#contents #main-content01 .main-content-card-wrap {
+  background-color: #4de5a5;
 }
 
-#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
-  background-color: #4DE5A5;
+#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #4de5a5;
 }
 
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag{
-  background-color: #DBF8EC;
+#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag {
+  background-color: #dbf8ec;
 }
 
 #contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:hover,
-#contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag.active{
-  background-color: #4DE5A5;
+#contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag.active {
+  background-color: #4de5a5;
 }
 
-
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next,
-#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev{
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev {
   width: 32px;
   height: 32px;
   border-radius: 50px;
-  top: 46%;
-  background-color: #DBF8EC;
+  top: 41%;
+  background-color: #dbf8ec;
 }
 
-
 #contents #main-content01 .main-content-card-wrap .swiper-button-prev.swiper-button-disabled svg path,
-#contents #main-content01 .main-content-card-wrap .swiper-button-next.swiper-button-disabled svg path{
-  stroke: #BFBFBF;
+#contents #main-content01 .main-content-card-wrap .swiper-button-next.swiper-button-disabled svg path {
+  stroke: #bfbfbf;
 }
 
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next svg path,
-#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev svg path{
+#main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev svg path {
   stroke: rgba(22, 181, 114, 0.9);
 }
 
-#main-content01 .main-slide-banner-wrap .swiper-wrapper{
+#main-content01 .main-slide-banner-wrap .swiper-wrapper {
   box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.5);
-  background-color: #FFB9E5;
+  background-color: #ffb9e5;
 }
 
 /* ========================================
     메인페이지 수업자료 섹션 - 중등
   ======================================== */
 
-#main-class-resource{
+#main-class-resource {
   height: 407px;
   box-sizing: border-box;
   padding: 66px 0;
-  background-image: url('../img/middle/main-content-02-bg-middle.png');
+  background-image: url("../img/middle/main-content-02-bg-middle.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.main-class-resource-wrap{
+.main-class-resource-wrap {
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
-.main-class-resource-title-wrap{
+.main-class-resource-title-wrap {
   width: 347px;
   display: flex;
   flex-direction: column;
@@ -108,19 +105,19 @@
   padding: 16px 0;
 }
 
-.main-class-resource-title-wrap .title{
-  font-family: 'NanumSquareRound', 'Pretendard Variable', sans-serif;
+.main-class-resource-title-wrap .title {
+  font-family: "NanumSquareRound", "Pretendard Variable", sans-serif;
   font-weight: var(--fw-extrabold);
   font-size: 32px;
   color: #171719;
   line-height: 44px;
 }
-.main-class-resource-title-wrap .title img{
+.main-class-resource-title-wrap .title img {
   width: 30px;
   height: 30px;
 }
 
-.main-class-resource-title-wrap .main-class-resource-btn{
+.main-class-resource-title-wrap .main-class-resource-btn {
   border-radius: 50px;
   background-color: #fff;
   display: flex;
@@ -130,20 +127,20 @@
   box-sizing: border-box;
   text-decoration: none;
   width: fit-content;
-  padding: 18px 24px;
+  padding: 18px 24px 18px 30px;
 }
 
-.main-class-resource-title-wrap .main-class-resource-btn p{
+.main-class-resource-title-wrap .main-class-resource-btn p {
   font-size: 18px;
   font-weight: var(--fw-medium);
   color: #171719;
 }
 
-.main-class-resource-title-wrap .main-class-resource-btn svg path{
+.main-class-resource-title-wrap .main-class-resource-btn svg path {
   stroke: #313131;
 }
 
-.main-class-resource-slide-wrap{
+.main-class-resource-slide-wrap {
   padding: 48px;
   display: flex;
   flex-direction: column;
@@ -153,7 +150,7 @@
   background-color: #fff;
   border-radius: 32px;
   width: 934px;
-  border: 1px solid #F2F2F2;
+  border: 1px solid #f2f2f2;
   box-sizing: border-box;
   box-shadow: 0 10px 50px rgba(151, 151, 151, 0.2);
   backdrop-filter: blur(4px);
@@ -161,16 +158,16 @@
   position: relative;
 }
 
-.main-class-resource-slide-wrap .tabs{
+.main-class-resource-slide-wrap .tabs {
   display: flex;
   justify-content: space-between;
   gap: 6px;
 }
 
-.main-class-resource-slide-wrap .tabs .tab{
+.main-class-resource-slide-wrap .tabs .tab {
   padding: 16px 20px;
   border-radius: 50px;
-  background-color: #F7F9FA;
+  background-color: #f7f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,27 +177,27 @@
   height: 43px;
 }
 
-.main-class-resource-slide-wrap .tabs .tab.active{
-  background-color: #4DE5A5;
+.main-class-resource-slide-wrap .tabs .tab.active {
+  background-color: #4de5a5;
 }
 
-.main-class-resource-slide-wrap .tabs .tab p{
+.main-class-resource-slide-wrap .tabs .tab p {
   font-size: 16px;
   font-family: "Pretendard Variable", sans-serif;
   font-weight: var(--fw-medium);
   color: #171719;
 }
 
-.main-class-resource-slide-wrap .main-class-resource-swiper-button-next{
+.main-class-resource-slide-wrap .main-class-resource-swiper-button-next {
   left: 98%;
 }
 
-.main-class-resource-slide-wrap .main-class-resource-swiper-button-prev{
+.main-class-resource-slide-wrap .main-class-resource-swiper-button-prev {
   right: 98%;
 }
 
 .main-class-resource-swiper-button-next,
-.main-class-resource-swiper-button-prev{
+.main-class-resource-swiper-button-prev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -216,17 +213,17 @@
   z-index: 99;
 }
 
-.main-class-resource-slide-wrap .swiper{
+.main-class-resource-slide-wrap .swiper {
   width: 100%;
 }
 
-.main-class-resource-slide-wrap .main-class-resource-download-wrap{
+.main-class-resource-slide-wrap .main-class-resource-download-wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.main-class-resource-slide-wrap .main-class-resource-download-item{
+.main-class-resource-slide-wrap .main-class-resource-download-item {
   display: flex;
   padding: 14px 14px 14px 18px;
   width: 203px;
@@ -236,13 +233,13 @@
   align-items: center;
 }
 
-.download-item-title-wrap{
+.download-item-title-wrap {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.download-item-title-wrap p{
+.download-item-title-wrap p {
   font-size: 15px;
   font-weight: var(--fw-medium);
   color: #2b2b2b;
@@ -252,7 +249,7 @@
   overflow: hidden;
 }
 
-.file-icon-wrap{
+.file-icon-wrap {
   width: 24px;
   height: 24px;
   background-color: #efefef;
@@ -262,55 +259,54 @@
   align-items: center;
 }
 
-.main-class-resource-title-wrap .title span{
-  color: #16B572;
+.main-class-resource-title-wrap .title span {
+  color: #16b572;
 }
 
 /* ========================================
     메인페이지 다섯번째 섹션
   ======================================== */
 
-#bottom-board-section{
-  background-image: url('../img/bottom-board-section-bg-middle-high.png');
+#bottom-board-section {
+  background-image: url("../img/bottom-board-section-bg-middle-high.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-#main-content05 .main-content05-container .main-content-detail-tag{
-  background: #78EFBD;
+#main-content05 .main-content05-container .main-content-detail-tag {
+  background: #78efbd;
 }
 
-
-.main-content05-swiper-wrap .swiper-slide.swiper-slide-active img{
-  border: 2px solid #4DE5A5;
+.main-content05-swiper-wrap .swiper-slide.swiper-slide-active img {
+  border: 2px solid #4de5a5;
 }
 
-.main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag{
-  background-color: #4DE5A5;
+.main-content05-swiper-wrap .swiper-slide-active .main-content-swiper-detail-tag {
+  background-color: #4de5a5;
 }
 
-#main-content05 .main-content05-container .main-content-detail-subtitle{  
-  color: #27B397;
+#main-content05 .main-content05-container .main-content-detail-subtitle {
+  color: #27b397;
 }
 
 /* ===============================================
     메인페이지 여섯번째 섹션 - B면, 유튜브 영역
   ================================================ */
 
-#main-content06 .teacher-desc{
+#main-content06 .teacher-desc {
   background-color: rgba(77, 229, 165, 0.8);
 }
 
-.service-center-wrap .service-center-top-wrap .number{
-  color: #16B572;
+.service-center-wrap .service-center-top-wrap .number {
+  color: #16b572;
 }
 
-.service-center-bottom-wrap .serivce-remote-btn{
-  background-color: #4DE5A5;
+.service-center-bottom-wrap .serivce-remote-btn {
+  background-color: #4de5a5;
 }
 
-#contents .main-content-board-top-wrap .more-btn:hover{
-  background-color: #4DE5A5;
+#contents .main-content-board-top-wrap .more-btn:hover {
+  background-color: #4de5a5;
 }
 
 /* ========================================
@@ -318,21 +314,21 @@
   ======================================== */
 
 .menu-header {
-  background-color: #4DE5A5;
+  background-color: #4de5a5;
 }
 
-.cert-btn{
-  background-color: #2BC886;
+.cert-btn {
+  background-color: #2bc886;
 }
 
-.login-btn{
-  background-color: #2BC886;
+.login-btn {
+  background-color: #2bc886;
 }
 
-#quickMenu.quick-menu.collapsed .menu-item::before{
-  background-color: #4DE5A5;
+#quickMenu.quick-menu.collapsed .menu-item::before {
+  background-color: #4de5a5;
 }
 
-#quickMenu.quick-menu.collapsed .menu-item::after{
-  border-left:8px solid #4DE5A5;
+#quickMenu.quick-menu.collapsed .menu-item::after {
+  border-left: 8px solid #4de5a5;
 }
