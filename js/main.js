@@ -51,15 +51,19 @@ document
     const tags = slide.querySelectorAll(".tag:not(.disabled,.setting)");
     const imgs = slide.querySelectorAll("img[data-book]");
 
-    // 초기화: active 태그 찾기
+    // 초기 active 태그
     const activeTag = slide.querySelector(".tag.active");
     const activeBook = activeTag ? activeTag.getAttribute("data-book") : null;
 
     imgs.forEach((img) => {
+      const cardImg = img.closest(".card-img");
+
       if (img.getAttribute("data-book") === activeBook) {
         img.style.display = "block";
+        if (cardImg) cardImg.style.display = "block";
       } else {
         img.style.display = "none";
+        if (cardImg) cardImg.style.display = "none";
       }
     });
 
@@ -68,21 +72,26 @@ document
       tag.addEventListener("click", () => {
         const book = tag.getAttribute("data-book");
 
-        // 태그 active 처리
+        // tag active 처리
         tags.forEach((t) => t.classList.remove("active"));
         tag.classList.add("active");
 
-        // 이미지 표시
+        // 이미지 + 부모 card-img 제어
         imgs.forEach((img) => {
+          const cardImg = img.closest(".card-img");
+
           if (img.getAttribute("data-book") === book) {
             img.style.display = "block";
+            if (cardImg) cardImg.style.display = "block";
           } else {
             img.style.display = "none";
+            if (cardImg) cardImg.style.display = "none";
           }
         });
       });
     });
   });
+
 
 /* ========================================
    메인페이지 첫번째 섹션
