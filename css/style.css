@@ -364,7 +364,7 @@ a {
 }
 
 #header.is-sticky .sticky-wrap {
-  gap: 24px;
+  
   display: flex;
   align-items: center;
 }
@@ -401,8 +401,10 @@ a {
 
 #header.is-sticky .bottom-nav {
   height: 96px;
-  padding: 24px;
+  padding: 24px 0;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 #header.is-sticky .bottom-nav .nav-item-wrapper {
@@ -414,9 +416,9 @@ a {
 #header.is-sticky .sticky-logo-container img,
 #header.is-sticky .sticky-logo-container {
   width: 170px;
-  height: 49px;
+  
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-16px);
 }
 
 /* ========================================
