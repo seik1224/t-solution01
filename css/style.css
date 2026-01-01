@@ -416,9 +416,8 @@ a {
 #header.is-sticky .sticky-logo-container img,
 #header.is-sticky .sticky-logo-container {
   width: 170px;
-  
   opacity: 1;
-  transform: translateY(-16px);
+  transform: translateY(-17px);
 }
 
 /* ========================================
