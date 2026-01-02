@@ -45,6 +45,7 @@ window.addEventListener("scroll", () => {
     메인페이지 첫번째 섹션
     - 내 교과서 카드 슬라이드
   ======================================== */
+let currentTagIndex = 0;
 
 const swiper = new Swiper("#main-content01 .main-content-card-wrap .swiper", {
   slidesPerView: 1,
@@ -58,6 +59,13 @@ const swiper = new Swiper("#main-content01 .main-content-card-wrap .swiper", {
     el: "#main-content01 .main-content-card-wrap .swiper-pagination",
     clickable: true,
   },
+
+  on: {
+    slideChange: () => {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      applyTagByIndex(activeSlide, currentTagIndex);
+    },
+  },
 });
 
 document
@@ -66,46 +74,35 @@ document
     const tags = slide.querySelectorAll(".tag:not(.disabled,.setting)");
     const imgs = slide.querySelectorAll("img[data-book]");
 
-    // 초기 active 태그
-    const activeTag = slide.querySelector(".tag.active");
-    const activeBook = activeTag ? activeTag.getAttribute("data-book") : null;
+    applyTagByIndex(slide, currentTagIndex);
 
-    imgs.forEach((img) => {
-      const cardImg = img.closest(".card-img");
-
-      if (img.getAttribute("data-book") === activeBook) {
-        img.style.display = "block";
-        if (cardImg) cardImg.style.display = "block";
-      } else {
-        img.style.display = "none";
-        if (cardImg) cardImg.style.display = "none";
-      }
-    });
-
-    // 클릭 이벤트
-    tags.forEach((tag) => {
+    tags.forEach((tag, index) => {
       tag.addEventListener("click", () => {
-        const book = tag.getAttribute("data-book");
-
-        // tag active 처리
-        tags.forEach((t) => t.classList.remove("active"));
-        tag.classList.add("active");
-
-        // 이미지 + 부모 card-img 제어
-        imgs.forEach((img) => {
-          const cardImg = img.closest(".card-img");
-
-          if (img.getAttribute("data-book") === book) {
-            img.style.display = "block";
-            if (cardImg) cardImg.style.display = "block";
-          } else {
-            img.style.display = "none";
-            if (cardImg) cardImg.style.display = "none";
-          }
-        });
+        currentTagIndex = index;
+        applyTagByIndex(slide, currentTagIndex);
       });
     });
   });
+
+function applyTagByIndex(slide, index) {
+  const tags = slide.querySelectorAll(".tag:not(.disabled,.setting)");
+  const imgs = slide.querySelectorAll("img[data-book]");
+
+  if (!tags[index]) return;
+
+  const book = tags[index].getAttribute("data-book");
+
+  tags.forEach((t) => t.classList.remove("active"));
+  tags[index].classList.add("active");
+
+  imgs.forEach((img) => {
+    const cardImg = img.closest(".card-img");
+    const isMatch = img.getAttribute("data-book") === book;
+
+    img.style.display = isMatch ? "block" : "none";
+    if (cardImg) cardImg.style.display = isMatch ? "block" : "none";
+  });
+}
 
 
 /* ========================================
