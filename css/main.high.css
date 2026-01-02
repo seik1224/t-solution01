@@ -287,6 +287,29 @@
   background-color: #b79dff;
 }
 
+#main-content05 .main-content05-swiper-wrap .swiper-slide:hover img{
+  border: 2px solid #B79DFF;
+  box-sizing: border-box;
+}
+
+#main-content05 .main-content05-swiper-wrap .swiper-slide:hover .main-content-swiper-detail-tag{
+  background-color: #B79DFF;
+}
+
+#main-content05 .main-content05-swiper-wrap .swiper-slide:hover .main-content-swiper-detail-tag{
+  color: #171719;
+}
+
+.main-content05-swiper-wrap .swiper-slide.is-active img {
+  border: 2px solid #B79DFF;
+}
+
+.main-content05-swiper-wrap .is-active .main-content-swiper-detail-tag{
+  background-color: #B79DFF;
+  color: #171719;
+}
+
+
 /* ========================================
     메인페이지 여섯번째 섹션
   ======================================== */
@@ -313,6 +336,7 @@
 
 .login-btn {
   background-color: #9c7bfb;
+  color: #fff;
 }
 
 .cert-btn {

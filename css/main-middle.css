@@ -289,6 +289,29 @@
   color: #27b397;
 }
 
+#main-content05 .main-content05-swiper-wrap .swiper-slide:hover img{
+  border: 2px solid #4de5a5;
+  box-sizing: border-box;
+}
+
+#main-content05 .main-content05-swiper-wrap .swiper-slide:hover .main-content-swiper-detail-tag{
+  background-color: #4de5a5;
+}
+
+#main-content05 .main-content05-swiper-wrap .swiper-slide:hover .main-content-swiper-detail-tag{
+  color: #171719;
+}
+
+.main-content05-swiper-wrap .swiper-slide.is-active img {
+  border: 2px solid #4de5a5;
+}
+
+.main-content05-swiper-wrap .is-active .main-content-swiper-detail-tag{
+  background-color: #4de5a5;
+  color: #171719;
+}
+
+
 /* ===============================================
     메인페이지 여섯번째 섹션 - B면, 유튜브 영역
   ================================================ */
@@ -323,6 +346,7 @@
 
 .login-btn {
   background-color: #2bc886;
+  color: #fff;
 }
 
 #quickMenu.quick-menu.collapsed .menu-item::before {

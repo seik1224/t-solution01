@@ -124,6 +124,7 @@ a {
   z-index: 9999;
   margin: auto;
   padding-bottom: 77px;
+  box-shadow: 0 4px 40px rgba(45, 43, 43, 0.08);
 }
 
 /* ========================================
