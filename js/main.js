@@ -363,7 +363,10 @@ if (content04) {
     autoSlideTimer = null;
   }
 
-  startAutoSlide();
+  // startAutoSlide();
+  
+  // autoplay
+  
 
   carouselContainer.addEventListener("mouseenter", stopAutoSlide);
   carouselContainer.addEventListener("mouseleave", startAutoSlide);
@@ -393,251 +396,255 @@ if (content04) {
   
 const section = document.querySelector("#main-content05");
 
-const swiperWrap = section.querySelector(".main-content05-swiper-wrap");
-const wrapper = swiperWrap.querySelector(".swiper-wrapper");
-const slides = Array.from(wrapper.querySelectorAll(".swiper-slide"));
+if(section){
 
-const nextBtn = section.querySelector(".main-content-05-swiper-button-next");
-const prevBtn = section.querySelector(".main-content-05-swiper-button-prev");
+  const swiperWrap = section.querySelector(".main-content05-swiper-wrap");
+  const wrapper = swiperWrap.querySelector(".swiper-wrapper");
+  const slides = Array.from(wrapper.querySelectorAll(".swiper-slide"));
 
-/* detail */
-const detailImg = section.querySelector(".main-content-detail img");
-const detailSubtitle = section.querySelector(".main-content-detail-subtitle p");
-const detailTitle = section.querySelector(".main-content-detail-title p");
-const detailDesc = section.querySelector(".main-content-detail-desc p");
-const detailTag = section.querySelector(".main-content-detail-tag p");
+  const nextBtn = section.querySelector(".main-content-05-swiper-button-next");
+  const prevBtn = section.querySelector(".main-content-05-swiper-button-prev");
 
-
-/* =========================
-   설정
-========================= */
-const VISIBLE_COUNT = 4;   // 7로 바꿔도 OK
-const SLIDE_GAP = 48;
-const TOTAL = slides.length;
-
-let startIndex = 0;
-let isAnimating = false;
+  /* detail */
+  const detailImg = section.querySelector(".main-content-detail img");
+  const detailSubtitle = section.querySelector(".main-content-detail-subtitle p");
+  const detailTitle = section.querySelector(".main-content-detail-title p");
+  const detailDesc = section.querySelector(".main-content-detail-desc p");
+  const detailTag = section.querySelector(".main-content-detail-tag p");
 
 
-/* =========================
-   초기화
-========================= */
-render();
-updateDetail(startIndex);
+  /* =========================
+    설정
+  ========================= */
+  const VISIBLE_COUNT = 4;   // 7로 바꿔도 OK
+  const SLIDE_GAP = 48;
+  const TOTAL = slides.length;
+
+  let startIndex = 0;
+  let isAnimating = false;
 
 
-/* =========================
-   렌더링
-========================= */
-function render() {
-  wrapper.innerHTML = "";
-
-  for (let i = 0; i < VISIBLE_COUNT; i++) {
-    const index = (startIndex + i) % TOTAL;
-    const slide = slides[index];
-
-    slide.classList.toggle("is-active", i === 0);
-    wrapper.appendChild(slide);
-  }
-}
+  /* =========================
+    초기화
+  ========================= */
+  render();
+  updateDetail(startIndex);
 
 
-/* =========================
-   Detail 업데이트
-========================= */
-function updateDetail(index) {
-  const slide = slides[index];
-  if (!slide) return;
+  /* =========================
+    렌더링
+  ========================= */
+  function render() {
+    wrapper.innerHTML = "";
 
-  const img = slide.querySelector("img");
-  if (img) {
-    detailImg.src = img.src;
-    detailImg.alt = img.alt || "";
-  }
+    for (let i = 0; i < VISIBLE_COUNT; i++) {
+      const index = (startIndex + i) % TOTAL;
+      const slide = slides[index];
 
-  const subtitle = slide.querySelector(".main-content-swiper-detail-subtitle p");
-  const title = slide.querySelector(".main-content-swiper-detail-title p");
-  const desc = slide.querySelector(".main-content-swiper-detail-desc p");
-  const tag = slide.querySelector(".main-content-swiper-detail-tag p");
-
-  if (subtitle) detailSubtitle.textContent = subtitle.textContent;
-  if (title) detailTitle.textContent = title.textContent;
-  if (desc) detailDesc.textContent = desc.textContent;
-  if (tag) detailTag.textContent = tag.textContent;
-}
-
-
-/* =========================
-   슬라이드 너비
-========================= */
-function getSlideWidth() {
-  const slide = wrapper.querySelector(".swiper-slide");
-  if (!slide) return 0;
-  return slide.offsetWidth + SLIDE_GAP;
-}
-
-/* =========================
-   여러 칸 한번에 이동
-========================= */
-function moveToIndexByClick(visibleIndex, targetIndex) {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  const distance = getSlideWidth() * visibleIndex;
-
-  wrapper.style.transition = "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)";
-  wrapper.style.transform = `translateX(-${distance}px)`;
-
-  wrapper.addEventListener(
-    "transitionend",
-    () => {
-      startIndex = targetIndex;
-      wrapper.style.transition = "none";
-      wrapper.style.transform = "translateX(0)";
-      render();
-      updateDetail(startIndex);
-
-      isAnimating = false;
-    },
-    { once: true }
-  );
-}
-
-/* =========================
-   Prev / Next
-========================= */
-nextBtn.addEventListener("click", () => {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  wrapper.style.transition = "transform 0.35s ease";
-  wrapper.style.transform = `translateX(-${getSlideWidth()}px)`;
-
-  wrapper.addEventListener(
-    "transitionend",
-    () => {
-      startIndex = (startIndex + 1) % TOTAL;
-      wrapper.style.transition = "none";
-      wrapper.style.transform = "translateX(0)";
-      render();
-      updateDetail(startIndex);
-      isAnimating = false;
-    },
-    { once: true }
-  );
-});
-
-
-prevBtn.addEventListener("click", () => {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  wrapper.style.transition = "transform 0.35s ease";
-  wrapper.style.transform = `translateX(${getSlideWidth()}px)`;
-
-  wrapper.addEventListener(
-    "transitionend",
-    () => {
-      startIndex = (startIndex - 1 + TOTAL) % TOTAL;
-      wrapper.style.transition = "none";
-      wrapper.style.transform = "translateX(0)";
-      render();
-      updateDetail(startIndex);
-      isAnimating = false;
-    },
-    { once: true }
-  );
-});
-
-
-/* =========================
-   Slide Click
-   - 항상 오른쪽
-   - 한번에 이동
-========================= */
-slides.forEach((slide, realIndex) => {
-  slide.addEventListener("click", () => {
-    if (isAnimating) return;
-
-    const visibleSlides = wrapper.querySelectorAll(".swiper-slide");
-    let visibleIndex = -1;
-
-    visibleSlides.forEach((el, i) => {
-      if (el === slide) visibleIndex = i;
-    });
-
-    if (visibleIndex <= 0) return;
-
-    moveToIndexByClick(visibleIndex, realIndex);
-  });
-});
-
-/* =========================
-  AUTO play
-========================= */
-let autoTimer = null;
-const AUTO_DELAY = 4000;
-
-function autoLoop() {
-  autoTimer = setTimeout(() => {
-    if (!isAnimating) {
-      nextBtn.click();
+      slide.classList.toggle("is-active", i === 0);
+      wrapper.appendChild(slide);
     }
-    autoLoop();
-  }, AUTO_DELAY);
-}
-
-autoLoop();
+  }
 
 
-/* =========================
-   수업 자료 섹션
-   - 중등
-   - 고등
-========================= */
+  /* =========================
+    Detail 업데이트
+  ========================= */
+  function updateDetail(index) {
+    const slide = slides[index];
+    if (!slide) return;
 
-const resourceSection = document.querySelector("#main-class-resource");
+    const img = slide.querySelector("img");
+    if (img) {
+      detailImg.src = img.src;
+      detailImg.alt = img.alt || "";
+    }
 
-if (resourceSection) {
-  const swiperEl = resourceSection.querySelector(".swiper");
-  const resourceTabs = resourceSection.querySelectorAll(
-    ".main-class-resource-slide-wrap .tab"
-  );
+    const subtitle = slide.querySelector(".main-content-swiper-detail-subtitle p");
+    const title = slide.querySelector(".main-content-swiper-detail-title p");
+    const desc = slide.querySelector(".main-content-swiper-detail-desc p");
+    const tag = slide.querySelector(".main-content-swiper-detail-tag p");
 
-  if (swiperEl) {
-    const resourceSwiper = new Swiper(swiperEl, {
-      slidesPerView: 1,
-      loop: true,
-      navigation: {
-        nextEl: ".main-class-resource-swiper-button-next",
-        prevEl: ".main-class-resource-swiper-button-prev",
+    if (subtitle) detailSubtitle.textContent = subtitle.textContent;
+    if (title) detailTitle.textContent = title.textContent;
+    if (desc) detailDesc.textContent = desc.textContent;
+    if (tag) detailTag.textContent = tag.textContent;
+  }
+
+
+  /* =========================
+    슬라이드 너비
+  ========================= */
+  function getSlideWidth() {
+    const slide = wrapper.querySelector(".swiper-slide");
+    if (!slide) return 0;
+    return slide.offsetWidth + SLIDE_GAP;
+  }
+
+  /* =========================
+    여러 칸 한번에 이동
+  ========================= */
+  function moveToIndexByClick(visibleIndex, targetIndex) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const distance = getSlideWidth() * visibleIndex;
+
+    wrapper.style.transition = "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)";
+    wrapper.style.transform = `translateX(-${distance}px)`;
+
+    wrapper.addEventListener(
+      "transitionend",
+      () => {
+        startIndex = targetIndex;
+        wrapper.style.transition = "none";
+        wrapper.style.transform = "translateX(0)";
+        render();
+        updateDetail(startIndex);
+
+        isAnimating = false;
       },
-    });
+      { once: true }
+    );
+  }
 
-    if (resourceTabs.length) {
-      resourceTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const index = Number(tab.dataset.index);
-          if (Number.isNaN(index)) return;
+  /* =========================
+    Prev / Next
+  ========================= */
+  nextBtn.addEventListener("click", () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    wrapper.style.transition = "transform 0.35s ease";
+    wrapper.style.transform = `translateX(-${getSlideWidth()}px)`;
+
+    wrapper.addEventListener(
+      "transitionend",
+      () => {
+        startIndex = (startIndex + 1) % TOTAL;
+        wrapper.style.transition = "none";
+        wrapper.style.transform = "translateX(0)";
+        render();
+        updateDetail(startIndex);
+        isAnimating = false;
+      },
+      { once: true }
+    );
+  });
+
+
+  prevBtn.addEventListener("click", () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    wrapper.style.transition = "transform 0.35s ease";
+    wrapper.style.transform = `translateX(${getSlideWidth()}px)`;
+
+    wrapper.addEventListener(
+      "transitionend",
+      () => {
+        startIndex = (startIndex - 1 + TOTAL) % TOTAL;
+        wrapper.style.transition = "none";
+        wrapper.style.transform = "translateX(0)";
+        render();
+        updateDetail(startIndex);
+        isAnimating = false;
+      },
+      { once: true }
+    );
+  });
+
+
+  /* =========================
+    Slide Click
+    - 항상 오른쪽
+    - 한번에 이동
+  ========================= */
+  slides.forEach((slide, realIndex) => {
+    slide.addEventListener("click", () => {
+      if (isAnimating) return;
+
+      const visibleSlides = wrapper.querySelectorAll(".swiper-slide");
+      let visibleIndex = -1;
+
+      visibleSlides.forEach((el, i) => {
+        if (el === slide) visibleIndex = i;
+      });
+
+      if (visibleIndex <= 0) return;
+
+      moveToIndexByClick(visibleIndex, realIndex);
+    });
+  });
+
+  /* =========================
+    AUTO play
+  ========================= */
+  let autoTimer = null;
+  const AUTO_DELAY = 4000;
+
+  function autoLoop() {
+    autoTimer = setTimeout(() => {
+      if (!isAnimating) {
+        nextBtn.click();
+      }
+      autoLoop();
+    }, AUTO_DELAY);
+  }
+
+  autoLoop();
+
+
+  /* =========================
+    수업 자료 섹션
+    - 중등
+    - 고등
+  ========================= */
+
+  const resourceSection = document.querySelector("#main-class-resource");
+
+  if (resourceSection) {
+    const swiperEl = resourceSection.querySelector(".swiper");
+    const resourceTabs = resourceSection.querySelectorAll(
+      ".main-class-resource-slide-wrap .tab"
+    );
+
+    if (swiperEl) {
+      const resourceSwiper = new Swiper(swiperEl, {
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+          nextEl: ".main-class-resource-swiper-button-next",
+          prevEl: ".main-class-resource-swiper-button-prev",
+        },
+      });
+
+      if (resourceTabs.length) {
+        resourceTabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            const index = Number(tab.dataset.index);
+            if (Number.isNaN(index)) return;
+
+            resourceTabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            resourceSwiper.slideToLoop(index);
+          });
+        });
+
+        resourceSwiper.on("slideChange", () => {
+          const currentIndex = resourceSwiper.realIndex;
+          if (!resourceTabs[currentIndex]) return;
 
           resourceTabs.forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-
-          resourceSwiper.slideToLoop(index);
+          resourceTabs[currentIndex].classList.add("active");
         });
-      });
-
-      resourceSwiper.on("slideChange", () => {
-        const currentIndex = resourceSwiper.realIndex;
-        if (!resourceTabs[currentIndex]) return;
-
-        resourceTabs.forEach((t) => t.classList.remove("active"));
-        resourceTabs[currentIndex].classList.add("active");
-      });
+      }
     }
+    
   }
-  
 }
+
 
 /* ========================================
    퀵메뉴
