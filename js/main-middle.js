@@ -2,64 +2,75 @@
     메인페이지 첫번째 섹션
     - 내 교과서 카드 슬라이드
   ======================================== */
-let currentTagIndex = 0;
-
-const swiper = new Swiper("#main-content01 .main-content-card-wrap .swiper", {
+// Swiper 초기화
+const socialSwiper = new Swiper(".swiper-01", {
   slidesPerView: 1,
-  spaceBetween: 20,
-
+  autoplay: false,
+  allowTouchMove: false,
   navigation: {
-    nextEl: "#main-content01 .main-content-card-wrap .swiper-button-next",
-    prevEl: "#main-content01 .main-content-card-wrap .swiper-button-prev",
+    prevEl: ".swiper-01 .swiper-button-prev",
+    nextEl: ".swiper-01 .swiper-button-next",
   },
   pagination: {
-    el: "#main-content01 .main-content-card-wrap .swiper-pagination",
-    clickable: true,
+    el: ".swiper-01 .swiper-pagination",
   },
-
-  on: {
-    slideChange: () => {
-      const activeSlide = swiper.slides[swiper.activeIndex];
-      applyTagByIndex(activeSlide, currentTagIndex);
-    },
-  },
+  observer: true,
+  observeParents: true,
 });
 
-document
-  .querySelectorAll("#main-content01 .main-content-card-wrap .swiper-slide")
-  .forEach((slide) => {
-    const tags = slide.querySelectorAll(".tag:not(.disabled,.setting)");
-    const imgs = slide.querySelectorAll("img[data-book]");
+const scienceSwiper = new Swiper(".swiper-02", {
+  slidesPerView: 1,
+  autoplay: false,
+  allowTouchMove: false,
+  navigation: {
+    nextEl: ".swiper-02 .swiper-button-next",
+    prevEl: ".swiper-02 .swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-02 .swiper-pagination",
+    clickable: true,
+  },
+  observer: true,
+  observeParents: true,
+});
 
-    applyTagByIndex(slide, currentTagIndex);
+const mathSwiper = new Swiper(".swiper-03", {
+  slidesPerView: 1,
+  autoplay: false,
+  allowTouchMove: false,
+  navigation: {
+    nextEl: ".swiper-03 .swiper-button-next",
+    prevEl: ".swiper-03 .swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-03 .swiper-pagination",
+    clickable: true,
+  },
+  observer: true,
+  observeParents: true,
+});
 
-    tags.forEach((tag, index) => {
-      tag.addEventListener("click", () => {
-        currentTagIndex = index;
-        applyTagByIndex(slide, currentTagIndex);
-      });
+// 태그 클릭 이벤트
+const tags = document.querySelectorAll(".tag:not(.disabled)");
+const subjects = document.querySelectorAll(".swiper-subject");
+
+tags.forEach(tag => {
+  tag.addEventListener("click", () => {
+    // active 클래스 토글
+    tags.forEach(t => t.classList.remove("active"));
+    tag.classList.add("active");
+
+    const target = tag.dataset.subject;
+
+    subjects.forEach(sub => {
+      if(sub.classList.contains(`swiper-${target}`)) {
+        sub.classList.add('active');
+      } else {
+        sub.classList.remove('active');
+      }
     });
   });
-
-function applyTagByIndex(slide, index) {
-  const tags = slide.querySelectorAll(".tag:not(.disabled,.setting)");
-  const imgs = slide.querySelectorAll("img[data-book]");
-
-  if (!tags[index]) return;
-
-  const book = tags[index].getAttribute("data-book");
-
-  tags.forEach((t) => t.classList.remove("active"));
-  tags[index].classList.add("active");
-
-  imgs.forEach((img) => {
-    const cardImg = img.closest(".card-img");
-    const isMatch = img.getAttribute("data-book") === book;
-
-    img.style.display = isMatch ? "block" : "none";
-    if (cardImg) cardImg.style.display = isMatch ? "block" : "none";
-  });
-}
+});
 
 
 /* ========================================

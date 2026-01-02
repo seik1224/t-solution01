@@ -505,7 +505,8 @@ a {
   width: 32px;
   height: 32px;
   border-radius: 50px;
-  top: 41%;
+  top: 60%;
+  transform: translateY(-50%);
   background-color: #fff1a1;
 }
 
@@ -525,13 +526,14 @@ a {
 }
 
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-next {
-  right: 22px;
+  right: 0;
 }
 
 #main-content01 .main-content01-wrapper .main-content-card-wrap .swiper-button-prev {
-  left: 22px;
+  left: 0;
 }
 
+#main-content01 .main-content-card-wrap .swiper-slide .card-img,
 #main-content01 .main-content-card-wrap .swiper-slide img {
   width: 148px;
   height: 208px;
@@ -542,7 +544,6 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 28px 0;
 }
 
 #main-content01 .main-content-card-wrap .swiper-slide .slide-img-wrap .card-img {
@@ -578,6 +579,33 @@ a {
   text-decoration: none;
 }
 
+.swiper-subject{
+  width: 100%;
+  display: none;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-subject.active{
+  display: flex;
+}
+
+.swiper-subject .swiper-wrapper{
+  padding-bottom: 12px;
+}
+
+#main-content01 .swiper-subject .swiper-pagination-bullets{
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+#main-content01 .swiper-subject .swiper-pagination-bullet{
+  width: 6px;
+  height: 6px;
+  margin: 0;
+}
 #main-content01 .main-content-card-wrap .swiper-slide .button-wrap .button a p {
   width: 80px;
   height: 32px;
@@ -592,26 +620,35 @@ a {
   border-radius: 12px;
 }
 
-#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet {
+#main-content01 .main-content-card-wrap .swiper-pagination{
+  text-align: center;
+  position: relative !important;
+  top: auto;
+  bottom: auto;
+  left: auto;
+
+}
+
+#main-content01 .main-content-card-wrap .swiper-pagination-bullet.swiper-pagination-bullet {
   width: 6px;
   height: 6px;
   background-color: #d7dde4;
   opacity: 1;
 }
 
-#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+#main-content01 .main-content-card-wrap .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 16px;
   height: 6px;
   border-radius: 200px;
   background-color: #fdd700;
 }
 
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap {
+#main-content01 .main-content-card-wrap .tag-wrap {
   display: flex;
   gap: 8px;
 }
 
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag {
+#main-content01 .main-content-card-wrap .tag-wrap .tag {
   background-color: #fff1a1;
   padding: 12px 0;
   border-radius: 50px;
@@ -624,14 +661,31 @@ a {
   cursor: pointer;
   transition: 0.2s;
 }
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag.disabled {
+#main-content01 .main-content-card-wrap .tag-wrap .tag.disabled {
   background-color: #f5f5f5;
   cursor: default;
 }
 
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:not(.disabled):hover,
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:not(.disabled).active {
+#main-content01 .main-content-card-wrap .tag-wrap .tag:not(.disabled):hover,
+#main-content01 .main-content-card-wrap .tag-wrap .tag:not(.disabled).active {
   background-color: #fdd700;
+}
+
+#main-content01 .main-content-card-wrap .swiper-container{
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+  
+  overflow: hidden;
+  padding: 24px;
+}
+
+#main-content01 .main-content-card-wrap .swiper-container .swiper{
+  width: 360px !important;
+  position: relative;
 }
 
 #main-content01 .main-content-card-wrap .swiper .swiper-pagination {

@@ -44,7 +44,7 @@
     고등 메인페이지 첫번째 섹션
   ======================================== */
 
-#main-content01 .main-content-card-wrap .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+#main-content01 .main-content-card-wrap .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #b79dff;
 }
 
@@ -53,10 +53,11 @@
   width: 32px;
   height: 32px;
   border-radius: 50px;
-  top: 41%;
+  top: 60%;
+  transform: translateY(-50%);
   background-color: #efe6ff;
 }
-#contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:hover,
+#contents #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:not(.disabled):hover,
 #main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag:not(.disabled).active {
   background-color: #b79dff;
 }
@@ -71,8 +72,13 @@
   stroke: rgba(136, 94, 255, 0.9);
 }
 
-#main-content01 .main-content-card-wrap .swiper-slide .tag-wrap .tag {
+#main-content01 .main-content-card-wrap .tag-wrap .tag {
   background-color: #efe6ff;
+}
+
+#contents #main-content01 .main-content-card-wrap .tag-wrap .tag:not(.disabled):hover,
+#contents #main-content01 .main-content-card-wrap .tag-wrap .tag.active{
+  background-color: #B79DFF;
 }
 
 /* ========================================
