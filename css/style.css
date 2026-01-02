@@ -1178,6 +1178,7 @@ a.main-content02-img {
   background-image: url("../img/elementary/main-content04-bg.png");
   background-color: #fff9c2;
   height: 694px;
+  user-select: none;
 }
 
 #main-content04 .inner {

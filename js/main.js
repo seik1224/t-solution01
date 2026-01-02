@@ -185,8 +185,6 @@ if (content03) {
    메인페이지 네번째 섹션
    - 로고 슬라이드
   ========================================  */
-
-
 const content04 = document.querySelector("#main-content04");
 
 if (content04) {
@@ -197,11 +195,12 @@ if (content04) {
 
   const slidesPerView = 7;
   const spaceBetween = 30;
-  const duration = 400;
+  const duration = 350;
 
   const videoWraps = content04.querySelectorAll(".main-content04-video-wrap");
 
   let slides = Array.from(wrapper.children);
+  let activeIndex = 0;
   let isAnimating = false;
 
   /* =============================
@@ -224,11 +223,11 @@ if (content04) {
      VIDEO SYNC
   ============================= */
   function syncVideo() {
-    const activeSlide = slides[0];
+    const activeSlide = slides[activeIndex];
     if (!activeSlide) return;
 
-    const tabClass = [...activeSlide.classList].find(cls =>
-      cls.startsWith("tab-")
+    const tabClass = [...activeSlide.classList].find(c =>
+      c.startsWith("tab-")
     );
     if (!tabClass) return;
 
@@ -239,65 +238,53 @@ if (content04) {
 
   /* =============================
      CLASS CONTROL
-     - 보이는 영역만 show
-     - 맨 앞만 active
   ============================= */
   function updateClasses() {
     slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === 0);
+      slide.classList.toggle("active", i === activeIndex);
       slide.classList.toggle("show", i < slidesPerView);
     });
-
     syncVideo();
   }
-function moveBy(count) {
-  if (count <= 0 || isAnimating) return;
-
-  const width = getSlideWidth();
-  const moveX = -count * (width + spaceBetween);
-
-  isAnimating = true;
-
-  for (let i = 0; i < count; i++) {
-    slides[i]?.classList.remove("show");
-  }
-
-  for (let i = slidesPerView; i < slidesPerView + count; i++) {
-    slides[i]?.classList.add("show");
-  }
-
-  wrapper.style.transition = `transform ${duration}ms ease`;
-  wrapper.style.transform = `translateX(${moveX}px)`;
-
-  setTimeout(() => {
-    wrapper.style.transition = "none";
-    wrapper.style.transform = "translateX(0)";
-
-    for (let i = 0; i < count; i++) {
-      wrapper.appendChild(wrapper.firstElementChild);
-    }
-
-    slides = Array.from(wrapper.children);
-    updateClasses();
-    bindClick();
-
-    isAnimating = false;
-  }, duration);
-}
-
 
   /* =============================
-     PREV
+     SLIDE SHIFT (끝에서만)
   ============================= */
-  function prev() {
+  function shiftNext() {
+    if (isAnimating) return;
+
+    const width = getSlideWidth();
+    isAnimating = true;
+
+    slides[0].classList.remove("show");
+    slides[slidesPerView]?.classList.add("show");
+
+    wrapper.style.transition = `transform ${duration}ms ease`;
+    wrapper.style.transform = `translateX(-${width + spaceBetween}px)`;
+
+    setTimeout(() => {
+      wrapper.style.transition = "none";
+      wrapper.style.transform = "translateX(0)";
+      wrapper.appendChild(wrapper.firstElementChild);
+
+      slides = Array.from(wrapper.children);
+      activeIndex = slidesPerView - 1;
+
+      updateClasses();
+      bindClick();
+      isAnimating = false;
+    }, duration);
+  }
+
+  function shiftPrev() {
     if (isAnimating) return;
 
     const width = getSlideWidth();
     isAnimating = true;
 
     wrapper.insertBefore(wrapper.lastElementChild, wrapper.firstElementChild);
-
     slides = Array.from(wrapper.children);
+
     slides.forEach((slide, i) => {
       if (i >= slidesPerView) slide.classList.remove("show");
     });
@@ -312,7 +299,7 @@ function moveBy(count) {
     });
 
     setTimeout(() => {
-      slides = Array.from(wrapper.children);
+      activeIndex = 0;
       updateClasses();
       bindClick();
       isAnimating = false;
@@ -320,14 +307,39 @@ function moveBy(count) {
   }
 
   /* =============================
+     NEXT / PREV
+  ============================= */
+  function next() {
+    if (isAnimating) return;
+
+    if (activeIndex < slidesPerView - 1) {
+      activeIndex++;
+      updateClasses();
+    } else {
+      shiftNext();
+    }
+  }
+
+  function prev() {
+    if (isAnimating) return;
+
+    if (activeIndex > 0) {
+      activeIndex--;
+      updateClasses();
+    } else {
+      shiftPrev();
+    }
+  }
+
+  /* =============================
      CLICK
-     - 클릭 시 무조건 왼쪽 맨앞
   ============================= */
   function bindClick() {
     slides.forEach((slide, index) => {
       slide.onclick = () => {
-        if (isAnimating || index === 0) return;
-        moveBy(index);
+        if (isAnimating) return;
+        activeIndex = index;
+        updateClasses();
       };
     });
   }
@@ -339,7 +351,7 @@ function moveBy(count) {
   updateClasses();
   bindClick();
 
-  nextBtn?.addEventListener("click", () => moveBy(1));
+  nextBtn?.addEventListener("click", next);
   prevBtn?.addEventListener("click", prev);
 
   window.addEventListener("resize", () => {
@@ -347,8 +359,6 @@ function moveBy(count) {
     updateClasses();
   });
 }
-
-
 
 
 /* ========================================
