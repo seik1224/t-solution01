@@ -234,32 +234,6 @@ if (content02Wrap) {
    - 수업도구 슬라이드
   ========================================  */
 
-// const content03 = document.querySelector("#main-content03");
-
-// if (content03) {
-//   const swiperContainer = content03.querySelector(".swiper");
-//   const swiperWrapper = swiperContainer?.querySelector(".swiper-wrapper");
-
-//   if (swiperContainer && swiperWrapper) {
-//     const slides = swiperWrapper.querySelectorAll(".swiper-slide");
-
-//     slides.forEach((slide) => {
-//       swiperWrapper.appendChild(slide.cloneNode(true));
-//     });
-
-//     new Swiper(swiperContainer, {
-//       slidesPerView: 6,
-//       slidesPerGroup: 1,
-//       spaceBetween: 16,
-//       loop: true,
-//       loopAdditionalSlides: 14,
-//       navigation: {
-//         nextEl: ".main-content-03-swiper-button-next",
-//         prevEl: ".main-content-03-swiper-button-prev",
-//       },
-//     });
-//   }
-// }
 
 const content03 = document.querySelector("#main-content03");
 
@@ -373,7 +347,7 @@ if (content03) {
    - 로고 슬라이드
   ========================================  */
 
-  
+
 const content04 = document.querySelector("#main-content04");
 
 if (content04) {
@@ -431,7 +405,7 @@ if (content04) {
       }
 
       carouselWrapper.style.transform = `translateX(${translateX}px)`;
-      updateShowSlides(); // ⭐ 추가
+      updateShowSlides();
     }
 
     function nextSlide() {
@@ -530,6 +504,45 @@ if (content04) {
   if (firstLogo && firstVideo) {
     firstLogo.classList.add("active");
     firstVideo.classList.add("active");
+  }
+
+  /* =========================
+    AUTO SLIDE (추가)
+  ========================= */
+  const autoDelay = 3000; // ms
+  let autoSlideTimer = null;
+
+  function startAutoSlide() {
+    if (autoSlideTimer) return;
+    autoSlideTimer = setInterval(() => {
+      nextSlide(); // ← 네가 이미 만든 이동 함수
+    }, autoDelay);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = null;
+  }
+
+  startAutoSlide();
+
+  /* hover 시 정지 */
+  carouselContainer.addEventListener("mouseenter", stopAutoSlide);
+  carouselContainer.addEventListener("mouseleave", startAutoSlide);
+
+  /* 버튼 클릭 시 자동 타이머 리셋 */
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  }
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      stopAutoSlide();
+      startAutoSlide();
+    });
   }
 }
 
@@ -659,7 +672,6 @@ function moveToIndexByClick(visibleIndex, targetIndex) {
   );
 }
 
-
 /* =========================
    Prev / Next
 ========================= */
@@ -683,6 +695,7 @@ nextBtn.addEventListener("click", () => {
     { once: true }
   );
 });
+
 
 prevBtn.addEventListener("click", () => {
   if (isAnimating) return;
@@ -727,6 +740,20 @@ slides.forEach((slide, realIndex) => {
     moveToIndexByClick(visibleIndex, realIndex);
   });
 });
+
+let autoTimer = null;
+const AUTO_DELAY = 2500;
+
+function autoLoop() {
+  autoTimer = setTimeout(() => {
+    if (!isAnimating) {
+      nextBtn.click(); // ✅ 여기 그대로 써도 문제 없음
+    }
+    autoLoop();
+  }, AUTO_DELAY);
+}
+
+autoLoop();
 
 
 
