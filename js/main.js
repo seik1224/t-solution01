@@ -9,10 +9,25 @@ const placeholder = document.querySelector(
   "#header .header-search-input-placeholder"
 );
 
-input.addEventListener("input", () => {
-  const filled = input.value.trim() !== "";
+function updateFilledState(isHover = false) {
+  const filled = input.value.trim() !== "" || isHover;
   placeholder.classList.toggle("hidden", filled);
   input.classList.toggle("filled", filled);
+}
+
+// 입력 시
+input.addEventListener("input", () => {
+  updateFilledState();
+});
+
+// hover 시
+input.addEventListener("mouseenter", () => {
+  updateFilledState(true);
+});
+
+// hover 해제 시
+input.addEventListener("mouseleave", () => {
+  updateFilledState();
 });
 
 /* ========================================
