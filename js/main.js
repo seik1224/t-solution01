@@ -828,6 +828,21 @@ function updateLoginState() {
 }
 
 /* ========================================
+   퀵메뉴 메뉴들
+  ========================================  */
+
+function fn_moveClassToolsMenu(type) {
+  const url = `https://tsol.jihak.co.kr/mv/classTools.ez?type=${type}#Back`;
+
+  window.open(
+    url,
+    "classToolsPopup",
+    "width=1280,height=730"
+  );
+}
+
+
+/* ========================================
    top 버튼
   ========================================  */
 topBtn.addEventListener("click", () => {
