@@ -507,15 +507,15 @@ if (content04) {
   }
 
   /* =========================
-    AUTO SLIDE (추가)
+    AUTO play
   ========================= */
-  const autoDelay = 3000; // ms
+  const autoDelay = 3000;
   let autoSlideTimer = null;
 
   function startAutoSlide() {
     if (autoSlideTimer) return;
     autoSlideTimer = setInterval(() => {
-      nextSlide(); // ← 네가 이미 만든 이동 함수
+      nextSlide();
     }, autoDelay);
   }
 
@@ -526,11 +526,9 @@ if (content04) {
 
   startAutoSlide();
 
-  /* hover 시 정지 */
   carouselContainer.addEventListener("mouseenter", stopAutoSlide);
   carouselContainer.addEventListener("mouseleave", startAutoSlide);
 
-  /* 버튼 클릭 시 자동 타이머 리셋 */
   if (nextButton) {
     nextButton.addEventListener("click", () => {
       stopAutoSlide();
@@ -553,9 +551,7 @@ if (content04) {
    - active 슬라이드 크게 띄우기
   ========================================  */
 
-/* =========================
-   DOM
-========================= */
+  
 const section = document.querySelector("#main-content05");
 
 const swiperWrap = section.querySelector(".main-content05-swiper-wrap");
@@ -641,9 +637,8 @@ function getSlideWidth() {
   return slide.offsetWidth + SLIDE_GAP;
 }
 
-
 /* =========================
-   여러 칸 한번에 이동 (슈웅)
+   여러 칸 한번에 이동
 ========================= */
 function moveToIndexByClick(visibleIndex, targetIndex) {
   if (isAnimating) return;
@@ -657,10 +652,7 @@ function moveToIndexByClick(visibleIndex, targetIndex) {
   wrapper.addEventListener(
     "transitionend",
     () => {
-      // 상태만 갱신
       startIndex = targetIndex;
-
-      // DOM 재정렬 (툭 튀는 느낌 방지)
       wrapper.style.transition = "none";
       wrapper.style.transform = "translateX(0)";
       render();
@@ -722,7 +714,7 @@ prevBtn.addEventListener("click", () => {
 /* =========================
    Slide Click
    - 항상 오른쪽
-   - 한번에 슈웅
+   - 한번에 이동
 ========================= */
 slides.forEach((slide, realIndex) => {
   slide.addEventListener("click", () => {
@@ -741,20 +733,22 @@ slides.forEach((slide, realIndex) => {
   });
 });
 
+/* =========================
+  AUTO play
+========================= */
 let autoTimer = null;
 const AUTO_DELAY = 2500;
 
 function autoLoop() {
   autoTimer = setTimeout(() => {
     if (!isAnimating) {
-      nextBtn.click(); // ✅ 여기 그대로 써도 문제 없음
+      nextBtn.click();
     }
     autoLoop();
   }, AUTO_DELAY);
 }
 
 autoLoop();
-
 
 
 /* =========================
