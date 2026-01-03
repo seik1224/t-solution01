@@ -551,6 +551,23 @@ if(section){
     });
   });
 
+    /* =========================
+    Slide Hover
+    - hover 시 detail만 변경
+    - active는 유지
+  ========================= */
+  slides.forEach((slide, realIndex) => {
+    slide.addEventListener("mouseenter", () => {
+      if (isAnimating) return;
+      updateDetail(realIndex);
+    });
+
+    slide.addEventListener("mouseleave", () => {
+      if (isAnimating) return;
+      updateDetail(startIndex);
+    });
+  });
+
   /* =========================
     AUTO play
   ========================= */
